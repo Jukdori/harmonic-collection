@@ -1,0 +1,92 @@
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0e1230;
+  color: #f6f7ff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Wrapper & layout */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Cards */
+.card {
+  background: #171c3c;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.span-2 { grid-column: 1 / -1; }
+
+/* Typography */
+.page-title {
+  margin: .2rem 0;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.tagline {
+  margin: 0 0 1rem;
+  color: #c3c9ff;
+  font-size: .95rem;
+}
+.section-title {
+  margin: .2rem 0 .6rem;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: #ff3b3b;
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .6rem;
+}
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  background: #1c2350;
+  border-radius: 10px;
+  padding: .6rem .7rem;
+}
+.item-title { font-weight: 800; }
+.item-note { color: #c3c9ff; font-size: .95rem; }
+
+/* Courses with bullets */
+.bullets { list-style: disc; padding-left: 1.2rem; }
+.bullets li { margin: .3rem 0; }
+
+/* Weekly planner */
+.planner {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: .7rem;
+}
+.day {
+  background: #1c2350;
+  border-radius: 10px;
+  padding: .7rem .8rem;
+}
+.day h3 {
+  margin: 0 0 .25rem;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.day p { margin: 0; }
+
+/* Footer */
+.footer small { color: #c3c9ff; }
+
