@@ -8,17 +8,7 @@ body {
   line-height: 1.6;
 }
 
-/* Wrapper & layout */
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-.layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
+
 
 /* Cards */
 .card {
