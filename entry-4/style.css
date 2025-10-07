@@ -1,0 +1,71 @@
+/* === Basic setup === */
+body {
+  background-color: #e4e2dd;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e4e2dd;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* === Header === */
+header {
+  text-align: center;
+  background-color: #1b4d48;
+  padding: 20px 0;
+  border-bottom: 2px solid rgb(239, 229, 38);
+}
+
+h1 {
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.tagline {
+  color: #e14146;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* === Main content layout === */
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* === Headings === */
+h2 {
+  color: #557c73;
+  border-bottom: 1px solid rgb(239, 229, 38);
+  padding-bottom: 5px;
+}
+
+/* === Lists === */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+li {
+  color: rgb(0, 0, 0);
+  margin: 8px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for interactivity */
+li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #869b0a;
+  padding: 15px 0;
+  border-top: 1px solid rgb(239, 229, 38);
+}
