@@ -1,0 +1,81 @@
+/* Basic setup */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;           
+  background: #f7f5ff;       
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  background: #2f3a8f;      
+  color: #ffffff;
+  padding: 24px 12px;
+  border-bottom: 3px solid #ffb703; 
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  font-style: italic;
+  color: #ffeaa6;     
+}
+
+/* Main container */
+.container {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* Section cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #dfe3f2; 
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Section titles */
+.card h2 {
+  margin: 0 0 10px 0;
+  color: #2f3a8f;         
+  border-left: 6px solid #ffb703; 
+  padding-left: 8px;
+  font-size: 20px;
+}
+
+/* Lists */
+ul {
+  padding-left: 18px;      
+  margin: 0;
+}
+
+li {
+  margin: 8px 0;
+  background: #faf9ff;      
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ecebff;
+}
+
+/* Hover effect */
+li:hover {
+  background: #fff8e6;     
+  border-color: #ffebb3;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  color: #4b5563;
+  border-top: 2px solid #e6e8f7;
+  padding: 14px 0 20px;
+}
