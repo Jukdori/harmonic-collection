@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Buddy — Entry-6</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <header class="site-header">
+    <h1>📑 Study Buddy</h1>
+    <p class="tagline" id="week-message">Week progress</p>
+  </header>
+
+  <!-- keep the course nav as you wanted -->
+  <nav class="on-this-page">
+    <strong>On this page</strong>
+    <a href="#course-typo-studio">Core 1: Typography studio</a>
+    <a href="#course-interaction">Core 1 Interaction</a>
+    <a href="#course-photo">Intro to Photography</a>
+    <a href="#course-iae">Image, Action &amp; Environment</a>
+    <a href="#course-typo-lecture">Core 1: Typography Lecture</a>
+  </nav>
+
+  <main class="container grid">
+    <!-- To-Do -->
+    <section class="card sticker">
+      <h2>To-Do</h2>
+      <form id="todo-form" class="row gap">
+        <input id="todo-input" type="text" placeholder="Add a task…" aria-label="New task"/>
+        <button type="submit" class="btn">Add</button>
+        <select id="todo-filter" aria-label="Filter tasks">
+          <option value="all">All</option>
+          <option value="open">Open</option>
+          <option value="done">Completed</option>
+        </select>
+      </form>
+      <ul id="todo-list" class="list">
+        <li><span>Design 3 options, table of contents and interior spreads</span></li>
+        <li><span>Include: Images, Running headers &amp; Page numbers, Headlines.</span></li>
+        <li><span>Make the presentation of your photographer.</span></li>
+        <li><span>Finish Entry-6</span></li>
+      </ul>
+      <p class="muted" id="todo-summary"></p>
+    </section>
+
+    <!-- Courses -->
+    <section class="card sticker">
+      <h2>Courses</h2>
+      <ul id="course-list" class="list">
+        <li id="course-typo-studio"><span>Core 1: Typography studio</span></li>
+        <li id="course-interaction"><span>Core 1 Interaction</span></li>
+        <li id="course-photo"><span>Intro to Photography</span></li>
+        <li id="course-iae"><span>Image, Action &amp; Environment</span></li>
+        <li id="course-typo-lecture"><span>Core 1: Typography Lecture</span></li>
+      </ul>
+    </section>
+
+    <!-- Progress (replaces Conditionals) -->
+    <section class="card sticker" id="progress">
+      <h2>Progress</h2>
+      <ul class="bullets">
+        <li>In progress: book binding &amp; 3 demo designs</li>
+        <li>Researching information for <em>John Mazlish</em></li>
+      </ul>
+      <button class="btn" id="check-busy-btn">How busy am I?</button>
+      <p id="busy-result" class="result"></p>
+    </section>
+
+    <!-- Study Timer (replaces Loops) -->
+    <section class="card sticker" id="study-timer">
+      <h2>Study Timer</h2>
+      <div id="timer-display" class="code" aria-live="polite" style="font-size:22px;text-align:center;">00:00:00</div>
+      <div class="row gap" style="margin-top:10px;">
+        <button class="btn" id="timer-start">Start</button>
+        <button class="btn" id="timer-pause">Pause</button>
+        <button class="btn ghost" id="timer-reset">Reset</button>
+        <input id="session-label" type="text" placeholder="Label (e.g., Typography)"/>
+        <button class="btn" id="timer-save">Save session</button>
+      </div>
+      <p class="muted" id="timer-total">Total: 0m</p>
+      <ul class="list" id="timer-log"></ul>
+    </section>
+
+    <!-- Looking ahead -->
+    <section class="card sticker" id="looking-ahead">
+      <h2>Looking ahead</h2>
+      <ul class="bullets">
+        <li>Final book project</li>
+        <li>Final photo portfolio</li>
+        <li>Final harmonic collection</li>
+      </ul>
+      <button class="btn ghost" id="switch theme" aria-pressed="false">Toggle theme</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hanjun Cho</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
