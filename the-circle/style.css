@@ -1,0 +1,6 @@
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  border: solid 1px blue;
+}

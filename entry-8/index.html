@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Buddy — Entry-8</title>
+  <link href="style8.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="background-blobs" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Study Buddy</h1>
+      <p class="tagline"> Soft Focus Mode</p>
+    </div>
+
+    <nav class="course-nav">
+      <strong>Courses</strong>
+      <a href="#course-typo-studio">Core 1 Typography Studio</a>
+      <a href="#course-interaction">Core 1 Interaction</a>
+      <a href="#course-photo">Intro to Photo</a>
+      <a href="#course-iae">Image, Action &amp; Environment</a>
+      <a href="#course-typo-lecture">Core 1 Typography Lecture</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Welcome / greeting -->
+    <section class="card hero-card">
+      <div class="hero-left">
+        <p class="pill-label">Today’s vibe</p>
+        <h2 id="greeting-text">Let’s have a calm session.</h2>
+        <p id="date-text" class="muted"></p>
+        <button id="new-affirmation" class="btn primary">
+          New little reminder
+        </button>
+      </div>
+      <div class="hero-right">
+        <p id="affirmation-text" class="affirmation">
+          You don’t have to finish everything today.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Left column: To-do + Courses -->
+      <section class="stack">
+        <!-- To-Do -->
+        <section class="card" id="todo">
+          <h3>Today’s to-do</h3>
+          <p class="muted small">
+            Check things off and watch the progress bar fill up.
+          </p>
+
+          <ul class="todo-list">
+            <li>
+              <label>
+                <input type="checkbox" class="todo-checkbox">
+                Finish Entry-8
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" class="todo-checkbox">
+                Try to print out the spreads for the final book project
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" class="todo-checkbox">
+                Be ready for progress critique
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" class="todo-checkbox">
+                Upload photos on google drive
+              </label>
+            </li>
+          </ul>
+
+          <div class="progress-wrap">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+          <p id="todo-summary" class="muted small">0 of 4 tasks completed.</p>
+        </section>
+
+        <!-- Courses list (for continuity) -->
+        <section class="card" id="courses">
+          <h3>Course board</h3>
+          <ul class="course-list">
+            <li id="course-typo-studio">Core 1: Typography studio</li>
+            <li id="course-interaction">Core 1: Interaction</li>
+            <li id="course-photo">Intro to Photography</li>
+            <li id="course-iae">Image, Action &amp; Environment</li>
+            <li id="course-typo-lecture">Core 1: Typography Lecture</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Right column: Timer + Looking ahead -->
+      <section class="stack">
+        <!-- Study timer -->
+        <section class="card" id="study-timer">
+          <h3>Gentle study timer</h3>
+          <p class="muted small">
+            Try a short focus session, then stretch and breathe.
+          </p>
+          <div id="timer-display" class="timer-display" aria-live="polite">
+            00:00
+          </div>
+          <div class="timer-controls">
+            <button id="timer-start" class="btn primary">Start</button>
+            <button id="timer-pause" class="btn secondary">Pause</button>
+            <button id="timer-reset" class="btn ghost">Reset</button>
+          </div>
+        </section>
+
+        <!-- Looking ahead -->
+        <section class="card" id="looking-ahead">
+          <h3>Looking ahead</h3>
+          <ul class="future-list">
+            <li>Final book project structure</li>
+            <li>Final photo portfolio sequencing</li>
+            <li>Final harmonic collection polishing</li>
+            <li>Organize files &amp; back up everything</li>
+          </ul>
+
+          <button id="theme-toggle" class="btn subtle">
+            Switch to sunset theme
+          </button>
+          <p class="muted tiny">
+            (Want to work in different mood? Click it!)
+          </p>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Study Buddy · Hanjun Cho</p>
+  </footer>
+
+  <script src="script8.js" defer></script>
+</body>
+</html>
+
