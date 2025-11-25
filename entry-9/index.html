@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Buddy — Entry-9</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo-dot"></div>
+        <div class="logo-text">
+          <span class="logo-title">Study Buddy</span>
+          <span class="logo-subtitle">entry-9 · control deck</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Today</p>
+        <p class="sidebar-date" id="today-date"></p>
+        <p class="sidebar-time" id="current-time"></p>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Today's vibe</p>
+        <p class="vibe-text" id="vibe-text">
+          Focused but gentle.
+        </p>
+        <button class="vibe-button" id="vibe-button">
+          Shuffle vibe
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">View</p>
+        <div class="nav-buttons">
+          <button class="nav-button active" data-panel="today-panel">
+            Today
+          </button>
+          <button class="nav-button" data-panel="week-panel">
+            Week map
+          </button>
+          <button class="nav-button" data-panel="notes-panel">
+            Notes
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <!-- BACKGROUND GRID -->
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <div class="content">
+
+        <!-- TODAY PANEL -->
+        <section class="panel active" id="today-panel">
+          <header class="panel-header">
+            <h1>Today’s Focus</h1>
+            <p>Choose one thing to move forward, not ten things to stress about.</p>
+          </header>
+
+          <div class="panel-grid">
+            <!-- Focus Course -->
+            <section class="card">
+              <h2>Focus course</h2>
+              <p class="small-label">Tap one</p>
+              <div class="pill-row" id="course-pills">
+                <button class="pill active" data-course="Core 1: Typography Studio">
+                  Core 1: Typography
+                </button>
+                <button class="pill" data-course="Core 1 Interaction">
+                  Core 1 Interaction
+                </button>
+                <button class="pill" data-course="Intro to Photography">
+                  Intro to Photography
+                </button>
+              </div>
+              <p class="selected-course-label">
+                Current focus:
+                <span id="selected-course">Core 1: Typography Studio</span>
+              </p>
+            </section>
+
+            <!-- Timer -->
+            <section class="card">
+              <h2>Study timer</h2>
+              <p class="small-label">Mini focus session</p>
+
+              <div class="timer-row">
+                <input
+                  type="number"
+                  id="timer-minutes"
+                  min="1"
+                  max="180"
+                  value="25"
+                />
+                <span class="timer-unit">min</span>
+              </div>
+
+              <div class="timer-display" id="timer-display">
+                25:00
+              </div>
+
+              <div class="timer-buttons">
+                <button id="timer-start">Start</button>
+                <button id="timer-pause">Pause</button>
+                <button id="timer-reset">Reset</button>
+              </div>
+            </section>
+
+            <!-- Tasks -->
+            <section class="card wide">
+              <h2>Today’s checklist</h2>
+              <p class="small-label">Click to mark as done</p>
+              <ul class="task-list" id="task-list">
+                <li data-task-id="1">
+                  <input type="checkbox" />
+                  <span>Bind book mockup · version 1</span>
+                </li>
+                <li data-task-id="2">
+                  <input type="checkbox" />
+                  <span>Refine 3 layout demos</span>
+                </li>
+                <li data-task-id="3">
+                  <input type="checkbox" />
+                  <span>Edit the Indesign based on the comments from critique</span>
+                </li>
+                <li data-task-id="4">
+                  <input type="checkbox" />
+                  <span>Organize photo selects for final portfolio</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <!-- WEEK PANEL -->
+        <section class="panel" id="week-panel">
+          <header class="panel-header">
+            <h1>Week Map</h1>
+            <p>See everything at once so it feels less chaotic.</p>
+          </header>
+
+          <section class="card">
+            <h2>Project timeline</h2>
+            <div class="week-grid">
+              <div class="week-col">
+                <h3>Mon–Tue</h3>
+                <ul>
+                  <li>Finalize book concept</li>
+                  <li>Typography refinements</li>
+                  <li>Upload Entry-9</li>
+                </ul>
+              </div>
+              <div class="week-col">
+                <h3>Wed–Thu</h3>
+                <ul>
+                  <li>Print test spreads</li>
+                  <li>Photo editing session</li>
+                  <li>Upload map numbers to the presentation</li>
+                </ul>
+              </div>
+              <div class="week-col">
+                <h3>Fri–Sun</h3>
+                <ul>
+                  <li>Book binding practice</li>
+                  <li>Think about how to set up the final portfolio </li>
+                  <li>Be ready for the final presentation</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Finals radar</h2>
+            <div class="radar-row">
+              <div class="radar-item">
+                <p class="radar-label">Final book project</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 55%"></div>
+                </div>
+                <p class="progress-text">55% · structure is forming</p>
+              </div>
+
+              <div class="radar-item">
+                <p class="radar-label">Photo portfolio</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 40%"></div>
+                </div>
+                <p class="progress-text">40% · more editing needed</p>
+              </div>
+
+              <div class="radar-item">
+                <p class="radar-label">Harmonic collection</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65%"></div>
+                </div>
+                <p class="progress-text">65% · entries almost there</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- NOTES PANEL -->
+        <section class="panel" id="notes-panel">
+          <header class="panel-header">
+            <h1>Scratchpad</h1>
+            <p>Messy thoughts welcome. This is just for you.</p>
+          </header>
+
+          <section class="card full">
+            <h2>Free notes</h2>
+            <p class="small-label">
+              This doesn’t save after refresh, but you can copy/paste into your real notes.
+            </p>
+            <textarea
+              id="notes-area"
+              placeholder="Brain dump here: questions for critique, ideas for spreads, reminders for future-you..."
+            ></textarea>
+            <button id="clear-notes" class="clear-notes-button">
+              Clear notes
+            </button>
+          </section>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+

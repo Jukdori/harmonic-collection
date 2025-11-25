@@ -1,0 +1,485 @@
+/* --- BASIC RESET --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #050816;
+  color: #e5e7eb;
+}
+
+/* --- LAYOUT --- */
+.page {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  position: relative;
+  z-index: 10;
+  padding: 20px 18px;
+  border-right: 1px solid rgba(148, 163, 184, 0.3);
+  background: radial-gradient(circle at top, #111827 0, #020617 55%);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.logo-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 180deg,
+    #22d3ee,
+    #4f46e5,
+    #a855f7,
+    #22c55e,
+    #22d3ee
+  );
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.logo-subtitle {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.sidebar-section {
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.75)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.sidebar-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+  margin: 0 0 6px;
+}
+
+.sidebar-date {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sidebar-time {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.vibe-text {
+  margin: 2px 0 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.vibe-button {
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  padding: 7px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #22c55e, #a3e635);
+  color: #020617;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.vibe-button:hover {
+  filter: brightness(1.05);
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-button {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  padding: 8px 10px;
+  font-size: 12px;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-button.active {
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  border-color: transparent;
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+/* --- MAIN AREA & BACKGROUND --- */
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(31, 41, 55, 0.4) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(31, 41, 55, 0.4) 1px,
+      transparent 1px
+    );
+  background-size: 32px 32px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 24px clamp(20px, 3vw, 32px);
+}
+
+/* --- PANELS --- */
+.panel {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-header {
+  margin-bottom: 18px;
+}
+
+.panel-header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+
+.panel-header p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* --- CARDS --- */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 16px 18px 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+}
+
+.card.wide {
+  grid-column: 1 / -1;
+}
+
+.card.full {
+  width: 100%;
+  max-width: 720px;
+}
+
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.small-label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+/* --- FOCUS COURSE --- */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 6px 10px;
+  font-size: 12px;
+  background: transparent;
+  cursor: pointer;
+  color: #e5e7eb;
+}
+
+.pill.active {
+  background: radial-gradient(circle at 0 0, #4f46e5, #22c55e);
+  border-color: transparent;
+}
+
+.selected-course-label {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.selected-course-label span {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* --- TIMER --- */
+.timer-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+#timer-minutes {
+  width: 64px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.timer-unit {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.timer-display {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.timer-buttons button {
+  flex: 1;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 7px 0;
+  border: none;
+  cursor: pointer;
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+#timer-start {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #020617;
+  border: none;
+}
+
+/* --- TASK LIST --- */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.task-list li:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+}
+
+.task-list input[type="checkbox"] {
+  accent-color: #22c55e;
+}
+
+/* --- WEEK MAP --- */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.week-col {
+  background: #020617;
+  border-radius: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+.week-col h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.week-col ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* --- RADAR / PROGRESS --- */
+.radar-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.radar-item {
+  font-size: 12px;
+}
+
+.radar-label {
+  margin: 0 0 4px;
+  color: #e5e7eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #020617;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4f46e5, #22c55e);
+}
+
+.progress-text {
+  margin: 3px 0 0;
+  color: #9ca3af;
+}
+
+/* --- NOTES PANEL --- */
+#notes-area {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 10px 12px;
+  background: #020617;
+  color: #e5e7eb;
+  resize: vertical;
+  font-size: 13px;
+}
+
+.clear-notes-button {
+  margin-top: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.8);
+  background: transparent;
+  color: #fecaca;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 880px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  }
+
+  .sidebar-section {
+    flex: 1 1 140px;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .week-grid,
+  .radar-row {
+    grid-template-columns: 1fr;
+  }
+}
