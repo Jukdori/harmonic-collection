@@ -1,0 +1,319 @@
+/* GLOBAL -------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e5e7eb;
+
+  /* colorful layered background */
+  background:
+    radial-gradient(circle at 0% 0%, rgba(244, 114, 182, 0.35), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.3), transparent 55%),
+    linear-gradient(135deg, #020617, #020617 35%, #1e1b4b, #7c3aed);
+}
+
+/* TOP BAR -------------------------------------------------- */
+.topbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Neon Violet to Teal Gradient Title */
+.topbar h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+
+  background: linear-gradient(90deg, #a78bfa, #4dd4c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 12px rgba(167, 139, 250, 0.35),
+    0 0 20px rgba(77, 212, 198, 0.25);
+}
+
+/* Animated shifting gradient */
+@keyframes neonShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.topbar h1 {
+  background-size: 200% 200%;
+  animation: neonShift 5s ease-in-out infinite alternate;
+}
+
+
+#us-time {
+  font-size: 14px;
+  color: #a5b4fc;
+}
+
+/* GRID LAYOUT --------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 20px;
+  padding: 32px 40px 48px;
+}
+
+/* PANELS -------------------------------------------------- */
+.panel {
+  position: relative;
+  padding: 20px 22px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.8),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 4px;
+  width: 100%;
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  animation: barGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes barGlow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* individual accent colors */
+.mood::before       { background: linear-gradient(90deg, #fb7185, #f97316); }
+.focus::before      { background: linear-gradient(90deg, #38bdf8, #22c55e); }
+.timer::before      { background: linear-gradient(90deg, #22c55e, #a3e635); }
+.todo::before       { background: linear-gradient(90deg, #facc15, #fb923c); }
+.energy::before     { background: linear-gradient(90deg, #f97316, #ec4899); }
+.courses::before    { background: linear-gradient(90deg, #818cf8, #22d3ee); }
+.notes::before      { background: linear-gradient(90deg, #f472b6, #c4b5fd); }
+.micro::before      { background: linear-gradient(90deg, #a855f7, #22c55e); }
+.music::before      { background: linear-gradient(90deg, #fbbf24, #f97316); }
+.reflection::before { background: linear-gradient(90deg, #2dd4bf, #60a5fa); }
+
+.panel h2 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* little helper text */
+.hint {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 0;
+}
+
+/* MOOD WAVE ----------------------------------------------- */
+.mood #vibe-text {
+  margin-bottom: 16px;
+}
+
+.mood .wave {
+  margin-top: 6px;
+  height: 48px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #fb7185, #f97316, #22c55e, #38bdf8, #a78bfa);
+  background-size: 300% 300%;
+
+  animation: moodWave 8s ease-in-out infinite;
+  filter: blur(0.4px);
+}
+
+@keyframes moodWave {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes waveMove {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 300% 0; }
+}
+
+/* FOCUS BUTTONS ------------------------------------------- */
+.focus-buttons {
+  margin-bottom: 12px;
+}
+
+.focus-buttons button {
+  margin: 6px 6px 0 0;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  background: rgba(37, 99, 235, 0.95);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.focus-buttons button:hover {
+  background: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* TIMER --------------------------------------------------- */
+.timer-display {
+  font-size: 40px;
+  text-align: center;
+  margin: 16px 0 20px;
+}
+
+.timer-controls button {
+  margin-right: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 500;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.timer-controls button:hover {
+  background: #4ade80;
+  transform: translateY(-1px);
+}
+.timer-active {
+  animation: pulseTimer 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseTimer {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.04); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* TODO ---------------------------------------------------- */
+.todo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.todo input {
+  margin-right: 10px;
+}
+
+/* ENERGY BAR ---------------------------------------------- */
+.energy-bar {
+  width: 100%;
+  height: 16px;
+  background: #111827;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0 14px;
+}
+
+#energy-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, #22c55e, #a3e635);
+  transition: width 0.3s ease-out;
+}
+
+.ghost-btn {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid #f97316;
+  background: transparent;
+  color: #fed7aa;
+  font-size: 13px;
+  cursor: pointer;
+}
+.energy-bounce {
+  animation: bump 0.25s ease-out;
+}
+
+@keyframes bump {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(1.02); }
+  100% { transform: scaleX(1); }
+}
+
+/* COURSES ------------------------------------------------- */
+.courses ul {
+  padding-left: 18px;
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* NOTES & REFLECTION -------------------------------------- */
+.notes textarea,
+.reflection-box {
+  width: 100%;
+  height: 140px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 10px 12px;
+  color: #e5e7eb;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* MICRO GOALS -------------------------------------------- */
+.micro ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* STUDY PLAYLIST ------------------------------------------ */
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.pill-list li {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(250, 204, 21, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.6);
+  font-size: 12px;
+  color: #fef3c7;
+}
+
+/* FOOTER -------------------------------------------------- */
+.footer {
+  text-align: center;
+  padding: 18px 20px 26px;
+  color: rgba(209, 213, 219, 0.7);
+  font-size: 13px;
+}

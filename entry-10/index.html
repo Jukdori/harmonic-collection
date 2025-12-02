@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Buddy — Entry 10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Study Buddy</h1>
+  <div id="us-time"></div>
+</header>
+
+<main class="grid">
+
+  <!-- 1. Today's Vibe -->
+  <section class="panel mood" style="grid-column: 1 / 4">
+    <h2>Today's Vibe</h2>
+    <p id="vibe-text">Sleepy, Hungry, Nervous.</p>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 2. Focus Selector -->
+  <section class="panel focus" style="grid-column: 4 / 8">
+    <h2>Focus Course</h2>
+    <div class="focus-buttons">
+      <button onclick="setFocus('Core 1: Typography Studio')">Studio</button>
+      <button onclick="setFocus('Core 1 Interaction')">Interaction</button>
+      <button onclick="setFocus('Intro to Photography')">Photography</button>
+      <button onclick="setFocus('Image/Action/Environment')">IAE</button>
+      <button onclick="setFocus('Core 1: Typography Lecture')">Lecture</button>
+    </div>
+    <p id="focus-display">Choose a course to begin.</p>
+  </section>
+
+  <!-- 3. Mini Focus Timer -->
+  <section class="panel timer" style="grid-column: 8 / 11">
+    <h2>Mini Focus Timer</h2>
+    <div class="timer-display" id="timer">25:00</div>
+    <div class="timer-controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </section>
+
+  <!-- To-Do -->
+  <section class="panel todo" style="grid-column: 1 / 6">
+    <h2>Today's To-Do</h2>
+    <ul id="todo-list">
+      <li><input type="checkbox"> Final book: refine layout</li>
+      <li><input type="checkbox"> Finish Entry-10</li>
+      <li><input type="checkbox"> Organize photos</li>
+      <li><input type="checkbox"> Prepare portfolio sequence</li>
+    </ul>
+  </section>
+
+  <!-- 5. Weekly Energy Meter -->
+  <section class="panel energy" style="grid-column: 6 / 11">
+    <h2>Weekly Energy Meter</h2>
+    <div class="energy-bar">
+      <div id="energy-fill"></div>
+    </div>
+    <button class="ghost-btn" onclick="boostEnergy()">Boost Progress</button>
+  </section>
+
+  <!-- 6. Course Board -->
+  <section class="panel courses" style="grid-column: 1 / 4">
+    <h2>Course Board</h2>
+    <ul>
+      <li>Core 1 Typography Studio</li>
+      <li>Core 1 Interaction</li>
+      <li>Intro to Photography</li>
+      <li>Image/Action/Environment</li>
+      <li>Typography Lecture</li>
+    </ul>
+  </section>
+
+  <!-- 7. Notes Capsule -->
+  <section class="panel notes" style="grid-column: 4 / 8">
+    <h2>Notes Capsule</h2>
+    <textarea placeholder="Write a quick note..."></textarea>
+  </section>
+
+  <!-- 8. Micro Goals -->
+  <section class="panel micro" style="grid-column: 8 / 11">
+    <h2>Micro Goals</h2>
+    <ul>
+      <li>Drink water</li>
+      <li>Work out</li>
+      <li>Print out the demo versions for the book </li>
+      <Li>Eat healthier</Li>
+    </ul>
+  </section>
+
+  <!-- 9. Study Playlist -->
+  <section class="panel music" style="grid-column: 1 / 6">
+    <h2>Study Playlist</h2>
+    <p class="hint">Pick a sound mood while you work.</p>
+    <ul class="pill-list">
+      <li>Daydreaming - Radiohead</li>
+      <li>Hisoyakani - Lamp</li>
+      <li>Homesick - Wave to earth</li>
+      <li>In the pool - Kensuke ushio</li>
+    </ul>
+  </section>
+
+  <!-- 10. End-of-Day Reflection -->
+  <section class="panel reflection" style="grid-column: 6 / 11">
+    <h2>End-of-Day Reflection</h2>
+    <p class="hint">One sentence about what you moved forward today:</p>
+    <textarea class="reflection-box"
+      placeholder="I made progress on…"></textarea>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Entry-10 · Hanjun Cho</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
