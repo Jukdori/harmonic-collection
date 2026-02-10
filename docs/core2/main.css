@@ -1,14 +1,27 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: Georgia, "Times New Roman", serif; color: #111; }
+body { font-family: Helvetica, Arial, sans-serif; color: #111; }
 
-.grid-bg {
+.grid-bg{
   min-height: 100vh;
   background:
-    radial-gradient(circle at 1px 1px, rgba(220, 60, 60, 0.22) 1px, transparent 1.6px);
-  background-size: 26px 26px;
-  background-color: #f6f6f6;
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.04),
+      rgba(0,0,0,0.04) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.04),
+      rgba(0,0,0,0.04) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    #f8f8f8;
 }
+
 
 .topbar{
   position: sticky;
