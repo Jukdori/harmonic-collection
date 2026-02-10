@@ -3,55 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Legibility</title>
+  <title>Legibility · Legibility changes through interaction</title>
   <link rel="stylesheet" href="main.css" />
 </head>
-<body>
-  <div class="stage">
-    <div class="nav">
-      <a class="pill" href="index.html">Return</a>
-      <a class="pill" href="precedent.html">Precedent</a>
-      <a class="pill" href="hierarchy.html">Hierarchy</a>
-      <a class="pill" href="legibility.html">Legibility</a>
-    </div>
+<body class="grid-bg">
+  <header class="topbar">
+    <a class="back" href="index.html">Return</a>
+    <div class="brand">Legibility</div>
+    <div class="meta">Legibility changes through interaction</div>
+  </header>
 
-    <div class="field">
-      <a class="node" href="#l1" style="top:14%; left:56%;">Legibility changes through interaction</a>
-      <a class="node" href="#l2" style="top:40%; left:18%;">Some text should resist</a>
-      <a class="node" href="#l3" style="top:68%; left:44%;">Meaning shifts when you focus</a>
-    </div>
-
-    <div class="meta">PAGE: LEGIBILITY</div>
-  </div>
-
-  <section id="l1" class="focus">
-    <div class="panel">
-      <h1>Legibility</h1>
+  <main class="stage">
+    <article class="panel">
+      <h1>Legibility changes through interaction</h1>
       <p>
-        The site makes you “approach” text: you notice it first, then click to read it clearly.
+        Legibility isn’t fixed. A text can be readable or unreadable depending on
+        distance, scale, contrast, and attention. Interaction can change all of that.
       </p>
-      <a class="pill close" href="#">Close</a>
-    </div>
-  </section>
 
-  <section id="l2" class="focus">
-    <div class="panel">
-      <h1>Resistance</h1>
       <p>
-        Not everything should be instantly readable. Confusion can be a design choice.
+        I’m keeping the code basic, but the idea stays: the grid background suggests
+        “navigation,” and the text boxes feel like small notes you discover. The user
+        reads by moving between pages, not by scrolling forever.
       </p>
-      <a class="pill close" href="#">Close</a>
-    </div>
-  </section>
 
-  <section id="l3" class="focus">
-    <div class="panel">
-      <h1>Focus</h1>
-      <p>
-        Clicking isolates one node (lightbox). That’s the “legibility change” without JavaScript.
-      </p>
-      <a class="pill close" href="#">Close</a>
-    </div>
-  </section>
+      <blockquote>
+        The same words feel different when the structure changes.
+      </blockquote>
+
+      <div class="next">
+        <a class="smallnode" href="precedent.html">Loop: Precedent →</a>
+        <a class="smallnode" href="hierarchy.html">Back: Hierarchy →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>State: LEGIBILITY</span>
+    <span>·</span>
+    <span>Path count: 03</span>
+  </footer>
 </body>
 </html>
