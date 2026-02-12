@@ -3,88 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hierarchy · Hierarchy as interaction</title>
+  <title>Hierarchy · Core 2</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body class="paper">
   <header class="topbar">
-    <a class="back" href="index.html">Return</a>
-
-    <div class="path" aria-label="Path indicator">
-      <span class="dot"></span>
-      <span>HUB</span>
-      <span class="sep">→</span>
-      <b>HIERARCHY</b>
-    </div>
-
-    <div class="meta">
-      Hierarchy as interaction
-      <span class="forknote">Scale decides what feels “important.”</span>
-    </div>
+    <a class="back" href="index.html">← Return</a>
+    <div class="route">HUB → HIERARCHY</div>
+    <div class="meta">Hierarchy as interaction · Scale decides what feels “important.”</div>
   </header>
 
-  <main class="stage page">
+  <main class="stage">
     <article class="panel">
       <h1>Hierarchy as interaction</h1>
-
       <p>
-        Hierarchy is not just decoration — it’s a steering wheel.
-        Size, spacing, and position quietly tell you where to look first.
-        That first glance is already a fork.
+        Hierarchy is not just decoration — it’s a steering wheel. Size, spacing, and position quietly tell you
+        where to look first. <strong>That first glance is already a fork.</strong>
+      </p>
+      <p>
+        Below, the “garden” is simulated through emphasis: one phrase becomes dominant,
+        others become distant. Meaning shifts with attention.
       </p>
 
-      <p class="micro">
-        Here, the same Borges sentence appears, but the structure changes its power:
-        one line becomes dominant, others become distant. Meaning shifts with attention.
-      </p>
+      <!-- Map-like field: nodes with different weight/opacity -->
+      <section class="field" aria-label="Hierarchy map field">
+        <!-- center dominant -->
+        <a class="node big" style="left:50%; top:48%;" href="#fork">
+          All possible outcomes occur <span class="tag">dominant</span>
+        </a>
 
-      <section class="hier-grid">
-        <div class="h-big">
-          <div class="h-label">dominant</div>
-          <div class="h-text">All possible outcomes occur.</div>
-        </div>
+        <!-- near nodes -->
+        <span class="node mid" style="left:28%; top:30%;">several alternatives <span class="tag">near</span></span>
+        <span class="node mid" style="left:72%; top:32%;">chooses one <span class="tag">near</span></span>
+        <span class="node mid" style="left:22%; top:70%;">point of departure <span class="tag">near</span></span>
+        <span class="node mid" style="left:78%; top:72%;">other forkings <span class="tag">near</span></span>
 
-        <div class="h-mid">
-          <div class="h-label">near</div>
-          <div class="h-text">He chooses one and eliminates the others.</div>
-        </div>
+        <!-- peripheral / almost lost -->
+        <span class="node small" style="left:14%; top:18%;">returning isn’t starting over <span class="tag">almost lost</span></span>
+        <span class="node small" style="left:86%; top:16%;">a parallel version <span class="tag">peripheral</span></span>
+        <span class="node small" style="left:10%; top:84%;">a choice forgotten <span class="tag">peripheral</span></span>
+        <span class="node small" style="left:90%; top:86%;">meaning shifts <span class="tag">almost lost</span></span>
 
-        <div class="h-small">
-          <div class="h-label">peripheral</div>
-          <div class="h-text">Each choice creates more than one future.</div>
-        </div>
-
-        <div class="h-faint">
-          <div class="h-label">almost lost</div>
-          <div class="h-text">Other forkings.</div>
-        </div>
+        <!-- connective hint (no lines needed; your figma can be “implied”) -->
       </section>
 
-      <div class="callout">
-        <div class="callout-title">Garden logic</div>
-        <p class="micro">
-          Hierarchy can simulate the garden: not by adding more pages,
-          but by making some possibilities <span class="em">feel</span> closer than others.
-        </p>
+      <div class="legend">
+        <div><strong>How to read it:</strong> big = closest / small = distant. Hover a node to “approach” it.</div>
+        <div><strong>Borges link:</strong> the hierarchy makes one route feel inevitable, while others stay possible but faint.</div>
       </div>
 
-      <details class="fork">
-        <summary>Another fork (open)</summary>
-        <div class="fork-body">
-          <p class="micro">
-            Question for critique: does the hierarchy guide you — or trap you?
-            Where do you want the viewer to resist the “main” path?
+      <div class="more" id="fork">
+        <details>
+          <summary>▶ Another fork (open)</summary>
+          <p>
+            Hierarchy can simulate the garden: not by adding more pages, but by making some possibilities feel closer than others.
+            The “interface” becomes the story’s structure.
           </p>
-        </div>
-      </details>
+        </details>
+      </div>
     </article>
   </main>
 
   <footer class="footer">
-    <div>STATE: HIERARCHY</div>
-    <div class="muted">Attention → route</div>
-    <div>PATH COUNT: 02</div>
+    <span>STATE: HIERARCHY</span><span class="dot">·</span>
+    <span>Attention → route</span><span class="dot">·</span>
+    <span>PATH COUNT: 02</span>
   </footer>
 </body>
 </html>
