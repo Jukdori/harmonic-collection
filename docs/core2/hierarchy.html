@@ -6,37 +6,85 @@
   <title>Hierarchy · Hierarchy as interaction</title>
   <link rel="stylesheet" href="main.css" />
 </head>
-<body class="grid-bg">
+
+<body class="paper">
   <header class="topbar">
     <a class="back" href="index.html">Return</a>
-    <div class="brand">Hierarchy</div>
-    <div class="meta">Hierarchy as interaction</div>
+
+    <div class="path" aria-label="Path indicator">
+      <span class="dot"></span>
+      <span>HUB</span>
+      <span class="sep">→</span>
+      <b>HIERARCHY</b>
+    </div>
+
+    <div class="meta">
+      Hierarchy as interaction
+      <span class="forknote">Scale decides what feels “important.”</span>
+    </div>
   </header>
 
-  <main class="stage">
+  <main class="stage page">
     <article class="panel">
       <h1>Hierarchy as interaction</h1>
-      <p>
-        Hierarchy isn’t just big title and small body. It can be like,
-        what appears first, what is hidden, what needs effort to understand,
-        and that becomes the interaction.
-      </p>
 
       <p>
-        On this site, the hierarchy is simple: the hub is a clear entry, and each page
-        offers small choices to continue. The structure is minimal, but the order still
-        shapes how the story feels.
+        Hierarchy is not just decoration — it’s a steering wheel.
+        Size, spacing, and position quietly tell you where to look first.
+        That first glance is already a fork.
       </p>
 
-      <blockquote>
-        What you see first becomes what you think matters.
-      </blockquote>
+      <p class="micro">
+        Here, the same Borges sentence appears, but the structure changes its power:
+        one line becomes dominant, others become distant. Meaning shifts with attention.
+      </p>
 
-      <div class="next">
-        <a class="smallnode" href="legibility.html">Next: Legibility →</a>
-        <a class="smallnode" href="precedent.html">Back: Precedent →</a>
+      <section class="hier-grid">
+        <div class="h-big">
+          <div class="h-label">dominant</div>
+          <div class="h-text">All possible outcomes occur.</div>
+        </div>
+
+        <div class="h-mid">
+          <div class="h-label">near</div>
+          <div class="h-text">He chooses one and eliminates the others.</div>
+        </div>
+
+        <div class="h-small">
+          <div class="h-label">peripheral</div>
+          <div class="h-text">Each choice creates more than one future.</div>
+        </div>
+
+        <div class="h-faint">
+          <div class="h-label">almost lost</div>
+          <div class="h-text">Other forkings.</div>
+        </div>
+      </section>
+
+      <div class="callout">
+        <div class="callout-title">Garden logic</div>
+        <p class="micro">
+          Hierarchy can simulate the garden: not by adding more pages,
+          but by making some possibilities <span class="em">feel</span> closer than others.
+        </p>
       </div>
+
+      <details class="fork">
+        <summary>Another fork (open)</summary>
+        <div class="fork-body">
+          <p class="micro">
+            Question for critique: does the hierarchy guide you — or trap you?
+            Where do you want the viewer to resist the “main” path?
+          </p>
+        </div>
+      </details>
     </article>
   </main>
+
+  <footer class="footer">
+    <div>STATE: HIERARCHY</div>
+    <div class="muted">Attention → route</div>
+    <div>PATH COUNT: 02</div>
+  </footer>
 </body>
 </html>
