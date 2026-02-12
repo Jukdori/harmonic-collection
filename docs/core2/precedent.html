@@ -3,72 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Precedent · Reading becomes navigation</title>
+  <title>Precedent · Core 2</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body class="paper">
   <header class="topbar">
-    <a class="back" href="index.html">Return</a>
-
-    <div class="path" aria-label="Path indicator">
-      <span class="dot"></span>
-      <span>HUB</span>
-      <span class="sep">→</span>
-      <b>PRECEDENT</b>
-    </div>
-
-    <div class="meta">
-      Reading becomes navigation
-      <span class="forknote">Choosing a link is choosing a route.</span>
-    </div>
+    <a class="back" href="index.html">← Return</a>
+    <div class="route">HUB → PRECEDENT</div>
+    <div class="meta">Precedent: Twine · Structure: network instead of linear scroll</div>
   </header>
 
-  <main class="stage page">
+  <main class="stage">
     <article class="panel">
-      <h1>Reading becomes navigation</h1>
-
+      <h1>Precedent: Twine</h1>
       <p>
-        A precedent is a proof: it shows that reading doesn’t have to move forward like a line.
-        It can move <span class="em">sideways</span>, loop back, or jump to a different node.
+        Twine is a precedent for the “garden” because it treats reading like navigation.
+        Links aren’t just references — they are <strong>choices</strong>. A path is an interpretation.
       </p>
 
-      <p>
-        In the <span class="em">Garden of Forking Paths</span>, every decision produces more than one future.
-        This site borrows that logic: links are not “next pages.” They are forks.
-      </p>
+      <!-- diagram area -->
+      <section class="diagram" aria-label="Network diagram">
+        <div class="active-pill">Active node</div>
 
-      <div class="callout">
-        <div class="callout-title">Design decision</div>
-        <p class="micro">
-          The layout is calm and minimal so the structure becomes the main interaction.
-          The header acts like a map legend — a reminder that you are navigating, not scrolling.
-        </p>
-      </div>
+        <!-- SVG lines behind nodes -->
+        <svg class="wires" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+          <!-- center quote box connections -->
+          <line x1="500" y1="190" x2="500" y2="70" />
+          <line x1="500" y1="190" x2="260" y2="150" />
+          <line x1="500" y1="190" x2="740" y2="150" />
 
-      <details class="fork">
-        <summary>A quiet fork (open)</summary>
-        <div class="fork-body">
-          <p class="micro">
-            Returning is not neutral. It doesn’t erase the path you took — it changes how you read the hub.
-            The “same” page becomes a different page because your attention is different.
+          <!-- side verticals -->
+          <line x1="260" y1="150" x2="260" y2="360" />
+          <line x1="740" y1="150" x2="740" y2="360" />
+
+          <!-- lower diamond-ish links -->
+          <line x1="260" y1="360" x2="500" y2="470" />
+          <line x1="740" y1="360" x2="500" y2="470" />
+          <line x1="260" y1="360" x2="500" y2="430" />
+          <line x1="740" y1="360" x2="500" y2="430" />
+
+          <!-- subtle circle curve substitute: extra “possibility” lines -->
+          <line x1="260" y1="150" x2="500" y2="70" />
+          <line x1="740" y1="150" x2="500" y2="70" />
+        </svg>
+
+        <!-- Nodes (positions mirror your figma screenshot) -->
+        <a class="pnode" href="#note-top" style="left:50%; top:12%;">Other forkings</a>
+
+        <a class="pnode" href="#note-left" style="left:26%; top:28%;">Alternatives</a>
+        <a class="pnode" href="#note-right" style="left:74%; top:28%;">Chooses one</a>
+
+        <a class="pnode small" href="#note-bottomleft" style="left:22%; top:70%;">All outcomes<br>occur</a>
+        <a class="pnode small" href="#note-bottomright" style="left:78%; top:70%;">Point of<br>departure</a>
+
+        <a class="pnode tiny" href="#note-bottom" style="left:50%; top:88%;">Fictional<br>works</a>
+
+        <!-- Center quote -->
+        <div class="quote-box" id="note-top">
+          <p>
+            “In all fictional works, each time a man is confronted with several alternatives, he chooses one and eliminates the others.
+            In the work of Ts’ui Pên, all possible outcomes occur; each one is the point of departure for other forkings.”
           </p>
         </div>
-      </details>
 
-      <div class="quote small">
-        <p>
-          “Each time a man is confronted with several alternatives, he chooses one and eliminates the others.”
-        </p>
-        <div class="cite">— Borges (source text)</div>
+        <!-- bottom captions like your mock -->
+        <div class="diagram-caption left" id="note-left">
+          Structure: network instead of linear scroll
+        </div>
+        <div class="diagram-caption right" id="note-right">
+          Precedent: Twine<br><span>Reading becomes navigation</span>
+        </div>
+      </section>
+
+      <div class="more">
+        <details>
+          <summary>▶ Why this matters for the “Garden of Forking Paths”</summary>
+          <p>
+            Borges describes a story that contains many possible futures at once. Twine models that idea as structure:
+            nodes + links create a space where each click makes a different sequence.
+            Here, the diagram is the argument — the page itself is a map.
+          </p>
+        </details>
       </div>
     </article>
   </main>
 
   <footer class="footer">
-    <div>STATE: PRECEDENT</div>
-    <div class="muted">Structure → meaning</div>
-    <div>PATH COUNT: 01</div>
+    <span>STATE: PRECEDENT</span><span class="dot">·</span>
+    <span>Network structure</span><span class="dot">·</span>
+    <span>PATH COUNT: 01</span>
   </footer>
 </body>
 </html>
