@@ -6,35 +6,69 @@
   <title>Precedent · Reading becomes navigation</title>
   <link rel="stylesheet" href="main.css" />
 </head>
-<body class="grid-bg">
+
+<body class="paper">
   <header class="topbar">
     <a class="back" href="index.html">Return</a>
-    <div class="brand">Precedent</div>
-    <div class="meta">Reading becomes navigation</div>
+
+    <div class="path" aria-label="Path indicator">
+      <span class="dot"></span>
+      <span>HUB</span>
+      <span class="sep">→</span>
+      <b>PRECEDENT</b>
+    </div>
+
+    <div class="meta">
+      Reading becomes navigation
+      <span class="forknote">Choosing a link is choosing a route.</span>
+    </div>
   </header>
 
-  <main class="stage">
+  <main class="stage page">
     <article class="panel">
       <h1>Reading becomes navigation</h1>
+
       <p>
-        Reading isn’t only scroll down. It’s closer to moving through space.
-        When you click a link, you’re not just turning a page, you’re choosing a route.
+        A precedent is a proof: it shows that reading doesn’t have to move forward like a line.
+        It can move <span class="em">sideways</span>, loop back, or jump to a different node.
       </p>
 
       <p>
-        My prediction: the user has a little patience and curiosity. The site should feel
-        like a quiet map: simple choices, small shifts, and a sense of direction.
+        In the <span class="em">Garden of Forking Paths</span>, every decision produces more than one future.
+        This site borrows that logic: links are not “next pages.” They are forks.
       </p>
 
-      <blockquote>
-        Each choice becomes a path and each path changes what you notice.
-      </blockquote>
+      <div class="callout">
+        <div class="callout-title">Design decision</div>
+        <p class="micro">
+          The layout is calm and minimal so the structure becomes the main interaction.
+          The header acts like a map legend — a reminder that you are navigating, not scrolling.
+        </p>
+      </div>
 
-      <div class="next">
-        <a class="smallnode" href="hierarchy.html">Next: Hierarchy →</a>
-        <a class="smallnode" href="legibility.html">Or: Legibility →</a>
+      <details class="fork">
+        <summary>A quiet fork (open)</summary>
+        <div class="fork-body">
+          <p class="micro">
+            Returning is not neutral. It doesn’t erase the path you took — it changes how you read the hub.
+            The “same” page becomes a different page because your attention is different.
+          </p>
+        </div>
+      </details>
+
+      <div class="quote small">
+        <p>
+          “Each time a man is confronted with several alternatives, he chooses one and eliminates the others.”
+        </p>
+        <div class="cite">— Borges (source text)</div>
       </div>
     </article>
   </main>
+
+  <footer class="footer">
+    <div>STATE: PRECEDENT</div>
+    <div class="muted">Structure → meaning</div>
+    <div>PATH COUNT: 01</div>
+  </footer>
 </body>
 </html>
