@@ -3,86 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Legibility · Legibility changes through interaction</title>
+  <title>Legibility · Core 2</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body class="paper">
   <header class="topbar">
-    <a class="back" href="index.html">Return</a>
-
-    <div class="path" aria-label="Path indicator">
-      <span class="dot"></span>
-      <span>HUB</span>
-      <span class="sep">→</span>
-      <b>LEGIBILITY</b>
-    </div>
-
-    <div class="meta">
-      Legibility changes through interaction
-      <span class="forknote">Clarity can be partial, delayed, or earned.</span>
-    </div>
+    <a class="back" href="index.html">← Return</a>
+    <div class="route">HUB → LEGIBILITY</div>
+    <div class="meta">Legibility changes through interaction · Clarity is something you earn.</div>
   </header>
 
-  <main class="stage page">
+  <main class="stage">
     <article class="panel">
-      <h1>Legibility changes through interaction</h1>
-
+      <h1>Edge of legibility</h1>
       <p>
-        Legibility is not fixed. It depends on context, contrast, distance, and repetition.
-        Sometimes a sentence is clear — sometimes it’s only a shadow.
+        Legibility isn’t fixed. It changes with distance, repetition, and what the page chooses to emphasize.
+        In Borges, a single story contains many possible readings — here, the same sentence keeps returning in different states.
       </p>
 
-      <p class="micro">
-        This page uses only CSS: hovering (or focusing with keyboard) changes what becomes readable.
-        The “garden” here is a garden of visibility.
-      </p>
+      <section class="legibility-stage" aria-label="Legibility stage">
+        <div class="focus-note">Some lines are “present.” Others are “elsewhere.”</div>
 
-      <section class="legibility">
-        <div class="line l1">
-          “In all fictional works, each time a man is confronted with”
-        </div>
-        <div class="line l2">
-          “several alternatives, he chooses one and eliminates the others.”
-        </div>
+        <!-- ghost copies around (faint, like your figma) -->
+        <div class="ghost g1">In all fictional works, each time a man is confronted with several alternatives…</div>
+        <div class="ghost g2">…he chooses one and eliminates the others.</div>
+        <div class="ghost g3">Each choice creates more than one future.</div>
+        <div class="ghost g4">Other forkings.</div>
 
-        <div class="ghost g1" aria-hidden="true">
-          “In all fictional works…”
+        <!-- center: split / staged clarity -->
+        <div class="center-lines">
+          <div class="line faint">“In all fictional works, each</div>
+          <div class="line emph">time a man is confronted with</div>
+          <div class="line">several alternatives, he chooses</div>
+          <div class="line emph">one and eliminates the others.”</div>
         </div>
-        <div class="ghost g2" aria-hidden="true">
-          “…he chooses one…”
-        </div>
-        <div class="ghost g3" aria-hidden="true">
-          “…eliminates the others.”
-        </div>
-
-        <div class="hint">Hover / focus this block →</div>
       </section>
 
-      <div class="callout">
-        <div class="callout-title">Forking effect</div>
-        <p class="micro">
-          If what you can read changes, what you can choose changes.
-          The viewer’s path is shaped by what is legible in the moment.
-        </p>
-      </div>
-
-      <details class="fork">
-        <summary>One more fork (open)</summary>
-        <div class="fork-body">
-          <p class="micro">
-            Question for critique: do you want the “hidden” text to feel like a reward,
-            or like a threat — something you might miss forever?
+      <div class="more">
+        <details>
+          <summary>▶ A small fork (open)</summary>
+          <p>
+            When a sentence repeats, it doesn’t stay the same. It becomes a map: some parts get louder, some fade into the margin.
+            Legibility is also hierarchy — just quieter.
           </p>
-        </div>
-      </details>
+        </details>
+      </div>
     </article>
   </main>
 
   <footer class="footer">
-    <div>STATE: LEGIBILITY</div>
-    <div class="muted">Visibility → choice</div>
-    <div>PATH COUNT: 03</div>
+    <span>STATE: LEGIBILITY</span><span class="dot">·</span>
+    <span>Clarity → attention</span><span class="dot">·</span>
+    <span>PATH COUNT: 03</span>
   </footer>
 </body>
 </html>
