@@ -368,3 +368,94 @@ body{
   color: rgba(21,21,21,.70);
 }
 .footer .dot{ opacity: .35; }
+/* ====== Precedent diagram ====== */
+.diagram{
+  position: relative;
+  margin-top: 18px;
+  height: min(560px, 66vh);
+  border-radius: 18px;
+  border: 1px solid var(--hair2);
+  background:
+    linear-gradient(0deg, rgba(255,255,255,.25), rgba(255,255,255,.25));
+  overflow: hidden;
+}
+
+/* Active node pill (top-right) */
+.active-pill{
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  background: rgba(0,0,0,.06);
+  color: rgba(0,0,0,.65);
+  font-size: 13px;
+}
+
+/* Wires behind nodes */
+.wires{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.wires line{
+  stroke: rgba(0,0,0,.22);
+  stroke-width: 1;
+}
+
+/* Precedent nodes */
+.pnode{
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  padding: 10px 12px;
+  border-radius: 2px; /* more “boxy” like your mock */
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.10);
+  color: rgba(0,0,0,.78);
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
+.pnode:hover{
+  background: rgba(0,0,0,.14);
+}
+.pnode.small{ font-size: 13px; padding: 10px 10px; }
+.pnode.tiny{ font-size: 12px; padding: 10px 10px; opacity: .85; }
+
+/* Center quote box */
+.quote-box{
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: min(520px, 72%);
+  padding: 18px 18px;
+  border-radius: 0px; /* rectangle */
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(0,0,0,.18);
+  color: rgba(0,0,0,.80);
+  font-family: Georgia, "Times New Roman", serif;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+}
+.quote-box p{
+  margin: 0;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+/* bottom captions */
+.diagram-caption{
+  position: absolute;
+  z-index: 2;
+  bottom: 18px;
+  font-size: 14px;
+  color: rgba(0,0,0,.62);
+  letter-spacing: .2px;
+}
+.diagram-caption.left{ left: 22px; }
+.diagram-caption.right{ right: 22px; text-align: right; }
+.diagram-caption.right span{ font-size: 12px; color: rgba(0,0,0,.52); }
