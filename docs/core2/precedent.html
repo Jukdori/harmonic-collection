@@ -1,98 +1,124 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Precedent · Core 2</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Precedent · Twine</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<body class="paper">
-  <header class="topbar">
-    <a class="back" href="index.html">← Return</a>
-    <div class="route">HUB → PRECEDENT</div>
-    <div class="meta">Precedent: Twine · Structure: network instead of linear scroll</div>
-  </header>
+  <body class="paper">
+    <header class="topbar">
+      <a class="back" href="index.html">← Return</a>
 
-  <main class="stage">
-    <article class="panel">
-      <h1>Precedent: Twine</h1>
-      <p>
-        Twine is a precedent for the “garden” because it treats reading like navigation.
-        Links aren’t just references — they are <strong>choices</strong>. A path is an interpretation.
-      </p>
-
-      <!-- diagram area -->
-      <section class="diagram" aria-label="Network diagram">
-        <div class="active-pill">Active node</div>
-
-        <!-- SVG lines behind nodes -->
-        <svg class="wires" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
-          <!-- center quote box connections -->
-          <line x1="500" y1="190" x2="500" y2="70" />
-          <line x1="500" y1="190" x2="260" y2="150" />
-          <line x1="500" y1="190" x2="740" y2="150" />
-
-          <!-- side verticals -->
-          <line x1="260" y1="150" x2="260" y2="360" />
-          <line x1="740" y1="150" x2="740" y2="360" />
-
-          <!-- lower diamond-ish links -->
-          <line x1="260" y1="360" x2="500" y2="470" />
-          <line x1="740" y1="360" x2="500" y2="470" />
-          <line x1="260" y1="360" x2="500" y2="430" />
-          <line x1="740" y1="360" x2="500" y2="430" />
-
-          <!-- subtle circle curve substitute: extra “possibility” lines -->
-          <line x1="260" y1="150" x2="500" y2="70" />
-          <line x1="740" y1="150" x2="500" y2="70" />
-        </svg>
-
-        <!-- Nodes (positions mirror your figma screenshot) -->
-        <a class="pnode" href="#note-top" style="left:50%; top:12%;">Other forkings</a>
-
-        <a class="pnode" href="#note-left" style="left:26%; top:28%;">Alternatives</a>
-        <a class="pnode" href="#note-right" style="left:74%; top:28%;">Chooses one</a>
-
-        <a class="pnode small" href="#note-bottomleft" style="left:22%; top:70%;">All outcomes<br>occur</a>
-        <a class="pnode small" href="#note-bottomright" style="left:78%; top:70%;">Point of<br>departure</a>
-
-        <a class="pnode tiny" href="#note-bottom" style="left:50%; top:88%;">Fictional<br>works</a>
-
-        <!-- Center quote -->
-        <div class="quote-box" id="note-top">
-          <p>
-            “In all fictional works, each time a man is confronted with several alternatives, he chooses one and eliminates the others.
-            In the work of Ts’ui Pên, all possible outcomes occur; each one is the point of departure for other forkings.”
-          </p>
-        </div>
-
-        <!-- bottom captions like your mock -->
-        <div class="diagram-caption left" id="note-left">
-          Structure: network instead of linear scroll
-        </div>
-        <div class="diagram-caption right" id="note-right">
-          Precedent: Twine<br><span>Reading becomes navigation</span>
-        </div>
-      </section>
-
-      <div class="more">
-        <details>
-          <summary>▶ Why this matters for the “Garden of Forking Paths”</summary>
-          <p>
-            Borges describes a story that contains many possible futures at once. Twine models that idea as structure:
-            nodes + links create a space where each click makes a different sequence.
-            Here, the diagram is the argument — the page itself is a map.
-          </p>
-        </details>
+      <div class="crumb">
+        <span class="mono">HUB</span> → <strong>PRECEDENT</strong>
       </div>
-    </article>
-  </main>
 
-  <footer class="footer">
-    <span>STATE: PRECEDENT</span><span class="dot">·</span>
-    <span>Network structure</span><span class="dot">·</span>
-    <span>PATH COUNT: 01</span>
-  </footer>
-</body>
+      <div class="topmeta">
+        <span class="muted">Precedent: Twine</span>
+        <span class="dot">·</span>
+        <span class="muted">Structure: network instead of linear scroll</span>
+      </div>
+    </header>
+
+    <main class="stage">
+      <article class="panel">
+        <div class="panel-head">
+          <h1 class="title-xl">Precedent: Twine</h1>
+          <span class="pill">Active node</span>
+        </div>
+
+        <p class="lede">
+          Twine is a precedent for the “garden” because it treats reading like navigation.
+          A link is not a footnote — it’s a choice. A path becomes an interpretation.
+        </p>
+
+        <!-- NETWORK MAP -->
+        <section class="map-wrap" aria-label="Network map inspired by The Garden of Forking Paths">
+          <div class="map">
+            <!-- lines -->
+            <svg class="map-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="500" y1="70"  x2="260" y2="200" />
+              <line x1="500" y1="70"  x2="740" y2="200" />
+
+              <line x1="260" y1="200" x2="260" y2="365" />
+              <line x1="740" y1="200" x2="740" y2="365" />
+
+              <line x1="260" y1="365" x2="420" y2="455" />
+              <line x1="740" y1="365" x2="580" y2="455" />
+
+              <line x1="420" y1="455" x2="500" y2="505" />
+              <line x1="580" y1="455" x2="500" y2="505" />
+            </svg>
+
+            <!-- nodes -->
+            <div class="node n-top">Other forkings</div>
+
+            <div class="node n-left">Alternatives</div>
+            <div class="node n-right">Chooses one</div>
+
+            <div class="node n-left-bot">All outcomes<br />occur</div>
+            <div class="node n-right-bot">Point of<br />departure</div>
+
+            <div class="node n-mid-bot">Fictional<br />works</div>
+
+            <!-- center quote -->
+            <blockquote class="quote-box">
+              <p>
+                “In all fictional works, each time a man is confronted with several alternatives,
+                he chooses one and eliminates the others. In the work of Ts’ui Pên,
+                all possible outcomes occur; each one is the point of departure for other forkings.”
+              </p>
+              <footer>— Borges, <em>The Garden of Forking Paths</em> (source text)</footer>
+            </blockquote>
+          </div>
+
+          <div class="map-caption">
+            <div class="caption-left">
+              <strong>Structure:</strong> network instead of linear scroll
+            </div>
+            <div class="caption-right">
+              <strong>Precedent:</strong> Twine<br />
+              <span class="muted">Reading becomes navigation</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Source tags / routes -->
+        <section class="tags">
+          <div class="tag-title mono muted">source tags</div>
+          <div class="tag-row">
+            <a class="tag" href="hierarchy.html">Hierarchy</a>
+            <a class="tag" href="legibility.html">Legibility</a>
+            <a class="tag" href="index.html">Hub</a>
+          </div>
+          <p class="small muted">
+            In the garden, you don’t “finish” a text — you move through it. The structure is the interaction.
+          </p>
+        </section>
+
+        <details class="fold">
+          <summary>Why this matters for the “Garden of Forking Paths”</summary>
+          <div class="fold-body">
+            <p>
+              Borges describes time as branching: not one straight timeline, but many futures at once.
+              Twine makes that idea practical. The reader is forced to choose,
+              and each choice produces a different reading — a different “now.”
+            </p>
+            <p>
+              This project keeps that logic in HTML/CSS only: the “map” is the interface.
+              You enter through a node, return through another, and the meaning shifts with your route.
+            </p>
+          </div>
+        </details>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="mono">STATE: PRECEDENT</div>
+      <div class="mono">NETWORK STRUCTURE</div>
+      <div class="mono">PATH COUNT: 01</div>
+    </footer>
+  </body>
 </html>
