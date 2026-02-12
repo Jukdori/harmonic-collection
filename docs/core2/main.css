@@ -1,4 +1,10 @@
+/* =========================
+   Core 2 · Interaction Website
+   HTML/CSS only (no JS)
+   Mood: calm / paper beige
+   ========================= */
 
+/* --- reset --- */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
