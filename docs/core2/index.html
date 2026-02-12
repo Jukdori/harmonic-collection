@@ -3,112 +3,87 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Core 2 · Garden of Forking Paths</title>
+  <title>Core 2 · Hub</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body class="paper">
   <header class="topbar">
     <div class="brand">Core 2 · Interaction Studio</div>
-
-    <div class="path" aria-label="Path indicator">
-      <span class="dot"></span>
-      <b>HUB</b>
-      <span class="sep">/</span>
-      <span>choose a route</span>
-    </div>
-
-    <div class="meta">
-      Three worlds / One idea
-      <span class="forknote">Garden of Forking Paths: each choice creates a different reading.</span>
-    </div>
+    <div class="route">HUB / choose a route</div>
+    <div class="meta">Three worlds / One idea · Garden of Forking Paths: each choice creates a different reading.</div>
   </header>
 
-  <main class="stage hub">
-    <section class="hero">
-      <h1>Reading becomes navigation.</h1>
-      <p class="lede">
-        A small site built from three ideas. It’s not a linear essay — it’s a map.
-        Pick a node. Return if you want. Returning is not the same as starting over.
-      </p>
-
-      <div class="quote">
+  <main class="stage">
+    <div class="grid-2">
+      <!-- LEFT: statement + quote -->
+      <section class="hero">
+        <h1>Reading<br>becomes<br>navigation.</h1>
         <p>
-          “In all fictional works, each time a man is confronted with several alternatives,
-          he chooses one and eliminates the others.”
+          A small site built from three ideas. It’s not a linear essay — it’s a map.
+          Pick a node. Return if you want. <strong>Returning is not the same as starting over.</strong>
         </p>
-        <div class="cite">— Borges, <span class="em">The Garden of Forking Paths</span> (source text)</div>
-      </div>
 
-      <div class="legend">
-        <div class="legend-item"><span class="chip chip-a"></span> Precedent</div>
-        <div class="legend-item"><span class="chip chip-b"></span> Hierarchy</div>
-        <div class="legend-item"><span class="chip chip-c"></span> Legibility</div>
-      </div>
-    </section>
-
-    <!-- HUB MAP (no JS) -->
-    <section class="map" aria-label="Hub map">
-      <a class="node n-precedent" href="precedent.html">
-        <div class="node-top">
-          <div class="node-title">Precedent</div>
-          <div class="node-sub">Reading becomes navigation</div>
-        </div>
-        <p class="node-body">
-          A reference point: a structure that turns reading into moving through space.
-        </p>
-        <div class="node-foot">Enter →</div>
-      </a>
-
-      <a class="node n-hierarchy" href="hierarchy.html">
-        <div class="node-top">
-          <div class="node-title">Hierarchy</div>
-          <div class="node-sub">Hierarchy as interaction</div>
-        </div>
-        <p class="node-body">
-          Scale and distance act like decisions: what feels “central,” what becomes peripheral.
-        </p>
-        <div class="node-foot">Enter →</div>
-      </a>
-
-      <a class="node n-legibility" href="legibility.html">
-        <div class="node-top">
-          <div class="node-title">Legibility</div>
-          <div class="node-sub">Legibility changes through interaction</div>
-        </div>
-        <p class="node-body">
-          A sentence can fade, return, or split — clarity becomes something you earn.
-        </p>
-        <div class="node-foot">Enter →</div>
-      </a>
-
-      <!-- Decorative routes -->
-      <div class="route r1" aria-hidden="true"></div>
-      <div class="route r2" aria-hidden="true"></div>
-      <div class="route r3" aria-hidden="true"></div>
-    </section>
-
-    <section class="forks">
-      <details class="fork">
-        <summary>Open a hidden fork</summary>
-        <div class="fork-body">
-          <p class="micro">
-            Your “map” is also a choice-machine. Even without JavaScript, structure still performs:
-            links, headings, emphasis, and the way the page divides attention.
+        <div class="quote">
+          <p>
+            <strong>“In all fictional works, each time a man is confronted with several alternatives, he chooses one and eliminates the others.”</strong>
           </p>
-          <p class="micro">
-            Question to ask in critique: <span class="em">Where do you feel the fork?</span>
-            Is it the link, the hierarchy, the legibility — or the return?
-          </p>
+          <p>— Borges, <em>The Garden of Forking Paths</em> <span class="kicker">(source text)</span></p>
         </div>
-      </details>
-    </section>
+      </section>
+
+      <!-- RIGHT: hub cards + hidden fork -->
+      <section class="hub" aria-label="Choose a node">
+        <div class="card">
+          <a href="precedent.html">
+            <div class="kicker">Precedent</div>
+            <div class="title">Reading becomes navigation</div>
+            <div class="desc">
+              A reference point: a structure that turns reading into moving through space.
+            </div>
+            <div class="enter">Enter →</div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="hierarchy.html">
+            <div class="kicker">Hierarchy</div>
+            <div class="title">Hierarchy as interaction</div>
+            <div class="desc">
+              Scale and distance act like decisions: what feels “central,” what becomes peripheral.
+            </div>
+            <div class="enter">Enter →</div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="legibility.html">
+            <div class="kicker">Legibility</div>
+            <div class="title">Legibility changes through interaction</div>
+            <div class="desc">
+              A sentence can fade, return, or split — clarity becomes something you earn.
+            </div>
+            <div class="enter">Enter →</div>
+          </a>
+        </div>
+
+        <details class="fork">
+          <summary>▶ Open a hidden fork</summary>
+          <p>
+            This hub is a “garden map.” The pages don’t just contain meaning — they distribute it.
+            What you click first becomes your first interpretation.
+          </p>
+        </details>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
-    <div>STATE: HUB</div>
-    <div class="muted">No JS · HTML/CSS only · Structure as interaction</div>
-    <div>PATH COUNT: 00</div>
+    <span>STATE: HUB</span><span class="dot">·</span>
+    <span>No JS</span><span class="dot">·</span>
+    <span>HTML/CSS only</span><span class="dot">·</span>
+    <span>Structure as interaction</span><span class="dot">·</span>
+    <span>PATH COUNT: 00</span>
   </footer>
 </body>
 </html>
