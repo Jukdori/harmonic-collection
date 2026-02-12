@@ -63,6 +63,14 @@ body{
   white-space: nowrap;
 }
 
+.route{
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
 .topmeta{
   font-size: 14px;
   white-space: nowrap;
@@ -138,6 +146,9 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.02em;
+  /* 빈줄로 보이게 하고 싶으면 아래 두 줄 유지 */
+  color: transparent;
+  user-select: none;
 }
 
 /* =========================
@@ -413,6 +424,195 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   .quote-box{ width: 86%; }
   .map-caption{ flex-direction: column; }
   .caption-right{ text-align: left; }
+}
+
+/* =========================
+   LEGIBILITY (your HTML)
+   uses: .legibility-stage .focus-note .ghost.g1..g4 .center-lines .line.faint/.emph
+   ========================= */
+.legibility-stage{
+  position: relative;
+  margin-top: 18px;
+  padding: 20px 12px 28px;
+  min-height: 420px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.55);
+  overflow: hidden;
+}
+
+/* little “instruction” line */
+.focus-note{
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  opacity: 0.70;
+  padding: 10px 14px;
+  margin: 0 0 8px 0;
+}
+
+/* ghost copies around like your figma */
+.ghost{
+  position: absolute;
+  max-width: 40ch;
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: 0.12;
+  color: rgba(0,0,0,0.55);
+  pointer-events: none;
+}
+
+/* positions */
+.ghost.g1{ left: 6%;  top: 18%; }
+.ghost.g2{ right: 8%; top: 30%; text-align: right; }
+.ghost.g3{ left: 10%; bottom: 16%; }
+.ghost.g4{ right: 6%; bottom: 20%; text-align: right; }
+
+/* center lines (main reading) */
+.center-lines{
+  position: relative;
+  margin: 26px auto 0;
+  width: min(640px, 86%);
+  text-align: center;
+}
+
+.center-lines .line{
+  font-size: clamp(22px, 2.7vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 10px 0;
+  color: rgba(0,0,0,0.82);
+}
+
+.center-lines .line.faint{
+  opacity: 0.26;
+}
+
+.center-lines .line.emph{
+  font-size: clamp(26px, 3.2vw, 40px);
+  opacity: 0.95;
+}
+
+/* details block look */
+.more details{
+  margin-top: 18px;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+  overflow: hidden;
+}
+
+.more summary{
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+.more details p{
+  padding: 0 16px 16px;
+  margin: 0;
+  color: rgba(0,0,0,0.78);
+}
+
+@media (max-width: 760px){
+  .legibility-stage{ min-height: 520px; }
+  .ghost{ max-width: 34ch; }
+}
+
+/* =========================
+   HIERARCHY (your current HTML)
+   uses: .field, .node, .big/.mid/.small, .tag (inside nodes)
+   ========================= */
+.field{
+  position: relative;
+  margin-top: 18px;
+  height: 520px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.55);
+  overflow: hidden;
+}
+
+/* subtle “map fog” so the center feels like a node */
+.field::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(circle at 25% 30%, rgba(0,0,0,0.03), transparent 45%),
+    radial-gradient(circle at 75% 70%, rgba(0,0,0,0.03), transparent 45%);
+  pointer-events:none;
+}
+
+/* base node inside field */
+.field .node{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.55);
+  color: rgba(0,0,0,0.88);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  line-height: 1.25;
+  max-width: min(340px, 70vw);
+}
+
+/* weight / distance */
+.field .node.big{
+  font-size: clamp(26px, 3.2vw, 42px);
+  letter-spacing: -0.03em;
+  padding: 18px 18px;
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(0,0,0,0.16);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.10);
+}
+
+.field .node.mid{
+  font-size: clamp(14px, 1.6vw, 18px);
+  opacity: 0.78;
+}
+
+.field .node.small{
+  font-size: 12px;
+  opacity: 0.38;
+  background: rgba(255,255,255,0.45);
+  border-color: rgba(0,0,0,0.10);
+  box-shadow: none;
+}
+
+/* tag pill inside nodes */
+.field .tag{
+  display: inline-block;
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: rgba(0,0,0,0.60);
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.10);
+  vertical-align: middle;
+}
+
+/* hover = “choice becomes louder” */
+.field .node.big:hover{
+  transform: translate(-50%, -50%) scale(1.01);
+  background: rgba(255,255,255,0.86);
+}
+
+.field a.node.big:focus{
+  outline: 2px solid rgba(0,0,0,0.22);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px){
+  .field{ height: 560px; }
+  .field .node{ max-width: 86vw; }
 }
 
 /* =========================
