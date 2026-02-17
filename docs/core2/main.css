@@ -697,3 +697,65 @@ hr{
   font-size: 12px !important;
   color: rgba(0,0,0,0.70) !important;
 }
+/* === PRECEDENT BEAUTIFY + FIX CROPPING (PASTE AT VERY BOTTOM) === */
+
+/* 1) map 자체가 너무 딱 끊겨서 bottom node가 잘림 → 높이 조금 올림 */
+.map{
+  height: 560px !important;  /* 기존 520px → 560px */
+}
+
+/* 레이어 정리 */
+.map .map-lines{ z-index: 0 !important; }
+.map .quote-box{ z-index: 2 !important; }
+.map .node{ z-index: 4 !important; }
+
+/* 2) 중앙 박스: 육각형 안에 딱 들어가게 + 카드 느낌 예쁘게 */
+.map .quote-box{
+  position: absolute !important;
+  left: 50% !important;
+  top: 270px !important;                 /* 살짝 아래로 (노드랑 덜 겹치게) */
+  transform: translate(-50%, -50%) !important;
+
+  width: min(440px, 44%) !important;     /* ✅ 라인 밖으로 안 나가면서도 보기 좋은 폭 */
+  max-width: 44% !important;
+
+  padding: 20px 22px !important;
+  border-radius: 22px !important;
+
+  background: rgba(243,238,226,0.90) !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  box-shadow: 0 22px 70px rgba(0,0,0,0.10) !important;
+
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+/* 텍스트 밸런스 */
+.map .quote-box p{
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: rgba(0,0,0,0.82) !important;
+}
+
+.map .quote-box footer{
+  margin-top: 12px !important;
+  font-size: 12px !important;
+  color: rgba(0,0,0,0.68) !important;
+}
+
+/* 3) Fictional works 더 안정적으로 위로 (map 높이 올렸어도 보험) */
+.map .n-mid-bot{
+  top: 510px !important;   /* 기존 505px 근처였을 텐데, 살짝 위로 안전빵 */
+}
+
+/* 모바일에서도 박스 안 터지게 */
+@media (max-width: 760px){
+  .map{ height: 600px !important; }
+  .map .quote-box{
+    width: min(420px, 82%) !important;
+    max-width: 82% !important;
+    top: 285px !important;
+  }
+  .map .n-mid-bot{ top: 545px !important; }
+}
