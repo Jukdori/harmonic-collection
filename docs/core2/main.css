@@ -610,3 +610,33 @@ hr{
   border-top: 1px solid var(--line);
   margin: 18px 0;
 }
+
+/* give map a bit more breathing room */
+.map{
+  height: 600px;
+}
+
+/* pull bottom node up a bit so it's always visible */
+.n-mid-bot{
+  top: 525px;
+}
+
+/* ✅ make the quote box SMALLER so it fits inside hex and doesn't touch lines */
+.quote-box{
+  top: 305px;                         /* tiny nudge for centering */
+  width: min(460px, 56%);             /* smaller than before */
+  padding: 16px 18px;                 /* less padding */
+  border-radius: 10px;                /* closer to figma */
+}
+
+/* text scale inside quote to match smaller box */
+.quote-box p{
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* footer a bit tighter */
+.quote-box footer{
+  margin-top: 8px;
+  font-size: 12px;
+}
