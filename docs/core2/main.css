@@ -636,3 +636,26 @@ hr{
 
   z-index:3;
 }
+/* === PRECEDENT HARD OVERRIDE (PUT AT VERY BOTTOM) === */
+.map { position: relative; }
+
+.map .map-lines { z-index: 0 !important; }
+
+.map .node { z-index: 4 !important; }
+
+.map .quote-box{
+  position: absolute !important;
+  left: 50% !important;
+  top: 245px !important;              /* 박스가 선 안에 들어오게 위로 */
+  transform: translate(-50%,-50%) !important;
+
+  width: min(420px, 58%) !important;  /* ✅ 핵심: 폭 줄여서 육각형 내부로 */
+  padding: 18px 20px !important;
+
+  background: rgba(243,238,226,0.96) !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12) !important;
+
+  z-index: 3 !important;
+}
