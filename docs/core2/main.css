@@ -146,7 +146,6 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   font-size: 12px;
   letter-spacing: 0.02em;
 
-  /* 빈줄로 보이게 */
   color: transparent;
   user-select: none;
 }
@@ -255,9 +254,6 @@ p{ margin: 10px 0; color: var(--ink-soft); }
 
 /* =========================
    Precedent: Network Map (FIXED)
-   - quote가 라인을 자르는 느낌 줄이기
-   - 레이어 순서: lines(1) < quote(2) < nodes(3)
-   - quote: 더 얇고 더 투명 + blur(종이/유리)
    ========================= */
 .paper{
   min-height: 100vh;
@@ -338,14 +334,14 @@ p{ margin: 10px 0; color: var(--ink-soft); }
 .quote-box{
   position: absolute;
   left: 50%;
-  top: 262px; /* 살짝 아래로 */
+  top: 262px;
   transform: translate(-50%, -50%);
 
-  width: min(520px, 72%);   /* 덜 길게 */
+  width: min(520px, 72%); 
   padding: 16px 16px;
   border-radius: 16px;
 
-  /* 종이 위에 얹힌 얇은 유리 느낌 (라인이 통과해 보임) */
+
   background: rgba(243,238,226,0.34);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -369,7 +365,7 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   color: rgba(0,0,0,0.68);
 }
 
-/* caption / tags 그대로 */
+
 .map-caption{
   display: flex;
   justify-content: space-between;
