@@ -1,519 +1,478 @@
 /* =========================
    Core 2 · Interaction Website
+   HTML/CSS only (no JS)
+   SINGLE FINAL main.css (clean + deduped)
    ========================= */
 
 /* --- reset --- */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-img { max-width: 100%; display: block; }
-a { color: inherit; }
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
 
 /* --- tokens --- */
 :root{
-  --paper: #f3eee2;         /* calm beige */
-  --panel: rgba(255,255,255,0.62);
-  --ink: #111;
-  --ink-soft: rgba(0,0,0,0.72);
-  --line: rgba(0,0,0,0.10);
-  --line-strong: rgba(0,0,0,0.14);
-  --shadow: 0 18px 60px rgba(0,0,0,0.08);
-  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper:#f3eee2;
+  --panel:rgba(255,255,255,0.62);
+  --ink:#111;
+  --ink-soft:rgba(0,0,0,0.72);
+  --line:rgba(0,0,0,0.10);
+  --line-strong:rgba(0,0,0,0.14);
+  --shadow:0 18px 60px rgba(0,0,0,0.08);
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 
 /* --- base --- */
 body{
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--ink);
-  background: var(--paper);
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--ink);
+  background:var(--paper);
 }
+.paper{ min-height:100vh; background:var(--paper); }
 
-.paper{
-  min-height: 100vh;
-  background: var(--paper);
-}
-
-.mono{ font-family: var(--mono); }
-.muted{ opacity: 0.7; }
-.small{ font-size: 14px; line-height: 1.55; }
+.mono{ font-family:var(--mono); }
+.muted{ opacity:0.7; }
+.small{ font-size:14px; line-height:1.55; }
 
 /* --- topbar --- */
 .topbar{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  background: rgba(243,238,226,0.88);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  background:rgba(243,238,226,0.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
 }
-
-.brand{ font-weight: 700; letter-spacing: -0.01em; }
-
 .meta{
-  font-size: 14px;
-  opacity: 0.78;
+  font-size:14px;
+  opacity:0.78;
 }
-
 .crumb{
-  font-size: 14px;
-  white-space: nowrap;
+  font-size:14px;
+  white-space:nowrap;
 }
-
 .route{
-  font-size: 14px;
-  white-space: nowrap;
-  font-family: var(--mono);
-  letter-spacing: 0.02em;
-  opacity: 0.85;
+  font-size:14px;
+  white-space:nowrap;
+  font-family:var(--mono);
+  letter-spacing:0.02em;
+  opacity:0.85;
 }
-
 .topmeta{
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 42vw;
-  text-align: right;
+  font-size:14px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:42vw;
+  text-align:right;
 }
-
-.dot{ padding: 0 6px; opacity: 0.5; }
+.dot{ padding:0 6px; opacity:0.5; }
 
 .back{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  border: 1px solid var(--line-strong);
-  background: rgba(255,255,255,0.50);
-  padding: 10px 14px;
-  border-radius: 999px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  border:1px solid var(--line-strong);
+  background:rgba(255,255,255,0.50);
+  padding:10px 14px;
+  border-radius:999px;
 }
-.back:hover{ background: rgba(255,255,255,0.80); }
+.back:hover{ background:rgba(255,255,255,0.80); }
 
 /* --- layout --- */
 .stage{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 42px 18px 70px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:42px 18px 70px;
 }
-
 .panel{
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 34px 34px;
-  box-shadow: var(--shadow);
-}
-
-.panel-head{
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.pill{
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.12);
-  font-size: 14px;
-  white-space: nowrap;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:34px;
+  box-shadow:var(--shadow);
 }
 
 /* --- type --- */
 .title-xl{
-  font-size: clamp(40px, 5vw, 68px);
-  line-height: 1.0;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.03em;
+  font-size:clamp(40px,5vw,68px);
+  line-height:1.0;
+  margin:0 0 10px 0;
+  letter-spacing:-0.03em;
 }
-
-h1{ margin: 0 0 12px 0; }
-h2{ margin: 26px 0 10px 0; }
-p{ margin: 10px 0; color: var(--ink-soft); }
-
+h1{ margin:0 0 12px 0; }
+h2{ margin:26px 0 10px 0; }
+p{ margin:10px 0; color:var(--ink-soft); }
 .lede{
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 70ch;
+  font-size:18px;
+  line-height:1.7;
+  max-width:70ch;
 }
 
-/* --- footer status bar (blank line) --- */
+/* --- footer (blank bar) --- */
 .footer{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 12px;
-  background: rgba(243,238,226,0.92);
-  border-top: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-
-  /* 빈줄처럼 보이게 */
-  color: transparent;
-  user-select: none;
+  position:fixed;
+  left:0; right:0; bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px 12px;
+  background:rgba(243,238,226,0.92);
+  border-top:1px solid var(--line);
+  backdrop-filter:blur(8px);
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.02em;
+  color:transparent;
+  user-select:none;
 }
 
 /* =========================
    HUB (index)
    ========================= */
 .hub{
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 24px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:24px;
+  align-items:start;
 }
-
-.hero{ padding-right: 18px; }
-
+.hero{ padding-right:18px; }
 .hero h1{
-  font-size: clamp(54px, 6.6vw, 92px);
-  line-height: 0.95;
-  margin: 0 0 14px 0;
-  letter-spacing: -0.04em;
+  font-size:clamp(54px,6.6vw,92px);
+  line-height:0.95;
+  margin:0 0 14px 0;
+  letter-spacing:-0.04em;
 }
-
 .hero .sub{
-  max-width: 44ch;
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--ink-soft);
+  max-width:44ch;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ink-soft);
 }
-
 .quote{
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  color: rgba(0,0,0,0.70);
-  max-width: 55ch;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:rgba(0,0,0,0.70);
+  max-width:55ch;
 }
-
 .cards{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
 }
-
 .card{
-  display: block;
-  text-decoration: none;
-  padding: 18px 18px;
-  border-radius: 16px;
-  border: 1px solid var(--line-strong);
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-  transform: translateY(0);
-  transition: transform 0.12s ease, background 0.12s ease;
+  display:block;
+  text-decoration:none;
+  padding:18px;
+  border-radius:16px;
+  border:1px solid var(--line-strong);
+  background:rgba(255,255,255,0.55);
+  box-shadow:0 10px 28px rgba(0,0,0,0.06);
 }
 .card:hover{
-  background: rgba(255,255,255,0.82);
-  transform: translateY(-1px);
+  background:rgba(255,255,255,0.82);
+  transform:translateY(-1px);
 }
-
 .card .kicker{
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  opacity: 0.7;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.02em;
+  opacity:0.7;
 }
-
 .card .name{
-  font-size: 22px;
-  font-weight: 700;
-  margin-top: 6px;
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
+  font-size:22px;
+  font-weight:700;
+  margin-top:6px;
+  margin-bottom:4px;
+  letter-spacing:-0.02em;
 }
-
 .card .desc{
-  margin: 0;
-  color: rgba(0,0,0,0.72);
-  line-height: 1.55;
+  margin:0;
+  color:rgba(0,0,0,0.72);
+  line-height:1.55;
 }
-
 .card .enter{
-  display: inline-block;
-  margin-top: 10px;
-  font-family: var(--mono);
-  font-size: 12px;
-  opacity: 0.85;
+  display:inline-block;
+  margin-top:10px;
+  font-family:var(--mono);
+  font-size:12px;
+  opacity:0.85;
 }
-
 .callout{
-  margin-top: 16px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.45);
-  border-radius: 16px;
-  padding: 14px 16px;
-  color: rgba(0,0,0,0.72);
+  margin-top:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.45);
+  border-radius:16px;
+  padding:14px 16px;
+  color:rgba(0,0,0,0.72);
 }
-.callout strong{ color: rgba(0,0,0,0.82); }
+.callout strong{ color:rgba(0,0,0,0.82); }
 
-@media (max-width: 900px){
-  .hub{ grid-template-columns: 1fr; }
-  .hero{ padding-right: 0; }
-  .topmeta{ max-width: 60vw; }
+@media (max-width:900px){
+  .hub{ grid-template-columns:1fr; }
+  .hero{ padding-right:0; }
+  .topmeta{ max-width:60vw; }
 }
 
 /* =========================
-   PRECEDENT (network map) — FINAL
-   Uses: .map-wrap .map .map-lines .node .quote-box
+   PRECEDENT (Network Map) — FINAL (meets your requirements)
+   - quote box fits inside hexagon (no line crossing outside)
+   - bottom "Fictional works" fully visible (not cropped)
    ========================= */
-.map-wrap{ margin-top: 22px; }
-
-.map-wrap .map{
-  position: relative;
-  height: 520px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.65);
-  border: 1px solid rgba(0,0,0,0.08);
-  overflow: hidden;
+.panel-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.12);
+  font-size:14px;
+  white-space:nowrap;
 }
 
-/* lines go OVER the quote (so they don’t “cut”) */
-.map-wrap .map-lines{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  pointer-events: none;
-}
-.map-wrap .map-lines line{
-  stroke: rgba(0,0,0,0.22);
-  stroke-width: 1.2;
+.map-wrap{ margin-top:22px; }
+.map{
+  position:relative;
+  height:600px;                 /* ✅ prevents bottom crop */
+  border-radius:18px;
+  background:rgba(255,255,255,0.65);
+  border:1px solid rgba(0,0,0,0.08);
+  overflow:hidden;
 }
 
-/* nodes on top */
-.map-wrap .node{
-  position: absolute;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.13);
-  border: 1px solid rgba(0,0,0,0.12);
-  color: #111;
-  font-size: 14px;
-  line-height: 1.15;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  z-index: 6;
+/* line layer behind everything */
+.map-lines{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+.map-lines line{
+  stroke:rgba(0,0,0,0.24);
+  stroke-width:1.2;
 }
 
-.map-wrap .n-top{ left: 50%; top: 70px; background: rgba(0,0,0,0.18); }
-.map-wrap .n-left{ left: 26%; top: 200px; }
-.map-wrap .n-right{ left: 74%; top: 200px; }
-.map-wrap .n-left-bot{ left: 26%; top: 365px; background: rgba(0,0,0,0.12); }
-.map-wrap .n-right-bot{ left: 74%; top: 365px; background: rgba(0,0,0,0.12); }
-.map-wrap .n-mid-bot{ left: 50%; top: 505px; background: rgba(0,0,0,0.16); }
-
-/* quote sits UNDER the lines */
-.map-wrap .quote-box{
-  position: absolute;
-  left: 50%;
-  top: 262px;
-  transform: translate(-50%, -50%);
-  width: min(520px, 72%);
-  padding: 16px 16px;
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0.38);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  border: 1px solid rgba(0,0,0,0.10);
-  box-shadow: 0 14px 38px rgba(0,0,0,0.10);
-  z-index: 2;
+/* nodes */
+.node{
+  position:absolute;
+  padding:10px 12px;
+  border-radius:12px;
+  background:rgba(0,0,0,0.13);
+  border:1px solid rgba(0,0,0,0.12);
+  color:#111;
+  font-size:14px;
+  line-height:1.15;
+  transform:translate(-50%,-50%);
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  z-index:3;
 }
 
-.map-wrap .quote-box p{
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(0,0,0,0.82);
+.n-top{ left:50%; top:70px;  background:rgba(0,0,0,0.18); }
+.n-left{ left:26%; top:200px; }
+.n-right{ left:74%; top:200px; }
+
+.n-left-bot{ left:26%; top:385px; background:rgba(0,0,0,0.12); }
+.n-right-bot{ left:74%; top:385px; background:rgba(0,0,0,0.12); }
+
+/* ✅ move up so it never gets cut */
+.n-mid-bot{ left:50%; top:545px; background:rgba(0,0,0,0.16); }
+
+/* ✅ quote box: fits INSIDE the hexagon */
+.quote-box{
+  position:absolute;
+  left:50%;
+  top:300px;                     /* centered between middle nodes */
+  transform:translate(-50%,-50%);
+  width:min(460px,44%);          /* ✅ keeps edges inside diagonals */
+  padding:20px 22px;
+  border-radius:22px;
+
+  background:rgba(243,238,226,0.90);
+  border:1px solid rgba(0,0,0,0.10);
+  box-shadow:0 22px 70px rgba(0,0,0,0.10);
+
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+
+  z-index:2;
 }
-.map-wrap .quote-box footer{
-  margin-top: 10px;
-  font-size: 12px;
-  color: rgba(0,0,0,0.68);
+.quote-box p{
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+  color:rgba(0,0,0,0.82);
+}
+.quote-box footer{
+  margin-top:12px;
+  font-size:12px;
+  color:rgba(0,0,0,0.68);
 }
 
-.map-wrap .map-caption{
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  margin-top: 10px;
-  padding: 6px 4px;
+.map-caption{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:10px;
+  padding:6px 4px;
 }
-
-.map-wrap .caption-left,
-.map-wrap .caption-right{
-  font-size: 14px;
-  color: rgba(0,0,0,0.78);
+.caption-left,.caption-right{
+  font-size:14px;
+  color:rgba(0,0,0,0.78);
 }
-.map-wrap .caption-right{ text-align: right; }
+.caption-right{ text-align:right; }
 
-/* tags block (shared across pages) */
+/* tags + fold (precedent page bottom) */
 .tags{
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0,0,0,0.10);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(0,0,0,0.10);
 }
-.tag-title{
-  margin-bottom: 8px;
-  font-size: 12px;
-}
-.tag-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.tag-title{ margin-bottom:8px; font-size:12px; }
+.tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
 .tag{
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.14);
-  background: rgba(255,255,255,0.55);
-  color: #111;
-  text-decoration: none;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.14);
+  background:rgba(255,255,255,0.55);
+  color:#111;
+  text-decoration:none;
 }
-.tag:hover{ background: rgba(255,255,255,0.80); }
+.tag:hover{ background:rgba(255,255,255,0.80); }
 
 .fold{
-  margin-top: 16px;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.55);
-  overflow: hidden;
+  margin-top:16px;
+  border:1px solid rgba(0,0,0,0.10);
+  border-radius:14px;
+  background:rgba(255,255,255,0.55);
+  overflow:hidden;
 }
 .fold summary{
-  cursor: pointer;
-  padding: 14px 16px;
-  font-weight: 600;
+  cursor:pointer;
+  padding:14px 16px;
+  font-weight:600;
 }
 .fold-body{
-  padding: 0 16px 16px;
-  color: rgba(0,0,0,0.78);
+  padding:0 16px 16px;
+  color:rgba(0,0,0,0.78);
 }
 
-@media (max-width: 760px){
-  .map-wrap .map{ height: 560px; }
-  .map-wrap .quote-box{ width: min(460px, 86%); }
-  .map-wrap .map-caption{ flex-direction: column; }
-  .map-wrap .caption-right{ text-align: left; }
+@media (max-width:760px){
+  .map{ height:680px; }
+  .quote-box{
+    width:min(420px,82%);
+    top:320px;
+  }
+  .n-left-bot{ top:420px; }
+  .n-right-bot{ top:420px; }
+  .n-mid-bot{ top:610px; }
+  .map-caption{ flex-direction:column; }
+  .caption-right{ text-align:left; }
 }
 
 /* =========================
    LEGIBILITY
-   Uses: .legibility-stage .focus-note .ghost.g1..g4 .center-lines .line
    ========================= */
 .legibility-stage{
-  position: relative;
-  margin-top: 18px;
-  padding: 20px 12px 28px;
-  min-height: 420px;
-  border-radius: 18px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.55);
-  overflow: hidden;
+  position:relative;
+  margin-top:18px;
+  padding:20px 12px 28px;
+  min-height:420px;
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:rgba(255,255,255,0.55);
+  overflow:hidden;
 }
-
 .focus-note{
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  opacity: 0.70;
-  padding: 10px 14px;
-  margin: 0 0 8px 0;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.02em;
+  opacity:0.70;
+  padding:10px 14px;
+  margin:0 0 8px 0;
 }
-
 .ghost{
-  position: absolute;
-  max-width: 40ch;
-  font-size: 12px;
-  line-height: 1.55;
-  opacity: 0.12;
-  color: rgba(0,0,0,0.55);
-  pointer-events: none;
+  position:absolute;
+  max-width:40ch;
+  font-size:12px;
+  line-height:1.55;
+  opacity:0.12;
+  color:rgba(0,0,0,0.55);
+  pointer-events:none;
 }
-.ghost.g1{ left: 6%;  top: 18%; }
-.ghost.g2{ right: 8%; top: 30%; text-align: right; }
-.ghost.g3{ left: 10%; bottom: 16%; }
-.ghost.g4{ right: 6%; bottom: 20%; text-align: right; }
+.ghost.g1{ left:6%;  top:18%; }
+.ghost.g2{ right:8%; top:30%; text-align:right; }
+.ghost.g3{ left:10%; bottom:16%; }
+.ghost.g4{ right:6%; bottom:20%; text-align:right; }
 
 .center-lines{
-  position: relative;
-  margin: 26px auto 0;
-  width: min(640px, 86%);
-  text-align: center;
+  position:relative;
+  margin:26px auto 0;
+  width:min(640px,86%);
+  text-align:center;
 }
-
 .center-lines .line{
-  font-size: clamp(22px, 2.7vw, 34px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 10px 0;
-  color: rgba(0,0,0,0.82);
+  font-size:clamp(22px,2.7vw,34px);
+  line-height:1.25;
+  letter-spacing:-0.02em;
+  margin:10px 0;
+  color:rgba(0,0,0,0.82);
 }
-
-.center-lines .line.faint{ opacity: 0.26; }
+.center-lines .line.faint{ opacity:0.26; }
 .center-lines .line.emph{
-  font-size: clamp(26px, 3.2vw, 40px);
-  opacity: 0.95;
+  font-size:clamp(26px,3.2vw,40px);
+  opacity:0.95;
 }
 
-/* details look (shared) */
 .more details{
-  margin-top: 18px;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.55);
-  overflow: hidden;
+  margin-top:18px;
+  border:1px solid rgba(0,0,0,0.10);
+  border-radius:14px;
+  background:rgba(255,255,255,0.55);
+  overflow:hidden;
 }
 .more summary{
-  cursor: pointer;
-  padding: 14px 16px;
-  font-weight: 600;
+  cursor:pointer;
+  padding:14px 16px;
+  font-weight:600;
 }
 .more details p{
-  padding: 0 16px 16px;
-  margin: 0;
-  color: rgba(0,0,0,0.78);
+  padding:0 16px 16px;
+  margin:0;
+  color:rgba(0,0,0,0.78);
 }
-
-@media (max-width: 760px){
-  .legibility-stage{ min-height: 520px; }
-  .ghost{ max-width: 34ch; }
+@media (max-width:760px){
+  .legibility-stage{ min-height:520px; }
+  .ghost{ max-width:34ch; }
 }
 
 /* =========================
    HIERARCHY
-   Uses: .field, .field .node.big/.mid/.small, .field .tag
    ========================= */
 .field{
-  position: relative;
-  margin-top: 18px;
-  height: 520px;
-  border-radius: 18px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.55);
-  overflow: hidden;
+  position:relative;
+  margin-top:18px;
+  height:520px;
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:rgba(255,255,255,0.55);
+  overflow:hidden;
 }
-
 .field::before{
   content:"";
   position:absolute;
@@ -524,238 +483,68 @@ p{ margin: 10px 0; color: var(--ink-soft); }
     radial-gradient(circle at 75% 70%, rgba(0,0,0,0.03), transparent 45%);
   pointer-events:none;
 }
-
 .field .node{
-  position: absolute;
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: rgba(255,255,255,0.55);
-  color: rgba(0,0,0,0.88);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  line-height: 1.25;
-  max-width: min(340px, 70vw);
-}
-
-.field .node.big{
-  font-size: clamp(26px, 3.2vw, 42px);
-  letter-spacing: -0.03em;
-  padding: 18px 18px;
-  background: rgba(255,255,255,0.72);
-  border-color: rgba(0,0,0,0.16);
-  box-shadow: 0 18px 55px rgba(0,0,0,0.10);
-}
-
-.field .node.mid{
-  font-size: clamp(14px, 1.6vw, 18px);
-  opacity: 0.78;
-}
-
-.field .node.small{
-  font-size: 12px;
-  opacity: 0.38;
-  background: rgba(255,255,255,0.45);
-  border-color: rgba(0,0,0,0.10);
-  box-shadow: none;
-}
-
-.field .tag{
-  display: inline-block;
-  margin-left: 10px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: rgba(0,0,0,0.60);
-  background: rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.10);
-  vertical-align: middle;
-}
-
-.field .node.big:hover{
-  transform: translate(-50%, -50%) scale(1.01);
-  background: rgba(255,255,255,0.86);
-}
-
-.field a.node.big:focus{
-  outline: 2px solid rgba(0,0,0,0.22);
-  outline-offset: 4px;
-}
-
-@media (max-width: 700px){
-  .field{ height: 560px; }
-  .field .node{ max-width: 86vw; }
-}
-
-/* =========================
-   utilities
-   ========================= */
-hr{
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-}
-/* =========================
-   PRECEDENT FIX — CENTER BOX CONTAINMENT
-   (PUT THIS AT THE VERY BOTTOM OF main.css)
-   ========================= */
-
-
-
-.map-lines{
-  z-index:0;
-}
-
-
-
-.node{
-  z-index:4;
-}
-
-
-
-.quote-box{
   position:absolute;
-  left:50%;
-  top:250px;
   transform:translate(-50%,-50%);
-
-  width:min(440px,60%); 
-
-  padding:20px 22px;
-  border-radius:18px;
-
-  background:rgba(243,238,226,0.96);
-
+  display:inline-block;
+  text-decoration:none;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.12);
+  background:rgba(255,255,255,0.55);
+  color:rgba(0,0,0,0.88);
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  line-height:1.25;
+  max-width:min(340px,70vw);
+}
+.field .node.big{
+  font-size:clamp(26px,3.2vw,42px);
+  letter-spacing:-0.03em;
+  padding:18px;
+  background:rgba(255,255,255,0.72);
+  border-color:rgba(0,0,0,0.16);
+  box-shadow:0 18px 55px rgba(0,0,0,0.10);
+}
+.field .node.mid{
+  font-size:clamp(14px,1.6vw,18px);
+  opacity:0.78;
+}
+.field .node.small{
+  font-size:12px;
+  opacity:0.38;
+  background:rgba(255,255,255,0.45);
+  border-color:rgba(0,0,0,0.10);
+  box-shadow:none;
+}
+.field .tag{
+  display:inline-block;
+  margin-left:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.02em;
+  color:rgba(0,0,0,0.60);
+  background:rgba(0,0,0,0.06);
   border:1px solid rgba(0,0,0,0.10);
-  box-shadow:0 18px 50px rgba(0,0,0,0.12);
-
-  z-index:3;
+  vertical-align:middle;
 }
-/* === PRECEDENT HARD OVERRIDE (PUT AT VERY BOTTOM) === */
-.map { position: relative; }
-
-.map .map-lines { z-index: 0 !important; }
-
-.map .node { z-index: 4 !important; }
-
-.map .quote-box{
-  position: absolute !important;
-  left: 50% !important;
-  top: 245px !important;              /* 박스가 선 안에 들어오게 위로 */
-  transform: translate(-50%,-50%) !important;
-
-  width: min(420px, 58%) !important;  /* ✅ 핵심: 폭 줄여서 육각형 내부로 */
-  padding: 18px 20px !important;
-
-  background: rgba(243,238,226,0.96) !important;
-  border: 1px solid rgba(0,0,0,0.10) !important;
-  border-radius: 18px !important;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.12) !important;
-
-  z-index: 3 !important;
+.field .node.big:hover{
+  transform:translate(-50%,-50%) scale(1.01);
+  background:rgba(255,255,255,0.86);
 }
-/* === PRECEDENT: QUOTE BOX MUST STAY INSIDE HEXAGON (FINAL) === */
-.map { position: relative; }
-
-.map .map-lines { z-index: 0 !important; }
-.map .node { z-index: 4 !important; }
-
-/* 핵심: 박스 폭을 46% 이하로 제한해서 (0.74 라인) 절대 안 넘게 */
-.map .quote-box{
-  position: absolute !important;
-  left: 50% !important;
-  top: 248px !important; /* 살짝 위로 올려서 중앙 안정감 */
-  transform: translate(-50%, -50%) !important;
-
-  width: min(360px, 46%) !important;   /* ✅ 여기 때문에 라인 밖으로 못 나감 */
-  max-width: 46% !important;
-
-  padding: 18px 20px !important;
-  border-radius: 18px !important;
-
-  background: rgba(243,238,226,0.96) !important;
-  border: 1px solid rgba(0,0,0,0.12) !important;
-  box-shadow: 0 18px 55px rgba(0,0,0,0.10) !important;
-
-  z-index: 2 !important;
+.field a.node.big:focus{
+  outline:2px solid rgba(0,0,0,0.22);
+  outline-offset:4px;
+}
+@media (max-width:700px){
+  .field{ height:560px; }
+  .field .node{ max-width:86vw; }
 }
 
-/* 텍스트도 살짝 컴팩트하게 (박스가 좁아져도 예쁘게) */
-.map .quote-box p{
-  font-size: 13px !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
-  color: rgba(0,0,0,0.82) !important;
-}
-.map .quote-box footer{
-  margin-top: 10px !important;
-  font-size: 12px !important;
-  color: rgba(0,0,0,0.70) !important;
-}
-/* === PRECEDENT BEAUTIFY + FIX CROPPING (PASTE AT VERY BOTTOM) === */
-
-/* 1) map 자체가 너무 딱 끊겨서 bottom node가 잘림 → 높이 조금 올림 */
-.map{
-  height: 560px !important;  /* 기존 520px → 560px */
-}
-
-/* 레이어 정리 */
-.map .map-lines{ z-index: 0 !important; }
-.map .quote-box{ z-index: 2 !important; }
-.map .node{ z-index: 4 !important; }
-
-/* 2) 중앙 박스: 육각형 안에 딱 들어가게 + 카드 느낌 예쁘게 */
-.map .quote-box{
-  position: absolute !important;
-  left: 50% !important;
-  top: 270px !important;                 /* 살짝 아래로 (노드랑 덜 겹치게) */
-  transform: translate(-50%, -50%) !important;
-
-  width: min(440px, 44%) !important;     /* ✅ 라인 밖으로 안 나가면서도 보기 좋은 폭 */
-  max-width: 44% !important;
-
-  padding: 20px 22px !important;
-  border-radius: 22px !important;
-
-  background: rgba(243,238,226,0.90) !important;
-  border: 1px solid rgba(0,0,0,0.10) !important;
-  box-shadow: 0 22px 70px rgba(0,0,0,0.10) !important;
-
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
-}
-
-/* 텍스트 밸런스 */
-.map .quote-box p{
-  margin: 0 !important;
-  font-size: 14px !important;
-  line-height: 1.65 !important;
-  color: rgba(0,0,0,0.82) !important;
-}
-
-.map .quote-box footer{
-  margin-top: 12px !important;
-  font-size: 12px !important;
-  color: rgba(0,0,0,0.68) !important;
-}
-
-/* 3) Fictional works 더 안정적으로 위로 (map 높이 올렸어도 보험) */
-.map .n-mid-bot{
-  top: 510px !important;   /* 기존 505px 근처였을 텐데, 살짝 위로 안전빵 */
-}
-
-/* 모바일에서도 박스 안 터지게 */
-@media (max-width: 760px){
-  .map{ height: 600px !important; }
-  .map .quote-box{
-    width: min(420px, 82%) !important;
-    max-width: 82% !important;
-    top: 285px !important;
-  }
-  .map .n-mid-bot{ top: 545px !important; }
+/* --- utility --- */
+hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin:18px 0;
 }
