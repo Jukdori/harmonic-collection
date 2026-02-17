@@ -575,3 +575,8 @@ hr{
 .map .quote-box footer{
   font-size:11.5px;
 }
+/* remove underline inside hub cards */
+.card, 
+.card *{
+  text-decoration: none;
+}
