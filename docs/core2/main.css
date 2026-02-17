@@ -1,6 +1,5 @@
 /* =========================
    Core 2 · Interaction Website
-   HTML/CSS only (no JS)
    Mood: calm / paper beige
    ========================= */
 
@@ -146,7 +145,8 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.02em;
-  /* 빈줄로 보이게 하고 싶으면 아래 두 줄 유지 */
+
+  /* 빈줄로 보이게 */
   color: transparent;
   user-select: none;
 }
@@ -254,7 +254,10 @@ p{ margin: 10px 0; color: var(--ink-soft); }
 }
 
 /* =========================
-   Precedent: Network Map  (UPDATED)
+   Precedent: Network Map (FIXED)
+   - quote가 라인을 자르는 느낌 줄이기
+   - 레이어 순서: lines(1) < quote(2) < nodes(3)
+   - quote: 더 얇고 더 투명 + blur(종이/유리)
    ========================= */
 .paper{
   min-height: 100vh;
@@ -292,31 +295,33 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   overflow: hidden;
 }
 
+/* ✅ lines layer */
 .map-lines{
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* ✅ lines */
+  z-index: 1;
 }
 
 .map-lines line{
-  stroke: rgba(0,0,0,0.28);
+  stroke: rgba(0,0,0,0.26);
   stroke-width: 1.2;
 }
 
+/* ✅ nodes layer (always on top) */
 .node{
   position: absolute;
   padding: 10px 12px;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.14);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.13);
   border: 1px solid rgba(0,0,0,0.12);
   color: #111;
   font-size: 14px;
   line-height: 1.15;
   transform: translate(-50%, -50%);
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  z-index: 3; /* ✅ nodes always on top */
+  z-index: 3;
 }
 
 .n-top{ left: 50%; top: 70px; background: rgba(0,0,0,0.18); }
@@ -329,27 +334,26 @@ p{ margin: 10px 0; color: var(--ink-soft); }
 
 .n-mid-bot{ left: 50%; top: 505px; background: rgba(0,0,0,0.16); }
 
-/* ✅ UPDATED quote box */
+/* ✅ quote layer (NOT “cutting” the lines) */
 .quote-box{
   position: absolute;
   left: 50%;
-  top: 255px;
+  top: 262px; /* 살짝 아래로 */
   transform: translate(-50%, -50%);
 
-  /* 덜 길게 + 컴팩트 */
-  width: min(520px, 74%);
+  width: min(520px, 72%);   /* 덜 길게 */
   padding: 16px 16px;
   border-radius: 16px;
 
-  /* 라인이 안 잘리게: 유리/종이 느낌 */
-  background: rgba(243,238,226,0.38);
+  /* 종이 위에 얹힌 얇은 유리 느낌 (라인이 통과해 보임) */
+  background: rgba(243,238,226,0.34);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
   border: 1px solid rgba(0,0,0,0.10);
   box-shadow: 0 14px 38px rgba(0,0,0,0.10);
 
-  z-index: 2; /* ✅ quote above lines, below nodes */
+  z-index: 2;
 }
 
 .quote-box p{
@@ -365,6 +369,7 @@ p{ margin: 10px 0; color: var(--ink-soft); }
   color: rgba(0,0,0,0.68);
 }
 
+/* caption / tags 그대로 */
 .map-caption{
   display: flex;
   justify-content: space-between;
@@ -433,7 +438,7 @@ p{ margin: 10px 0; color: var(--ink-soft); }
 
 @media (max-width: 760px){
   .map{ height: 560px; }
-  .quote-box{ width: min(460px, 86%); } /* 모바일은 더 컴팩트 */
+  .quote-box{ width: min(460px, 86%); }
   .map-caption{ flex-direction: column; }
   .caption-right{ text-align: left; }
 }
