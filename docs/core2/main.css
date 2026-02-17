@@ -659,3 +659,41 @@ hr{
 
   z-index: 3 !important;
 }
+/* === PRECEDENT: QUOTE BOX MUST STAY INSIDE HEXAGON (FINAL) === */
+.map { position: relative; }
+
+.map .map-lines { z-index: 0 !important; }
+.map .node { z-index: 4 !important; }
+
+/* 핵심: 박스 폭을 46% 이하로 제한해서 (0.74 라인) 절대 안 넘게 */
+.map .quote-box{
+  position: absolute !important;
+  left: 50% !important;
+  top: 248px !important; /* 살짝 위로 올려서 중앙 안정감 */
+  transform: translate(-50%, -50%) !important;
+
+  width: min(360px, 46%) !important;   /* ✅ 여기 때문에 라인 밖으로 못 나감 */
+  max-width: 46% !important;
+
+  padding: 18px 20px !important;
+  border-radius: 18px !important;
+
+  background: rgba(243,238,226,0.96) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,0.10) !important;
+
+  z-index: 2 !important;
+}
+
+/* 텍스트도 살짝 컴팩트하게 (박스가 좁아져도 예쁘게) */
+.map .quote-box p{
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  color: rgba(0,0,0,0.82) !important;
+}
+.map .quote-box footer{
+  margin-top: 10px !important;
+  font-size: 12px !important;
+  color: rgba(0,0,0,0.70) !important;
+}
