@@ -1,0 +1,1 @@
+const src = `Images/${letter}.jpg`;
