@@ -3,38 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inline vs Box Display</title>
+  <title>week-6-notes</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
-  <!-- fixed -->
-  <div class="badge">display / position demo</div>
+  <!-- fixed: -->
+  <div class="floating-tag">week-6-notes — Edited</div>
 
-  <main class="page">
-    <section class="row">
-      <!-- LEFT -->
-      <figure class="art">
-        <img src="artwork.png" alt="Artwork" />
-        <!-- absolute  -->
-        <figcaption class="credit">Photo reference</figcaption>
-      </figure>
+  <main class="stage">
+    <!-- relative: absolute  -->
+    <section class="sheet">
+      <!-- absolute:  -->
+      <div class="dot dot-a"></div>
+      <div class="dot dot-b"></div>
 
-      <!-- RIGHT (sticky ) -->
-      <section class="label">
-        <h1><em>Win Win</em>, 2011</h1>
-        <p>
-          Acrylic, fluorescent acrylic, and Roll-a-Tex on canvas<br />
-          72 x 80 inches
-        </p>
+      <h1 class="title">transform: translate(x, y);</h1>
 
-        <!-- display inline / block / inline-block  -->
-        <div class="display-demo">
-          <span class="chip inline">inline</span>
-          <span class="chip inline-block">inline-block</span>
-          <span class="chip block">block</span>
-        </div>
-      </section>
+      <p class="line">calc(a * b);</p>
+      <p class="line">display: inline / block / inline-block</p>
+      <p class="line">position: absolute / fixed / static</p>
+      <p class="line">(default) / sticky;</p>
+      <p class="line">top; bottom; left; right</p>
+
+      <!-- sticky:  -->
+      <aside class="sticky-note">
+        sticky note<br />
+        (scroll)
+      </aside>
+
+      <!-- display demo: inline / inline-block / block 차이 -->
+      <div class="display-demo">
+        <span class="chip inline">inline</span>
+        <span class="chip inline-block">inline-block</span>
+        <span class="chip block">block</span>
+      </div>
     </section>
   </main>
 </body>
