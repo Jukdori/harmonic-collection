@@ -3,22 +3,22 @@ body{
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* calc() 사용: 좌우 여백 */
+/* calc() */
 .paper{
   width: calc(100% - 120px);
   margin: 60px auto;
   padding: 40px;
   border: 1px solid #ddd;
 
-  position: relative; /* absolute 기준 */
+  position: relative; /*  */
 }
 
-/* 텍스트 크게 */
+/*  */
 .line{
   font-size: 40px;
   margin: 12px 0;
 
-  /* transform 예시: 살짝 아래로 */
+  /* transform  */
   transform: translate(0, 0);
 }
 
