@@ -1,76 +1,98 @@
 body{
-  margin: 0;
+  margin:0;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* 큰 박스 */
-.paper{
-  width: calc(100% - 120px); /* calc 사용 */
+/* 가로 배치 */
+.container{
+  width: calc(100% - 120px);
   margin: 60px auto;
-  padding: 40px;
-  border: 3px solid black;   /* 진하게 */
-
-  position: relative; /* absolute 기준 */
 }
 
-/* 큰 텍스트 */
-.line{
-  font-size: 44px;
-  margin: 16px 0;
-
-  transform: translate(0, 0); /* transform 사용 */
-}
-
-/* fixed */
-.fixed-tag{
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  border: 2px solid black;
-  padding: 8px 12px;
-  background: white;
-  font-size: 16px;
-}
-
-/* absolute + top/right */
-.absolute-dot{
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 20px;
-  height: 20px;
-  background: black;
-}
-
-/* display demo 영역 */
-.demo{
-  margin-top: 40px;
-  border-top: 3px solid black;
-  padding-top: 25px;
-  font-size: 20px;
-}
-
-/* inline */
-.inline{
-  display: inline;
-  border: 2px solid black;
-  padding: 8px 12px;
-}
-
-/* inline-block */
-.inline-block{
+/* inline-block 사용 */
+.art, .info{
   display: inline-block;
-  border: 2px solid black;
-  padding: 8px 12px;
-
-  transform: translate(0, -4px); /* translate 사용 */
+  vertical-align: top;
 }
 
-/* block */
-.block{
-  display: block;
-  border: 2px solid black;
-  padding: 8px 12px;
-  margin-top: 15px;
-  width: 220px;
+/* ===== 왼쪽 작품 영역 ===== */
+.art{
+  width: 500px;
+  height: 520px;
+  position: relative;
+}
+
+/* 검정 큰 프레임 */
+.frame-black{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+}
+
+/* 보라 프레임 */
+.frame-purple{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background: #6c4fb3;
+}
+
+/* 초록 세로 */
+.frame-green{
+  position: absolute;
+  left: 40px;
+  top: 120px;
+  width: 60px;
+  height: 260px;
+  background: #007a3d;
+}
+
+/* 노랑 */
+.yellow{
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 340px;
+  height: 150px;
+  background: #d9ff00;
+}
+
+/* 빨강 */
+.red{
+  position: absolute;
+  bottom: 90px;
+  left: 80px;
+  width: 340px;
+  height: 180px;
+  background: #ff1a1a;
+}
+
+/* 파랑 아래 바 */
+.blue-bar{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #2b3ea8;
+}
+
+/* ===== 오른쪽 텍스트 ===== */
+.info{
+  width: 500px;
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+.info h1{
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.info p{
+  font-size: 28px;
+  line-height: 1.4;
 }
