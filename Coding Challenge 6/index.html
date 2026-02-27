@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inline vs Box Display</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <!-- fixed -->
+  <div class="badge">display / position demo</div>
+
+  <main class="page">
+    <section class="row">
+      <!-- LEFT -->
+      <figure class="art">
+        <img src="artwork.png" alt="Artwork" />
+        <!-- absolute  -->
+        <figcaption class="credit">Photo reference</figcaption>
+      </figure>
+
+      <!-- RIGHT (sticky ) -->
+      <section class="label">
+        <h1><em>Win Win</em>, 2011</h1>
+        <p>
+          Acrylic, fluorescent acrylic, and Roll-a-Tex on canvas<br />
+          72 x 80 inches
+        </p>
+
+        <!-- display inline / block / inline-block  -->
+        <div class="display-demo">
+          <span class="chip inline">inline</span>
+          <span class="chip inline-block">inline-block</span>
+          <span class="chip block">block</span>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
