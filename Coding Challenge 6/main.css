@@ -3,73 +3,74 @@ body{
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* calc() */
+/* 큰 박스 */
 .paper{
-  width: calc(100% - 120px);
+  width: calc(100% - 120px); /* calc 사용 */
   margin: 60px auto;
   padding: 40px;
-  border: 1px solid #ddd;
+  border: 3px solid black;   /* 진하게 */
 
-  position: relative; /*  */
+  position: relative; /* absolute 기준 */
 }
 
-/*  */
+/* 큰 텍스트 */
 .line{
-  font-size: 40px;
-  margin: 12px 0;
+  font-size: 44px;
+  margin: 16px 0;
 
-  /* transform  */
-  transform: translate(0, 0);
+  transform: translate(0, 0); /* transform 사용 */
 }
 
 /* fixed */
 .fixed-tag{
   position: fixed;
-  top: 10px;
-  left: 10px;
-  border: 1px solid #ddd;
-  padding: 8px 10px;
+  top: 15px;
+  left: 15px;
+  border: 2px solid black;
+  padding: 8px 12px;
   background: white;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-/* absolute  + top/right */
+/* absolute + top/right */
 .absolute-dot{
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 12px;
-  height: 12px;
-  border: 1px solid #111;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: black;
 }
 
-/* display  */
+/* display demo 영역 */
 .demo{
-  margin-top: 30px;
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
-  font-size: 18px;
+  margin-top: 40px;
+  border-top: 3px solid black;
+  padding-top: 25px;
+  font-size: 20px;
 }
 
+/* inline */
 .inline{
   display: inline;
-  border: 1px solid #111;
-  padding: 6px 8px;
+  border: 2px solid black;
+  padding: 8px 12px;
 }
 
+/* inline-block */
 .inline-block{
   display: inline-block;
-  border: 1px solid #111;
-  padding: 6px 8px;
+  border: 2px solid black;
+  padding: 8px 12px;
 
-  /* translate */
-  transform: translate(0, -2px);
+  transform: translate(0, -4px); /* translate 사용 */
 }
 
+/* block */
 .block{
   display: block;
-  border: 1px solid #111;
-  padding: 6px 8px;
-  margin-top: 10px;
-  width: 200px;
+  border: 2px solid black;
+  padding: 8px 12px;
+  margin-top: 15px;
+  width: 220px;
 }
