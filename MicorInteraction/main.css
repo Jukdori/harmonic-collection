@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poiret One", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  background: #111827;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #93c5fd;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 16px;
+  font-weight: normal;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.group {
+  margin-bottom: 48px;
+}
+
+.group h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: normal;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px 16px;
+  text-align: center;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(147, 197, 253, 0.5);
+}
+
+.card p {
+  margin-top: 16px;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+.circle {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: whitesmoke;
+  box-shadow: 4px -40px 60px 5px rgb(26, 117, 206) inset;
+}
+
+.square {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  background: whitesmoke;
+  box-shadow: 4px -40px 60px 5px rgb(26, 117, 206) inset;
+}
+
+/* LOADER */
+.loader {
+  background: linear-gradient(to right, rgb(22, 113, 202) 50%, transparent 50%);
+  animation: spin 1s infinite linear;
+}
+
+.loader::before {
+  display: block;
+  content: "";
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78px;
+  height: 78px;
+  background: #111827;
+  border-radius: 50%;
+}
+
+/* CORE ANIMATIONS */
+.spin {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gelatine {
+  animation: gelatine 0.8s infinite;
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.82);
+  }
+  to {
+    transform: scale(1.18);
+  }
+}
+
+.flash {
+  animation: flash 0.7s ease infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+.hithere {
+  animation: hithere 1s ease infinite;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.15);
+  }
+  40%,
+  60% {
+    transform: rotate(-18deg) scale(1.15);
+  }
+  50% {
+    transform: rotate(18deg) scale(1.15);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.shake {
+  animation: shake 2s ease infinite;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.wobble {
+  animation: wobble 2s ease infinite;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.swing {
+  transform-origin: top center;
+  animation: swing 2s ease infinite;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fade-in-left {
+  animation: fade-in-left 2s ease infinite;
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 2s ease infinite;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.roll-in {
+  animation: roll-in 2s ease infinite;
+}
+
+@keyframes roll-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.roll-out {
+  animation: roll-out 2s ease infinite;
+}
+
+@keyframes roll-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 24px 16px 56px;
+  }
+
+  .card {
+    min-height: 170px;
+  }
+
+  .circle,
+  .square {
+    width: 80px;
+    height: 80px;
+  }
+
+  .loader::before {
+    width: 68px;
+    height: 68px;
+  }
+}
