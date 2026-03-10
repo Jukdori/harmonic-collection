@@ -18,10 +18,9 @@ body {
   background:
     radial-gradient(circle at top, rgba(35, 94, 184, 0.18), transparent 32%),
     linear-gradient(180deg, #071a38 0%, #041127 100%);
-  transition: background 0.5s ease;
+  transition: background 0.45s ease;
 }
 
-/* radio 숨기기 */
 input[type="radio"] {
   display: none;
 }
@@ -69,31 +68,36 @@ h1 {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(8px);
   text-align: center;
-  transition: background 0.5s ease, border-color 0.4s ease;
+  transition: background 0.45s ease, border-color 0.35s ease;
 }
 
-.orb-wrap {
+.emoji-box {
+  position: relative;
+  min-height: 170px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 210px;
+  justify-content: center;
 }
 
-.orb {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #c7dcff, #4d93f5 62%, #2268d1 100%);
-  box-shadow:
-    0 0 40px rgba(94, 155, 255, 0.35),
-    inset 12px 10px 26px rgba(255, 255, 255, 0.18);
-  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, background 0.4s ease;
+.emoji {
+  position: absolute;
+  font-size: 6rem;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.default-emoji {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .message-box {
   position: relative;
   min-height: 56px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .message {
@@ -104,15 +108,15 @@ h1 {
   color: #eef4ff;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
   position: absolute;
   inset: 0;
 }
 
 .default-message {
+  position: relative;
   opacity: 1;
   transform: translateY(0);
-  position: relative;
 }
 
 .buttons {
@@ -154,45 +158,47 @@ h1 {
   border: 1px solid rgba(219, 232, 255, 0.25);
 }
 
-/* ---------------- DEFAULT ---------------- */
+/* default */
+#reset:checked ~ .stage .default-emoji,
 #reset:checked ~ .stage .default-message {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   position: relative;
 }
 
+#reset:checked ~ .stage .calm-emoji,
+#reset:checked ~ .stage .sad-emoji,
+#reset:checked ~ .stage .happy-emoji,
 #reset:checked ~ .stage .calm-message,
-#reset:checked ~ .stage .alert-message,
-#reset:checked ~ .stage .soft-message {
+#reset:checked ~ .stage .sad-message,
+#reset:checked ~ .stage .happy-message {
   opacity: 0;
-}
-
-#reset:checked ~ .stage .orb {
-  animation: none;
 }
 
 #reset:checked ~ .stage .reset-btn {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-/* ---------------- CALM ---------------- */
+/* calm */
 #calm:checked ~ .stage {
   background: rgba(199, 227, 255, 0.06);
   border-color: rgba(162, 210, 255, 0.24);
 }
 
-#calm:checked ~ .stage .orb {
-  animation: pulse 2.8s ease-in-out infinite;
-  box-shadow:
-    0 0 40px rgba(136, 200, 255, 0.34),
-    0 0 90px rgba(101, 181, 255, 0.2),
-    inset 12px 10px 26px rgba(255, 255, 255, 0.2);
+#calm:checked ~ .stage .default-emoji,
+#calm:checked ~ .stage .sad-emoji,
+#calm:checked ~ .stage .happy-emoji,
+#calm:checked ~ .stage .default-message,
+#calm:checked ~ .stage .sad-message,
+#calm:checked ~ .stage .happy-message {
+  opacity: 0;
 }
 
-#calm:checked ~ .stage .default-message,
-#calm:checked ~ .stage .alert-message,
-#calm:checked ~ .stage .soft-message {
-  opacity: 0;
+#calm:checked ~ .stage .calm-emoji {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  position: relative;
+  animation: float-calm 2.8s ease-in-out infinite;
 }
 
 #calm:checked ~ .stage .calm-message {
@@ -206,129 +212,116 @@ h1 {
   color: #06204a;
 }
 
-/* ---------------- ALERT ---------------- */
-#alert:checked ~ .stage {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 158, 113, 0.24);
+/* sad */
+#sad:checked ~ .stage {
+  background: rgba(210, 220, 255, 0.05);
+  border-color: rgba(177, 192, 255, 0.2);
 }
 
-#alert:checked ~ .stage .orb {
-  animation: shake 0.5s infinite;
-  background: radial-gradient(circle at 30% 30%, #ffd2c1, #ff8a5b 65%, #df5b2b 100%);
-  box-shadow:
-    0 0 38px rgba(255, 129, 88, 0.34),
-    0 0 88px rgba(255, 106, 61, 0.18),
-    inset 12px 10px 24px rgba(255, 255, 255, 0.12);
-}
-
-#alert:checked ~ .stage .default-message,
-#alert:checked ~ .stage .calm-message,
-#alert:checked ~ .stage .soft-message {
+#sad:checked ~ .stage .default-emoji,
+#sad:checked ~ .stage .calm-emoji,
+#sad:checked ~ .stage .happy-emoji,
+#sad:checked ~ .stage .default-message,
+#sad:checked ~ .stage .calm-message,
+#sad:checked ~ .stage .happy-message {
   opacity: 0;
 }
 
-#alert:checked ~ .stage .alert-message {
+#sad:checked ~ .stage .sad-emoji {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  position: relative;
+  animation: sad-drop 2.2s ease-in-out infinite;
+}
+
+#sad:checked ~ .stage .sad-message {
   opacity: 1;
   transform: translateY(0);
   position: relative;
 }
 
-#alert:checked ~ .stage .buttons label[for="alert"] {
-  background: #ffd8cb;
-  color: #4a1708;
+#sad:checked ~ .stage .buttons label[for="sad"] {
+  background: #dfe4ff;
+  color: #26325c;
 }
 
-/* ---------------- SOFT ---------------- */
-#soft:checked ~ .stage {
-  background: rgba(255, 243, 250, 0.05);
-  border-color: rgba(255, 201, 230, 0.2);
+/* happy */
+#happy:checked ~ .stage {
+  background: rgba(255, 245, 204, 0.05);
+  border-color: rgba(255, 227, 132, 0.2);
 }
 
-#soft:checked ~ .stage .orb {
-  animation: soft-float 3.2s ease-in-out infinite;
-  background: radial-gradient(circle at 30% 30%, #fff0f7, #ffbdd9 62%, #ef86b5 100%);
-  box-shadow:
-    0 0 45px rgba(255, 191, 223, 0.28),
-    0 0 110px rgba(255, 203, 230, 0.18),
-    inset 12px 10px 24px rgba(255, 255, 255, 0.2);
-  filter: saturate(1.06);
-}
-
-#soft:checked ~ .stage .default-message,
-#soft:checked ~ .stage .calm-message,
-#soft:checked ~ .stage .alert-message {
+#happy:checked ~ .stage .default-emoji,
+#happy:checked ~ .stage .calm-emoji,
+#happy:checked ~ .stage .sad-emoji,
+#happy:checked ~ .stage .default-message,
+#happy:checked ~ .stage .calm-message,
+#happy:checked ~ .stage .sad-message {
   opacity: 0;
 }
 
-#soft:checked ~ .stage .soft-message {
+#happy:checked ~ .stage .happy-emoji {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  position: relative;
+  animation: happy-bounce 0.9s ease-in-out infinite alternate;
+}
+
+#happy:checked ~ .stage .happy-message {
   opacity: 1;
   transform: translateY(0);
   position: relative;
 }
 
-#soft:checked ~ .stage .buttons label[for="soft"] {
-  background: #ffe3ef;
-  color: #5b2942;
+#happy:checked ~ .stage .buttons label[for="happy"] {
+  background: #fff0b8;
+  color: #5b4400;
 }
 
-/* body background mood changes */
+/* optional page mood changes */
 body:has(#calm:checked) {
   background:
     radial-gradient(circle at top, rgba(122, 194, 255, 0.2), transparent 34%),
     linear-gradient(180deg, #0a2146 0%, #071630 100%);
 }
 
-body:has(#alert:checked) {
+body:has(#sad:checked) {
   background:
-    radial-gradient(circle at top, rgba(255, 166, 120, 0.12), transparent 28%),
-    linear-gradient(180deg, #1a1022 0%, #110a17 100%);
+    radial-gradient(circle at top, rgba(166, 182, 255, 0.16), transparent 30%),
+    linear-gradient(180deg, #151d3c 0%, #0e1329 100%);
 }
 
-body:has(#soft:checked) {
+body:has(#happy:checked) {
   background:
-    radial-gradient(circle at top, rgba(255, 214, 240, 0.22), transparent 34%),
-    linear-gradient(180deg, #1a1630 0%, #120f20 100%);
+    radial-gradient(circle at top, rgba(255, 221, 102, 0.18), transparent 30%),
+    linear-gradient(180deg, #2a2342 0%, #171223 100%);
 }
 
-/* keyframes */
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(0.96);
+/* animations */
+@keyframes float-calm {
+  0%, 100% {
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: translateY(-8px) scale(1.03);
   }
 }
 
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-8px);
-  }
-  40% {
-    transform: translateX(8px);
-  }
-  60% {
-    transform: translateX(-6px);
-  }
-  80% {
-    transform: translateX(6px);
-  }
-}
-
-@keyframes soft-float {
-  0%,
-  100% {
-    transform: translateY(0) scale(0.98);
-    opacity: 0.88;
+@keyframes sad-drop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-10px) scale(1.04);
-    opacity: 1;
+    transform: translateY(6px) scale(0.98);
+  }
+}
+
+@keyframes happy-bounce {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-10px) scale(1.08);
   }
 }
 
@@ -343,13 +336,12 @@ body:has(#soft:checked) {
     border-radius: 24px;
   }
 
-  .orb-wrap {
-    min-height: 170px;
+  .emoji-box {
+    min-height: 130px;
   }
 
-  .orb {
-    width: 110px;
-    height: 110px;
+  .emoji {
+    font-size: 4.5rem;
   }
 
   .buttons {
