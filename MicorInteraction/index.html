@@ -7,33 +7,46 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <main class="page mood-default" id="page">
+  <main class="page">
     <p class="eyebrow">UNIT 2 PROJECT</p>
-
     <h1>choose a mood.</h1>
+    <p class="intro">how should this interface respond?</p>
 
-    <p class="intro">
-      how should this interface respond?
-    </p>
+    <input type="radio" name="mood" id="reset" checked />
+    <input type="radio" name="mood" id="calm" />
+    <input type="radio" name="mood" id="sad" />
+    <input type="radio" name="mood" id="happy" />
 
-    <div class="stage">
-      <div class="orb-wrap">
-        <div class="orb" id="orb"></div>
+    <section class="stage">
+      <div class="emoji-box">
+        <div class="emoji default-emoji">😐</div>
+        <div class="emoji calm-emoji">😌</div>
+        <div class="emoji sad-emoji">😭</div>
+        <div class="emoji happy-emoji">😁</div>
       </div>
 
-      <p class="message" id="message">
-        press a button to change the feeling of the interface.
-      </p>
+      <div class="message-box">
+        <p class="message default-message">
+          choose one emotion to change the interface response.
+        </p>
+        <p class="message calm-message">
+          calm feels slow, gentle, and steady.
+        </p>
+        <p class="message sad-message">
+          sad feels heavier, softer, and more fragile.
+        </p>
+        <p class="message happy-message">
+          happy feels bright, playful, and energetic.
+        </p>
+      </div>
 
       <div class="buttons">
-        <button class="mood-btn" id="calmBtn">calm</button>
-        <button class="mood-btn" id="alertBtn">alert</button>
-        <button class="mood-btn" id="softBtn">soft</button>
-        <button class="mood-btn reset-btn" id="resetBtn">reset</button>
+        <label for="calm" class="mood-btn">calm</label>
+        <label for="sad" class="mood-btn">sad</label>
+        <label for="happy" class="mood-btn">happy</label>
+        <label for="reset" class="mood-btn reset-btn">reset</label>
       </div>
-    </div>
+    </section>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
