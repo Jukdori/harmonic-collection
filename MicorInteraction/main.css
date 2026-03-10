@@ -81,17 +81,18 @@ h1 {
 
 .emoji {
   position: absolute;
+  left: 50%;
+  top: 50%;
   font-size: 6rem;
   line-height: 1;
   opacity: 0;
-  transform: translateY(12px) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .default-emoji {
-  position: relative;
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .message-box {
@@ -145,7 +146,8 @@ h1 {
 }
 
 .mood-btn:hover {
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .mood-btn:active {
@@ -162,7 +164,14 @@ h1 {
 #reset:checked ~ .stage .default-emoji,
 #reset:checked ~ .stage .default-message {
   opacity: 1;
-  transform: translateY(0) scale(1);
+}
+
+#reset:checked ~ .stage .default-emoji {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#reset:checked ~ .stage .default-message {
+  transform: translateY(0);
   position: relative;
 }
 
@@ -196,8 +205,7 @@ h1 {
 
 #calm:checked ~ .stage .calm-emoji {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  position: relative;
+  transform: translate(-50%, -50%) scale(1);
   animation: float-calm 2.8s ease-in-out infinite;
 }
 
@@ -229,8 +237,7 @@ h1 {
 
 #sad:checked ~ .stage .sad-emoji {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  position: relative;
+  transform: translate(-50%, -50%) scale(1);
   animation: sad-drop 2.2s ease-in-out infinite;
 }
 
@@ -262,8 +269,7 @@ h1 {
 
 #happy:checked ~ .stage .happy-emoji {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  position: relative;
+  transform: translate(-50%, -50%) scale(1);
   animation: happy-bounce 0.9s ease-in-out infinite alternate;
 }
 
@@ -278,7 +284,7 @@ h1 {
   color: #5b4400;
 }
 
-/* optional page mood changes */
+/* optional page background mood changes */
 body:has(#calm:checked) {
   background:
     radial-gradient(circle at top, rgba(122, 194, 255, 0.2), transparent 34%),
@@ -300,28 +306,28 @@ body:has(#happy:checked) {
 /* animations */
 @keyframes float-calm {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translateY(-8px) scale(1.03);
+    transform: translate(-50%, calc(-50% - 8px)) scale(1.03);
   }
 }
 
 @keyframes sad-drop {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translateY(6px) scale(0.98);
+    transform: translate(-50%, calc(-50% + 6px)) scale(0.98);
   }
 }
 
 @keyframes happy-bounce {
   from {
-    transform: translateY(0) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
   to {
-    transform: translateY(-10px) scale(1.08);
+    transform: translate(-50%, calc(-50% - 10px)) scale(1.08);
   }
 }
 
