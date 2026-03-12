@@ -1,194 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curiosity Cabinet — Emotional Bingo</title>
-  <link rel="stylesheet" href="main.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curiosity Cabinet</title>
+<link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">UNIT 2 PROJECT</p>
-      <h1>curiosity cabinet</h1>
-      <p class="intro">
-        a cabinet of everyday curiosities, secretly arranged as an emotional bingo board.
-        each row holds a different feeling to discover.
-      </p>
-    </header>
 
-    <section class="cabinet">
-      <!-- ROW 1 -->
-      <div class="emotion-tag calm-tag" id="tag-calm">
-        <span class="tag-emoji">😌</span>
-        <span class="tag-text">calm</span>
-      </div>
+<header>
+<h1>curiosity cabinet</h1>
+<p>a collection of everyday curiosities. open drawers and discover hidden emotions.</p>
+</header>
 
-      <details class="calm" data-row="calm">
-        <summary><span class="emoji">😌</span> Why does rain make us feel calm?</summary>
-        <p>The steady sound and dim light of rain can soften attention and make the world feel quieter.</p>
-      </details>
+<div class="grid">
 
-      <details class="calm" data-row="calm">
-        <summary><span class="emoji">😌</span> Why do quiet mornings feel special?</summary>
-        <p>Quiet mornings can feel rare and protected, giving us a sense of space before the day gets loud.</p>
-      </details>
+<!-- ROW LABELS (hidden drawers) -->
 
-      <details class="calm" data-row="calm">
-        <summary><span class="emoji">😌</span> Why do warm drinks feel comforting?</summary>
-        <p>Warmth slows the body down and creates a small ritual of care, which can feel grounding.</p>
-      </details>
+<div class="row-label" id="label1">drawer 01</div>
 
-      <details class="calm" data-row="calm">
-        <summary><span class="emoji">😌</span> Why do we enjoy sitting by the window?</summary>
-        <p>A window lets us observe the world without fully entering it, which can feel peaceful and safe.</p>
-      </details>
+<details class="card row1">
+<summary>Why does rain feel calming?</summary>
+<p>Soft repetitive sounds help slow our nervous system.</p>
+</details>
 
-      <details class="calm" data-row="calm">
-        <summary><span class="emoji">😌</span> Why do slow days feel peaceful?</summary>
-        <p>When time feels less crowded, our thoughts often settle and even ordinary moments feel softer.</p>
-      </details>
+<details class="card row1">
+<summary>Why do quiet mornings feel special?</summary>
+<p>Less stimulation allows our mind to settle.</p>
+</details>
 
-      <!-- ROW 2 -->
-      <div class="emotion-tag awkward-tag" id="tag-awkward">
-        <span class="tag-emoji">😅</span>
-        <span class="tag-text">social awkwardness</span>
-      </div>
+<details class="card row1">
+<summary>Why do warm drinks feel comforting?</summary>
+<p>Warmth activates relaxation responses in the body.</p>
+</details>
 
-      <details class="awkward" data-row="awkward">
-        <summary><span class="emoji">😅</span> Why do we wave back by accident?</summary>
-        <p>Our bodies often react before our brains fully check the situation, especially in social moments.</p>
-      </details>
+<details class="card row1">
+<summary>Why do we enjoy sitting by windows?</summary>
+<p>Humans naturally seek views and soft light.</p>
+</details>
 
-      <details class="awkward" data-row="awkward">
-        <summary><span class="emoji">😅</span> Why do we laugh when nothing is funny?</summary>
-        <p>Laughter can be a social release, especially when we feel nervous, confused, or embarrassed.</p>
-      </details>
+<details class="card row1">
+<summary>Why do slow days feel peaceful?</summary>
+<p>Reduced pressure lets our brain reset.</p>
+</details>
 
-      <details class="awkward" data-row="awkward">
-        <summary><span class="emoji">😅</span> Why do we replay conversations later?</summary>
-        <p>The mind likes to revisit uncertain moments and imagine better ways things could have gone.</p>
-      </details>
 
-      <details class="awkward" data-row="awkward">
-        <summary><span class="emoji">😅</span> Why do we forget names immediately?</summary>
-        <p>Names often disappear when attention is split between impression, anxiety, and trying to appear normal.</p>
-      </details>
+<div class="row-label" id="label2">drawer 02</div>
 
-      <details class="awkward" data-row="awkward">
-        <summary><span class="emoji">😅</span> Why do awkward silences feel so long?</summary>
-        <p>Silence becomes heavier when we feel responsible for filling it, even if it only lasts a few seconds.</p>
-      </details>
+<details class="card row2">
+<summary>Why do we wave back by accident?</summary>
+<p>Our brain quickly mirrors social gestures.</p>
+</details>
 
-      <!-- ROW 3 -->
-      <div class="emotion-tag nostalgia-tag" id="tag-nostalgia">
-        <span class="tag-emoji">😭</span>
-        <span class="tag-text">nostalgia</span>
-      </div>
+<details class="card row2">
+<summary>Why do we laugh when nothing is funny?</summary>
+<p>Awkward tension often triggers nervous laughter.</p>
+</details>
 
-      <details class="nostalgia" data-row="nostalgia">
-        <summary><span class="emoji">😭</span> Why do old songs make us emotional?</summary>
-        <p>Music can hold memory tightly, so hearing an old song can suddenly bring back a whole feeling or time.</p>
-      </details>
+<details class="card row2">
+<summary>Why do we replay conversations later?</summary>
+<p>Our mind reviews social interactions for meaning.</p>
+</details>
 
-      <details class="nostalgia" data-row="nostalgia">
-        <summary><span class="emoji">😭</span> Why do smells bring back memories?</summary>
-        <p>Smell is closely linked to memory and emotion, so a scent can return us to a moment very quickly.</p>
-      </details>
+<details class="card row2">
+<summary>Why do we forget names immediately?</summary>
+<p>Attention is usually focused on the situation instead.</p>
+</details>
 
-      <details class="nostalgia" data-row="nostalgia">
-        <summary><span class="emoji">😭</span> Why do we reread old messages?</summary>
-        <p>Old messages can preserve connection, comfort, or a version of yourself you still want to revisit.</p>
-      </details>
+<details class="card row2">
+<summary>Why do awkward silences feel long?</summary>
+<p>Social pauses stretch our sense of time.</p>
+</details>
 
-      <details class="nostalgia" data-row="nostalgia">
-        <summary><span class="emoji">😭</span> Why do childhood places feel smaller now?</summary>
-        <p>Our bodies change, but so do our memories. Places often shrink when imagination no longer fills them the same way.</p>
-      </details>
 
-      <details class="nostalgia" data-row="nostalgia">
-        <summary><span class="emoji">😭</span> Why do we miss people more at night?</summary>
-        <p>At night, distractions fade and emotions have more room to surface.</p>
-      </details>
+<div class="row-label" id="label3">drawer 03</div>
 
-      <!-- ROW 4 -->
-      <div class="emotion-tag curious-tag" id="tag-curious">
-        <span class="tag-emoji">🤔</span>
-        <span class="tag-text">curiosity</span>
-      </div>
+<details class="card row3">
+<summary>Why do old songs feel emotional?</summary>
+<p>Music reconnects memories with emotion.</p>
+</details>
 
-      <details class="curious" data-row="curious">
-        <summary><span class="emoji">🤔</span> Why do we open the fridge when we are not hungry?</summary>
-        <p>Sometimes we are looking for novelty, comfort, or a small interruption rather than food itself.</p>
-      </details>
+<details class="card row3">
+<summary>Why do smells bring back memories?</summary>
+<p>Scent is strongly linked to memory centers.</p>
+</details>
 
-      <details class="curious" data-row="curious">
-        <summary><span class="emoji">🤔</span> Why do we google random things at night?</summary>
-        <p>Late at night, thoughts wander more freely and even tiny questions can suddenly feel urgent.</p>
-      </details>
+<details class="card row3">
+<summary>Why do we reread old messages?</summary>
+<p>We revisit moments to relive feelings.</p>
+</details>
 
-      <details class="curious" data-row="curious">
-        <summary><span class="emoji">🤔</span> Why do we click things just to see what happens?</summary>
-        <p>Curiosity is often about testing possibility. The unknown can be more interesting than the answer.</p>
-      </details>
+<details class="card row3">
+<summary>Why do childhood places feel smaller?</summary>
+<p>Perspective changes as we grow.</p>
+</details>
 
-      <details class="curious" data-row="curious">
-        <summary><span class="emoji">🤔</span> Why do we get distracted while working?</summary>
-        <p>The brain often looks for easier or more rewarding stimulation when focus begins to feel effortful.</p>
-      </details>
+<details class="card row3">
+<summary>Why do we miss people more at night?</summary>
+<p>Quiet moments amplify emotional reflection.</p>
+</details>
 
-      <details class="curious" data-row="curious">
-        <summary><span class="emoji">🤔</span> Why do random thoughts appear suddenly?</summary>
-        <p>Thoughts can surface from loose memory connections, especially when the mind is relaxed or wandering.</p>
-      </details>
 
-      <!-- ROW 5 -->
-      <div class="emotion-tag joy-tag" id="tag-joy">
-        <span class="tag-emoji">😁</span>
-        <span class="tag-text">joy</span>
-      </div>
+<div class="row-label" id="label4">drawer 04</div>
 
-      <details class="joy" data-row="joy">
-        <summary><span class="emoji">😁</span> Why do we smile when someone smiles at us?</summary>
-        <p>Smiles are contagious because people naturally mirror each other’s expressions and energy.</p>
-      </details>
+<details class="card row4">
+<summary>Why do we open the fridge when not hungry?</summary>
+<p>Curiosity and boredom often drive the action.</p>
+</details>
 
-      <details class="joy" data-row="joy">
-        <summary><span class="emoji">😁</span> Why does laughing with friends feel different?</summary>
-        <p>Shared laughter creates connection, making joy feel bigger than it does alone.</p>
-      </details>
+<details class="card row4">
+<summary>Why do we google random things at night?</summary>
+<p>The brain wanders when external input fades.</p>
+</details>
 
-      <details class="joy" data-row="joy">
-        <summary><span class="emoji">😁</span> Why do small achievements feel satisfying?</summary>
-        <p>Even tiny completions can create relief and momentum because they make effort feel visible.</p>
-      </details>
+<details class="card row4">
+<summary>Why do we click things just to see?</summary>
+<p>Curiosity rewards exploration.</p>
+</details>
 
-      <details class="joy" data-row="joy">
-        <summary><span class="emoji">😁</span> Why do pets improve our mood so fast?</summary>
-        <p>Pets offer affection, softness, and presence without complicated language, which can feel instantly comforting.</p>
-      </details>
+<details class="card row4">
+<summary>Why do we get distracted while working?</summary>
+<p>The brain seeks novelty constantly.</p>
+</details>
 
-      <details class="joy" data-row="joy">
-        <summary><span class="emoji">😁</span> Why does sunlight feel so good?</summary>
-        <p>Light can shift energy, mood, and attention, making the body feel more awake and open.</p>
-      </details>
-    </section>
+<details class="card row4">
+<summary>Why do random thoughts appear suddenly?</summary>
+<p>The mind forms spontaneous associations.</p>
+</details>
 
-    <section class="bingo-status">
-      <h2>emotional bingo</h2>
-      <div class="status-grid">
-        <div class="status-pill" id="status-calm">😌 calm — incomplete</div>
-        <div class="status-pill" id="status-awkward">😅 social awkwardness — incomplete</div>
-        <div class="status-pill" id="status-nostalgia">😭 nostalgia — incomplete</div>
-        <div class="status-pill" id="status-curious">🤔 curiosity — incomplete</div>
-        <div class="status-pill" id="status-joy">😁 joy — incomplete</div>
-      </div>
-      <p class="bingo-message" id="bingoMessage">
-        open five cards in the same row to complete an emotional bingo.
-      </p>
-    </section>
-  </main>
 
-  <script src="script.js"></script>
+<div class="row-label" id="label5">drawer 05</div>
+
+<details class="card row5">
+<summary>Why do we smile when others smile?</summary>
+<p>Our brains mirror expressions automatically.</p>
+</details>
+
+<details class="card row5">
+<summary>Why does laughter feel better together?</summary>
+<p>Shared emotion strengthens connection.</p>
+</details>
+
+<details class="card row5">
+<summary>Why do small achievements feel satisfying?</summary>
+<p>Completion releases dopamine.</p>
+</details>
+
+<details class="card row5">
+<summary>Why do pets improve our mood?</summary>
+<p>Physical affection reduces stress hormones.</p>
+</details>
+
+<details class="card row5">
+<summary>Why does sunlight feel good?</summary>
+<p>Light regulates mood and energy levels.</p>
+</details>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
