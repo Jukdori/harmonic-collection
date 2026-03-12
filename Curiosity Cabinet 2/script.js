@@ -1,79 +1,50 @@
 const rows = {
-  calm: {
-    details: document.querySelectorAll('details[data-row="calm"]'),
-    tag: document.getElementById("tag-calm"),
-    status: document.getElementById("status-calm"),
-    label: "😌 calm"
-  },
-  awkward: {
-    details: document.querySelectorAll('details[data-row="awkward"]'),
-    tag: document.getElementById("tag-awkward"),
-    status: document.getElementById("status-awkward"),
-    label: "😅 social awkwardness"
-  },
-  nostalgia: {
-    details: document.querySelectorAll('details[data-row="nostalgia"]'),
-    tag: document.getElementById("tag-nostalgia"),
-    status: document.getElementById("status-nostalgia"),
-    label: "😭 nostalgia"
-  },
-  curious: {
-    details: document.querySelectorAll('details[data-row="curious"]'),
-    tag: document.getElementById("tag-curious"),
-    status: document.getElementById("status-curious"),
-    label: "🤔 curiosity"
-  },
-  joy: {
-    details: document.querySelectorAll('details[data-row="joy"]'),
-    tag: document.getElementById("tag-joy"),
-    status: document.getElementById("status-joy"),
-    label: "😁 joy"
-  }
-};
-
-const bingoMessage = document.getElementById("bingoMessage");
-
-function updateRowState(rowName) {
-  const row = rows[rowName];
-  const openCount = Array.from(row.details).filter((item) => item.open).length;
-  const completed = openCount === row.details.length;
-
-  row.tag.classList.toggle("completed", completed);
-  row.status.classList.toggle("completed", completed);
-
-  if (completed) {
-    row.status.textContent = `${row.label} — BINGO complete ✨`;
-  } else {
-    row.status.textContent = `${row.label} — ${openCount}/5 open`;
-  }
+row1:{
+label:"😌 calm",
+message:"quiet things can still hold meaning"
+},
+row2:{
+label:"😅 social awkwardness",
+message:"connection often begins with discomfort"
+},
+row3:{
+label:"😭 nostalgia",
+message:"some feelings only return when we look back"
+},
+row4:{
+label:"🤔 curiosity",
+message:"questions are small doors to wonder"
+},
+row5:{
+label:"😁 joy",
+message:"happiness grows when shared"
+}
 }
 
-function updateAllRows() {
-  const completedRows = [];
+Object.keys(rows).forEach(row=>{
 
-  Object.keys(rows).forEach((rowName) => {
-    updateRowState(rowName);
+const cards = document.querySelectorAll(`.${row}`)
+const label = document.getElementById(`label${row.slice(-1)}`)
 
-    const row = rows[rowName];
-    const openCount = Array.from(row.details).filter((item) => item.open).length;
+cards.forEach(card=>{
+card.addEventListener("toggle",()=>{
 
-    if (openCount === row.details.length) {
-      completedRows.push(row.label);
-    }
-  });
+const opened = [...cards].filter(c=>c.open).length
 
-  if (completedRows.length === 0) {
-    bingoMessage.textContent =
-      "open five cards in the same row to complete an emotional bingo.";
-  } else if (completedRows.length === 1) {
-    bingoMessage.textContent = `✨ ${completedRows[0]} bingo completed.`;
-  } else {
-    bingoMessage.textContent = `✨ completed rows: ${completedRows.join(" · ")}.`;
-  }
+if(opened===5){
+
+label.classList.add("revealed")
+
+label.innerHTML=`
+<div class="reveal-text">
+${rows[row].label}<br>
+${rows[row].message}
+</div>
+`
+
 }
 
-document.querySelectorAll("details").forEach((detail) => {
-  detail.addEventListener("toggle", updateAllRows);
-});
+})
+})
 
-updateAllRows();
+})
