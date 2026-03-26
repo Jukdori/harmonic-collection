@@ -7,198 +7,272 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <div class="page">
+  <div class="background-glow"></div>
 
-    <header class="hero">
-      <div class="hero-top">
-        <p class="small-label">QuietCart</p>
-        <nav>
-          <a href="#screens">Screens</a>
-          <a href="#process">Process</a>
-          <a href="#reflection">Reflection</a>
-        </nav>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand">QuietCart</a>
+
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#usuals">Usuals</a>
+        <a href="#cart">Cart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="mode-toggle">Low-Stimulation Mode</button>
       </div>
+    </div>
+  </header>
 
-      <div class="hero-content">
-        <h1>QuietCart</h1>
-        <p class="hero-subtitle">
-          A low-stimulation grocery shopping interface developed.
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A calmer way to shop</p>
+        <h1>Groceries with less noise, less pressure, and more clarity.</h1>
+        <p class="hero-text">
+          QuietCart helps you browse fewer products at a time, return to familiar items,
+          and shop with a calmer, more predictable experience.
         </p>
+
+        <div class="search-wrap">
+          <input type="text" placeholder="Search groceries, household items, or your usuals" />
+          <button>Search</button>
+        </div>
       </div>
-    </header>
 
-    <main>
-      <section id="screens" class="section">
+      <div class="hero-panel">
+        <div class="status-card">
+          <p class="status-label">Shopping mode</p>
+          <h3>Calm browsing is on</h3>
+          <ul>
+            <li>Fewer items shown at once</li>
+            <li>No promotional banners</li>
+            <li>Sensory notes on products</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="section-heading">
+        <h2>Start with a category</h2>
+        <p>Simple entry points for everyday shopping.</p>
+      </div>
+
+      <div class="category-grid">
+        <article class="category-card">
+          <span class="category-icon">🥬</span>
+          <h3>Produce</h3>
+          <p>Fruit, vegetables, and simple staples.</p>
+        </article>
+
+        <article class="category-card">
+          <span class="category-icon">🥛</span>
+          <h3>Dairy</h3>
+          <p>Milk, yogurt, eggs, and familiar basics.</p>
+        </article>
+
+        <article class="category-card">
+          <span class="category-icon">🍞</span>
+          <h3>Bakery</h3>
+          <p>Bread, rolls, and everyday favorites.</p>
+        </article>
+
+        <article class="category-card">
+          <span class="category-icon">🧴</span>
+          <h3>Home</h3>
+          <p>Soap, tissues, and household essentials.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="usuals" class="usuals">
+      <div class="section-heading">
+        <h2>Your usuals</h2>
+        <p>Items you buy often, placed first for a more predictable routine.</p>
+      </div>
+
+      <div class="product-row">
+        <article class="usual-card">
+          <div class="product-image soft-green"></div>
+          <div class="product-info">
+            <h3>Whole Milk</h3>
+            <p>1 gallon</p>
+            <span>$4.29</span>
+          </div>
+          <button>Add</button>
+        </article>
+
+        <article class="usual-card">
+          <div class="product-image soft-yellow"></div>
+          <div class="product-info">
+            <h3>Sandwich Bread</h3>
+            <p>Soft white loaf</p>
+            <span>$3.49</span>
+          </div>
+          <button>Add</button>
+        </article>
+
+        <article class="usual-card">
+          <div class="product-image soft-rose"></div>
+          <div class="product-info">
+            <h3>Greek Yogurt</h3>
+            <p>Plain, 32 oz</p>
+            <span>$5.19</span>
+          </div>
+          <button>Add</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="shop" class="shop-layout">
+      <div class="products-panel">
         <div class="section-heading">
-          <p class="section-number">01</p>
-          <h2>Final interface concept</h2>
+          <h2>Browse</h2>
+          <p>Fewer products, wider spacing, and simpler choices.</p>
         </div>
 
-        <div class="screens-grid">
-          <article class="screen-card">
-            <div class="phone">
-              <div class="notch"></div>
-              <div class="phone-screen">
-                <div class="phone-header">Home</div>
-                <div class="ui-search">Search groceries...</div>
-                <div class="ui-pill">Low-Stimulation Mode</div>
-                <div class="ui-box short"></div>
-                <div class="ui-box"></div>
-                <div class="ui-row">
-                  <div class="ui-mini"></div>
-                  <div class="ui-mini"></div>
-                  <div class="ui-mini"></div>
-                </div>
-              </div>
-            </div>
-            <div class="screen-text">
-              <h3>Home</h3>
-              <p>Simple entry point with repeat purchases, reduced clutter, and no promotional banners.</p>
+        <div class="filter-row">
+          <button class="filter active">Familiar</button>
+          <button class="filter">Simple ingredients</button>
+          <button class="filter">No substitutions</button>
+          <button class="filter">Soft texture</button>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card selected">
+            <div class="product-image soft-beige large"></div>
+            <div class="product-card-text">
+              <h3>Oat Milk</h3>
+              <p>Original • 64 oz</p>
+              <span>$4.99</span>
             </div>
           </article>
 
-          <article class="screen-card">
-            <div class="phone">
-              <div class="notch"></div>
-              <div class="phone-screen">
-                <div class="phone-header">Product Listing</div>
-                <div class="ui-chip-row">
-                  <span class="ui-chip">Familiar</span>
-                  <span class="ui-chip">Simple</span>
-                </div>
-                <div class="ui-chip-row">
-                  <span class="ui-chip long">No Substitutions</span>
-                </div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-                <div class="ui-card"></div>
-              </div>
-            </div>
-            <div class="screen-text">
-              <h3>Product Listing</h3>
-              <p>Fewer products shown at once, larger spacing, and stable filters that reduce decision fatigue.</p>
+          <article class="product-card">
+            <div class="product-image soft-green large"></div>
+            <div class="product-card-text">
+              <h3>Bananas</h3>
+              <p>1 bunch</p>
+              <span>$1.89</span>
             </div>
           </article>
 
-          <article class="screen-card">
-            <div class="phone">
-              <div class="notch"></div>
-              <div class="phone-screen">
-                <div class="phone-header">Product Detail</div>
-                <div class="ui-image"></div>
-                <div class="ui-box short"></div>
-                <div class="ui-chip-row">
-                  <span class="ui-chip">Strong Smell</span>
-                  <span class="ui-chip">Soft Texture</span>
-                </div>
-                <div class="ui-chip-row">
-                  <span class="ui-chip long">Bright Packaging</span>
-                </div>
-                <div class="ui-box"></div>
-              </div>
-            </div>
-            <div class="screen-text">
-              <h3>Product Detail</h3>
-              <p>Sensory-aware information helps users anticipate texture, smell, and packaging intensity.</p>
+          <article class="product-card">
+            <div class="product-image soft-blue large"></div>
+            <div class="product-card-text">
+              <h3>Rice Cakes</h3>
+              <p>Lightly salted</p>
+              <span>$2.79</span>
             </div>
           </article>
 
-          <article class="screen-card">
-            <div class="phone">
-              <div class="notch"></div>
-              <div class="phone-screen">
-                <div class="phone-header">Checkout</div>
-                <div class="ui-stepper">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div class="ui-box"></div>
-                <div class="ui-box short"></div>
-                <div class="ui-button">Place Order</div>
-              </div>
-            </div>
-            <div class="screen-text">
-              <h3>Checkout</h3>
-              <p>A shorter, calmer flow that emphasizes routine and clarity over friction or pressure.</p>
+          <article class="product-card">
+            <div class="product-image soft-rose large"></div>
+            <div class="product-card-text">
+              <h3>Applesauce</h3>
+              <p>Unsweetened • 6 pack</p>
+              <span>$3.99</span>
             </div>
           </article>
         </div>
-      </section>
+      </div>
 
-      <section id="process" class="section split-section">
-        <div class="section-heading">
-          <p class="section-number">02</p>
-          <h2>Prompt evolution</h2>
-        </div>
+      <aside class="detail-panel">
+        <div class="detail-card">
+          <div class="product-image soft-beige detail-image"></div>
 
-        <div class="split-grid">
-          <div class="panel">
-            <div class="prompt-item">
-              <span>01</span>
-              <p>Started with a generic grocery app concept.</p>
+          <div class="detail-head">
+            <div>
+              <h2>Oat Milk</h2>
+              <p>Original • 64 oz</p>
             </div>
-            <div class="prompt-item">
-              <span>02</span>
-              <p>Shifted the direction toward calmness, clarity, and accessibility.</p>
-            </div>
-            <div class="prompt-item">
-              <span>03</span>
-              <p>Removed promotions and reduced choice overload.</p>
-            </div>
-            <div class="prompt-item">
-              <span>04</span>
-              <p>Structured the experience into four key screens.</p>
-            </div>
-            <div class="prompt-item">
-              <span>05</span>
-              <p>Added sensory-aware details to make the concept more specific.</p>
-            </div>
+            <span class="price">$4.99</span>
           </div>
 
-          <div class="panel">
-            <p class="panel-kicker">What changed</p>
-            <p class="large-note">
-              The early outputs felt polished but generic. The final concept only became distinct through repeated critique, narrowing, and human judgment.
-            </p>
+          <div class="tag-row">
+            <span class="tag">Mild smell</span>
+            <span class="tag">Smooth texture</span>
+            <span class="tag">Low visual noise</span>
           </div>
-        </div>
-      </section>
 
-      <section id="reflection" class="section split-section">
-        <div class="section-heading">
-          <p class="section-number">03</p>
-          <h2>Reflection</h2>
-        </div>
+          <div class="detail-section">
+            <h3>Ingredients</h3>
+            <p>Oat base, sunflower oil, sea salt, vitamins A, D2, and B12.</p>
+          </div>
 
-        <div class="split-grid">
-          <div class="panel">
-            <p class="panel-kicker">What ChatGPT made easy</p>
-            <p class="body-text">
-              It made ideation fast. It was useful for generating names, flows, and early structure.
-            </p>
-
-            <p class="panel-kicker space-top">What it made difficult</p>
-            <p class="body-text">
-              It often defaulted to familiar e-commerce patterns and broad “clean UI” solutions.
+          <div class="detail-section">
+            <h3>Sensory notes</h3>
+            <p>
+              Neutral scent, soft mouthfeel, and simple packaging that is easy to identify.
             </p>
           </div>
 
-          <div class="panel">
-            <p class="panel-kicker">Limits of the chat interface</p>
-            <p class="body-text">
-              Linear conversation made it harder to compare directions side by side. As the thread grew, useful ideas could get buried, and the outputs sometimes sounded more resolved than they actually were.
-            </p>
-
-            <p class="panel-kicker space-top">What the human adds</p>
-            <p class="body-text">
-              My role was to decide what mattered, reject generic defaults, and shape the interface toward a clearer point of view.
+          <div class="detail-section">
+            <h3>Why it fits QuietCart</h3>
+            <p>
+              A familiar staple with clear labeling and a predictable taste profile.
             </p>
           </div>
-        </div>
-      </section>
-    </main>
 
-  </div>
+          <button class="primary-button">Add to cart</button>
+        </div>
+      </aside>
+    </section>
+
+    <section id="cart" class="cart-section">
+      <div class="section-heading">
+        <h2>Cart</h2>
+        <p>A shorter checkout flow with less clutter and clearer totals.</p>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-items">
+          <article class="cart-item">
+            <div>
+              <h3>Whole Milk</h3>
+              <p>1 gallon</p>
+            </div>
+            <span>$4.29</span>
+          </article>
+
+          <article class="cart-item">
+            <div>
+              <h3>Sandwich Bread</h3>
+              <p>Soft white loaf</p>
+            </div>
+            <span>$3.49</span>
+          </article>
+
+          <article class="cart-item">
+            <div>
+              <h3>Oat Milk</h3>
+              <p>Original • 64 oz</p>
+            </div>
+            <span>$4.99</span>
+          </article>
+        </div>
+
+        <div class="checkout-card">
+          <div class="checkout-row">
+            <span>Subtotal</span>
+            <span>$12.77</span>
+          </div>
+          <div class="checkout-row">
+            <span>Estimated tax</span>
+            <span>$0.94</span>
+          </div>
+          <div class="checkout-row total">
+            <span>Total</span>
+            <span>$13.71</span>
+          </div>
+
+          <button class="primary-button">Continue to checkout</button>
+          <button class="secondary-button">Save as usual order</button>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
