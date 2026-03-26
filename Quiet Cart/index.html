@@ -29,22 +29,25 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">A calmer way to shop</p>
-        <h1>Groceries with less noise, less pressure, and more clarity.</h1>
+        <h1>Shop for everyday things in a calmer way.</h1>
         <p class="hero-text">
-          QuietCart helps you browse fewer products at a time, return to familiar items,
-          and shop with a calmer, more predictable experience.
+          Browse familiar items, move at your own pace, and keep shopping simple.
         </p>
 
         <div class="search-wrap">
-          <input type="text" placeholder="Search groceries, household items, or your usuals" />
-          <button>Search</button>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search groceries, household items, or your usuals"
+          />
+          <button id="searchButton">Search</button>
         </div>
       </div>
 
       <div class="hero-panel">
         <div class="status-card">
           <p class="status-label">Shopping mode</p>
-          <h3>Calm browsing is on</h3>
+          <h3>You’re in a calmer shopping mode</h3>
           <ul>
             <li>Fewer items shown at once</li>
             <li>No promotional banners</li>
@@ -94,34 +97,34 @@
       </div>
 
       <div class="product-row">
-        <article class="usual-card">
+        <article class="usual-card" data-name="Whole Milk" data-detail="1 gallon" data-price="4.29">
           <div class="product-image soft-green"></div>
           <div class="product-info">
             <h3>Whole Milk</h3>
             <p>1 gallon</p>
             <span>$4.29</span>
           </div>
-          <button>Add</button>
+          <button class="add-btn">Add</button>
         </article>
 
-        <article class="usual-card">
+        <article class="usual-card" data-name="Sandwich Bread" data-detail="Soft white loaf" data-price="3.49">
           <div class="product-image soft-yellow"></div>
           <div class="product-info">
             <h3>Sandwich Bread</h3>
             <p>Soft white loaf</p>
             <span>$3.49</span>
           </div>
-          <button>Add</button>
+          <button class="add-btn">Add</button>
         </article>
 
-        <article class="usual-card">
+        <article class="usual-card" data-name="Greek Yogurt" data-detail="Plain, 32 oz" data-price="5.19">
           <div class="product-image soft-rose"></div>
           <div class="product-info">
             <h3>Greek Yogurt</h3>
             <p>Plain, 32 oz</p>
             <span>$5.19</span>
           </div>
-          <button>Add</button>
+          <button class="add-btn">Add</button>
         </article>
       </div>
     </section>
@@ -140,8 +143,18 @@
           <button class="filter">Soft texture</button>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card selected">
+        <div class="product-grid" id="productGrid">
+          <article
+            class="product-card selected"
+            data-name="Oat Milk"
+            data-detail="Original • 64 oz"
+            data-price="4.99"
+            data-ingredients="Oat base, sunflower oil, sea salt, vitamins A, D2, and B12."
+            data-sensory="Neutral scent, smooth texture, and simple packaging that is easy to identify."
+            data-why="A familiar staple with clear labeling and a predictable taste profile."
+            data-tags="Mild smell,Smooth texture,Low visual noise"
+            data-color="soft-beige"
+          >
             <div class="product-image soft-beige large"></div>
             <div class="product-card-text">
               <h3>Oat Milk</h3>
@@ -150,7 +163,17 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-name="Bananas"
+            data-detail="1 bunch"
+            data-price="1.89"
+            data-ingredients="Bananas."
+            data-sensory="Soft texture, familiar smell, and easy visual recognition."
+            data-why="Simple, familiar, and easy to add to a routine shopping list."
+            data-tags="Soft texture,Familiar smell,Easy to identify"
+            data-color="soft-green"
+          >
             <div class="product-image soft-green large"></div>
             <div class="product-card-text">
               <h3>Bananas</h3>
@@ -159,7 +182,17 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-name="Rice Cakes"
+            data-detail="Lightly salted"
+            data-price="2.79"
+            data-ingredients="Brown rice, sea salt."
+            data-sensory="Dry, crisp texture and very mild smell."
+            data-why="A simple snack with low visual noise and few ingredients."
+            data-tags="Crisp texture,Mild smell,Simple ingredients"
+            data-color="soft-blue"
+          >
             <div class="product-image soft-blue large"></div>
             <div class="product-card-text">
               <h3>Rice Cakes</h3>
@@ -168,7 +201,17 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-name="Applesauce"
+            data-detail="Unsweetened • 6 pack"
+            data-price="3.99"
+            data-ingredients="Apples, water, vitamin C."
+            data-sensory="Soft texture, mild fruit smell, and gentle flavor."
+            data-why="Comforting, familiar, and easy to understand at a glance."
+            data-tags="Soft texture,Mild fruit smell,Gentle flavor"
+            data-color="soft-rose"
+          >
             <div class="product-image soft-rose large"></div>
             <div class="product-card-text">
               <h3>Applesauce</h3>
@@ -181,17 +224,17 @@
 
       <aside class="detail-panel">
         <div class="detail-card">
-          <div class="product-image soft-beige detail-image"></div>
+          <div id="detailImage" class="product-image soft-beige detail-image"></div>
 
           <div class="detail-head">
             <div>
-              <h2>Oat Milk</h2>
-              <p>Original • 64 oz</p>
+              <h2 id="detailName">Oat Milk</h2>
+              <p id="detailSubtitle">Original • 64 oz</p>
             </div>
-            <span class="price">$4.99</span>
+            <span class="price" id="detailPrice">$4.99</span>
           </div>
 
-          <div class="tag-row">
+          <div class="tag-row" id="detailTags">
             <span class="tag">Mild smell</span>
             <span class="tag">Smooth texture</span>
             <span class="tag">Low visual noise</span>
@@ -199,24 +242,26 @@
 
           <div class="detail-section">
             <h3>Ingredients</h3>
-            <p>Oat base, sunflower oil, sea salt, vitamins A, D2, and B12.</p>
+            <p id="detailIngredients">
+              Oat base, sunflower oil, sea salt, vitamins A, D2, and B12.
+            </p>
           </div>
 
           <div class="detail-section">
             <h3>Sensory notes</h3>
-            <p>
-              Neutral scent, soft mouthfeel, and simple packaging that is easy to identify.
+            <p id="detailSensory">
+              Neutral scent, smooth texture, and simple packaging that is easy to identify.
             </p>
           </div>
 
           <div class="detail-section">
             <h3>Why it fits QuietCart</h3>
-            <p>
+            <p id="detailWhy">
               A familiar staple with clear labeling and a predictable taste profile.
             </p>
           </div>
 
-          <button class="primary-button">Add to cart</button>
+          <button class="primary-button" id="detailAddButton">Add to cart</button>
         </div>
       </aside>
     </section>
@@ -228,8 +273,8 @@
       </div>
 
       <div class="cart-layout">
-        <div class="cart-items">
-          <article class="cart-item">
+        <div class="cart-items" id="cartItems">
+          <article class="cart-item" data-price="4.29">
             <div>
               <h3>Whole Milk</h3>
               <p>1 gallon</p>
@@ -237,7 +282,7 @@
             <span>$4.29</span>
           </article>
 
-          <article class="cart-item">
+          <article class="cart-item" data-price="3.49">
             <div>
               <h3>Sandwich Bread</h3>
               <p>Soft white loaf</p>
@@ -245,7 +290,7 @@
             <span>$3.49</span>
           </article>
 
-          <article class="cart-item">
+          <article class="cart-item" data-price="4.99">
             <div>
               <h3>Oat Milk</h3>
               <p>Original • 64 oz</p>
@@ -257,15 +302,15 @@
         <div class="checkout-card">
           <div class="checkout-row">
             <span>Subtotal</span>
-            <span>$12.77</span>
+            <span id="subtotal">$12.77</span>
           </div>
           <div class="checkout-row">
             <span>Estimated tax</span>
-            <span>$0.94</span>
+            <span id="tax">$0.94</span>
           </div>
           <div class="checkout-row total">
             <span>Total</span>
-            <span>$13.71</span>
+            <span id="total">$13.71</span>
           </div>
 
           <button class="primary-button">Continue to checkout</button>
@@ -274,5 +319,143 @@
       </div>
     </section>
   </main>
+
+  <script>
+    const productCards = document.querySelectorAll(".product-card");
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+
+    const detailName = document.getElementById("detailName");
+    const detailSubtitle = document.getElementById("detailSubtitle");
+    const detailPrice = document.getElementById("detailPrice");
+    const detailIngredients = document.getElementById("detailIngredients");
+    const detailSensory = document.getElementById("detailSensory");
+    const detailWhy = document.getElementById("detailWhy");
+    const detailTags = document.getElementById("detailTags");
+    const detailImage = document.getElementById("detailImage");
+    const detailAddButton = document.getElementById("detailAddButton");
+
+    const cartItems = document.getElementById("cartItems");
+    const subtotalEl = document.getElementById("subtotal");
+    const taxEl = document.getElementById("tax");
+    const totalEl = document.getElementById("total");
+
+    const tax = 0.94;
+    let currentSelectedProduct = null;
+
+    function parseMoney(text) {
+      return parseFloat(text.replace("$", ""));
+    }
+
+    function updateTotals() {
+      const prices = [...cartItems.querySelectorAll(".cart-item span:last-child")].map(el =>
+        parseMoney(el.textContent)
+      );
+
+      const subtotal = prices.reduce((sum, value) => sum + value, 0);
+      const total = subtotal + tax;
+
+      subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      taxEl.textContent = `$${tax.toFixed(2)}`;
+      totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    function addToCart(name, detail, price) {
+      const item = document.createElement("article");
+      item.className = "cart-item";
+      item.innerHTML = `
+        <div>
+          <h3>${name}</h3>
+          <p>${detail}</p>
+        </div>
+        <span>$${Number(price).toFixed(2)}</span>
+      `;
+      cartItems.appendChild(item);
+      updateTotals();
+      window.location.hash = "cart";
+    }
+
+    function renderDetail(card) {
+      currentSelectedProduct = {
+        name: card.dataset.name,
+        detail: card.dataset.detail,
+        price: card.dataset.price
+      };
+
+      detailName.textContent = card.dataset.name;
+      detailSubtitle.textContent = card.dataset.detail;
+      detailPrice.textContent = `$${Number(card.dataset.price).toFixed(2)}`;
+      detailIngredients.textContent = card.dataset.ingredients;
+      detailSensory.textContent = card.dataset.sensory;
+      detailWhy.textContent = card.dataset.why;
+
+      detailTags.innerHTML = "";
+      const tags = card.dataset.tags.split(",");
+      tags.forEach(tagText => {
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = tagText.trim();
+        detailTags.appendChild(tag);
+      });
+
+      detailImage.className = `product-image detail-image ${card.dataset.color}`;
+
+      productCards.forEach(product => product.classList.remove("selected"));
+      card.classList.add("selected");
+    }
+
+    productCards.forEach(card => {
+      card.addEventListener("click", () => {
+        renderDetail(card);
+      });
+    });
+
+    detailAddButton.addEventListener("click", () => {
+      if (currentSelectedProduct) {
+        addToCart(
+          currentSelectedProduct.name,
+          currentSelectedProduct.detail,
+          currentSelectedProduct.price
+        );
+      }
+    });
+
+    document.querySelectorAll(".add-btn").forEach(button => {
+      button.addEventListener("click", (e) => {
+        const card = e.target.closest(".usual-card");
+        addToCart(card.dataset.name, card.dataset.detail, card.dataset.price);
+      });
+    });
+
+    function filterProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      productCards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const detail = card.dataset.detail.toLowerCase();
+        const ingredients = card.dataset.ingredients.toLowerCase();
+
+        const matches =
+          name.includes(query) ||
+          detail.includes(query) ||
+          ingredients.includes(query);
+
+        card.style.display = matches || query === "" ? "block" : "none";
+      });
+    }
+
+    searchButton.addEventListener("click", filterProducts);
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        filterProducts();
+      }
+    });
+
+    if (productCards.length > 0) {
+      renderDetail(productCards[0]);
+    }
+
+    updateTotals();
+  </script>
 </body>
 </html>
