@@ -29,7 +29,13 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">A calmer way to shop</p>
-        <h1>Shop for everyday things in a calmer way.</h1>
+
+        <h1 class="hero-title">
+          A quieter way<br />
+          to shop for<br />
+          everyday things
+        </h1>
+
         <p class="hero-text">
           Browse familiar items, move at your own pace, and keep shopping simple.
         </p>
@@ -351,7 +357,6 @@
       const prices = [...cartItems.querySelectorAll(".cart-item span:last-child")].map(el =>
         parseMoney(el.textContent)
       );
-
       const subtotal = prices.reduce((sum, value) => sum + value, 0);
       const total = subtotal + tax;
 
@@ -440,7 +445,7 @@
           detail.includes(query) ||
           ingredients.includes(query);
 
-        card.style.display = matches || query === "" ? "block" : "none";
+        card.classList.toggle("hidden", !(matches || query === ""));
       });
     }
 
