@@ -124,65 +124,68 @@ main {
 .hero {
   min-height: 78vh;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
   align-items: center;
-  padding: 40px 0 42px;
+  padding: 54px 0 46px;
 }
 
 .eyebrow {
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--accent-dark);
-  margin-bottom: 16px;
-}
-
-.hero h1 {
-  font-size: clamp(3rem, 7vw, 5.8rem);
-  line-height: 0.95;
-  letter-spacing: -0.075em;
-  max-width: 760px;
+  letter-spacing: 0.24em;
+  color: #8a9a91;
   margin-bottom: 18px;
 }
 
+.hero-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 5vw, 5.1rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  max-width: 650px;
+  margin-bottom: 22px;
+  color: #24312b;
+}
+
 .hero-text {
-  max-width: 620px;
-  font-size: 1.08rem;
+  max-width: 500px;
+  font-size: 1.02rem;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .search-wrap {
-  max-width: 700px;
+  max-width: 620px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
-  background: var(--panel-strong);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(46, 63, 54, 0.07);
   padding: 12px;
-  border-radius: 26px;
-  box-shadow: var(--shadow);
+  border-radius: 999px;
+  box-shadow: 0 18px 34px rgba(55, 74, 64, 0.05);
 }
 
 .search-wrap input {
   border: none;
   background: transparent;
-  padding: 12px 12px;
+  padding: 12px 18px;
   outline: none;
   color: var(--text);
 }
 
 .search-wrap input::placeholder {
-  color: #7f8c85;
+  color: #86938d;
 }
 
 .search-wrap button,
 .primary-button {
   background: var(--button);
   color: var(--button-text);
-  padding: 12px 18px;
-  border-radius: 16px;
+  padding: 12px 22px;
+  border-radius: 999px;
   font-weight: 600;
 }
 
@@ -193,7 +196,8 @@ main {
 
 .hero-panel {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .status-card,
@@ -212,22 +216,29 @@ main {
 
 .status-card {
   width: 100%;
-  max-width: 380px;
-  padding: 24px;
+  max-width: 410px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(46, 63, 54, 0.07);
+  border-radius: 34px;
+  box-shadow: 0 24px 44px rgba(55, 74, 64, 0.06);
 }
 
 .status-label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--accent-dark);
-  margin-bottom: 8px;
+  letter-spacing: 0.2em;
+  color: #8a9a91;
+  margin-bottom: 10px;
 }
 
 .status-card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 12px;
-  letter-spacing: -0.03em;
+  font-size: 1.65rem;
+  line-height: 1.08;
+  margin-bottom: 14px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  max-width: 280px;
 }
 
 .status-card ul {
@@ -541,6 +552,10 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    gap: 28px;
+  }
+
   .hero-panel {
     justify-content: flex-start;
   }
@@ -573,6 +588,11 @@ section {
 
   .search-wrap {
     grid-template-columns: 1fr;
+    border-radius: 28px;
+  }
+
+  .search-wrap button {
+    width: 100%;
   }
 
   .category-grid,
@@ -581,7 +601,8 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 3rem;
+  .hero-title {
+    font-size: 2.8rem;
+    max-width: 100%;
   }
 }
