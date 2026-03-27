@@ -15,7 +15,7 @@ let counter = 0;
 const bodyTag = document.querySelector("body");
 const pTag = document.querySelector("#poem");
 
-// 기본 generator: 순서대로 바뀌기
+
 bodyTag.addEventListener("click", function () {
   pTag.classList.add("fade");
 
