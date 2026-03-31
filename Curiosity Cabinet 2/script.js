@@ -98,9 +98,9 @@ function renderBoard() {
     plaque.className = "row-plaque";
     plaque.id = `plaque-${rowIndex + 1}`;
     plaque.innerHTML = `
-      <div class="plaque-title">drawer 0${rowIndex + 1}</div>
-      <div class="plaque-sub">locked</div>
-    `;
+      plaque.innerHTML = `
+  <div class="plaque-sub only-status">locked</div>
+`;
     boardGrid.appendChild(plaque);
 
     row.clues.forEach((clue, colIndex) => {
