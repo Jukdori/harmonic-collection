@@ -7,11 +7,11 @@ const boardData = [
     label: "calm",
     message: "quiet things can still hold meaning",
     clues: [
-      ["rain = calm?", "Soft rain lowers noise and slows the body."],
-      ["quiet mornings?", "Low stimulation makes space feel precious."],
-      ["warm drinks?", "Warm routines create a small feeling of safety."],
-      ["window seat?", "You can watch the world without entering it."],
-      ["slow days?", "Less pressure makes simple moments feel softer."]
+      ["why does rain quiet everything?", "Soft rain lowers noise and slows the body."],
+      ["why do quiet mornings feel expensive?", "Low stimulation makes space feel precious."],
+      ["why do warm drinks feel like a reset?", "Warm routines create a small feeling of safety."],
+      ["why does a window seat fix the mood?", "You can watch the world without entering it."],
+      ["why do slow days feel softer?", "Less pressure makes simple moments feel softer."]
     ]
   },
   {
@@ -20,11 +20,11 @@ const boardData = [
     label: "social awkwardness",
     message: "connection often begins with discomfort",
     clues: [
-      ["wave back?", "Social reflexes often move before thought."],
-      ["nervous laugh?", "Laughter can release tension when you freeze."],
-      ["replay talks?", "The mind edits awkward moments after they pass."],
-      ["forget names?", "Attention goes to survival, not memory."],
-      ["long silence?", "Embarrassment stretches time."]
+      ["why do we suddenly feel too aware of ourselves?", "One small social moment can make you notice everything about yourself at once."],
+      ["why does nervous laughter arrive first?", "Laughter can release tension when you freeze."],
+      ["why do names disappear instantly?", "Attention goes to survival, not memory."],
+      ["why does silence suddenly get louder?", "Embarrassment stretches time."],
+      ["why do awkward moments replay all day?", "The mind edits awkward moments after they pass."]
     ]
   },
   {
@@ -33,11 +33,11 @@ const boardData = [
     label: "nostalgia",
     message: "some feelings only return when we look back",
     clues: [
-      ["old songs?", "Music stores mood better than language."],
-      ["memory smells?", "Scent reaches memory fast and deeply."],
-      ["reread texts?", "Old words hold versions of people and self."],
-      ["childhood places?", "Growing changes both scale and memory."],
-      ["miss people at night?", "Quiet leaves more room for feeling."]
+      ["why do old songs hit harder at night?", "Music stores mood better than language."],
+      ["why can one smell bring back everything?", "Scent reaches memory fast and deeply."],
+      ["why are old texts so hard to delete?", "Old words hold versions of people and self."],
+      ["why do childhood places feel unreal now?", "Growing changes both scale and memory."],
+      ["why do people feel farther away after dark?", "Quiet leaves more room for feeling."]
     ]
   },
   {
@@ -46,11 +46,11 @@ const boardData = [
     label: "curiosity",
     message: "questions are small doors to wonder",
     clues: [
-      ["open fridge?", "Sometimes you want interruption, not food."],
-      ["google at 2am?", "Night gives random thoughts more volume."],
-      ["click anyway?", "Curiosity rewards possibility before answers."],
-      ["distracted?", "The brain keeps hunting novelty."],
-      ["random thoughts?", "Loose associations rise when the mind drifts."]
+      ["why do we open the fridge just to look?", "Sometimes you want interruption, not food."],
+      ["why do weird questions show up at 2 a.m.?", "Night gives random thoughts more volume."],
+      ["why do we click before thinking?", "Curiosity rewards possibility before answers."],
+      ["why does distraction feel more interesting?", "The brain keeps hunting novelty."],
+      ["why do random thoughts arrive like that?", "Loose associations rise when the mind drifts."]
     ]
   },
   {
@@ -59,11 +59,11 @@ const boardData = [
     label: "joy",
     message: "happiness grows when shared",
     clues: [
-      ["mirror smiles?", "Faces copy faces almost automatically."],
-      ["group laughter?", "Shared joy feels bigger than private joy."],
-      ["tiny wins?", "Completion makes effort feel visible."],
-      ["pets help?", "Softness and presence lower stress quickly."],
-      ["sunlight?", "Light changes mood, energy, and attention."]
+      ["why do tiny wins feel so big?", "Completion makes effort feel visible."],
+      ["why does shared laughter feel louder?", "Shared joy feels bigger than private joy."],
+      ["why do pets improve everything instantly?", "Softness and presence lower stress quickly."],
+      ["why does sunlight change the whole day?", "Light changes mood, energy, and attention."],
+      ["why do smiles spread so fast?", "Faces copy faces almost automatically."]
     ]
   }
 ];
@@ -115,7 +115,7 @@ function renderBoard() {
           <span class="chest-lock"></span>
         </summary>
         <article class="clue-card">
-          <span class="ticket">${letters[colIndex]} clue</span>
+          <span class="ticket">${letters[colIndex]}</span>
           <h3>${clue[0]}</h3>
           <p>${clue[1]}</p>
         </article>
@@ -178,8 +178,11 @@ function wireBoard() {
 }
 
 closeOverlay.addEventListener("click", hideOverlay);
+
 overlay.addEventListener("click", (event) => {
-  if (event.target === overlay) hideOverlay();
+  if (event.target === overlay) {
+    hideOverlay();
+  }
 });
 
 renderBoard();
