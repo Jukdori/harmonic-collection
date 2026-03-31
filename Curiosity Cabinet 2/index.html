@@ -12,172 +12,194 @@
       <p class="eyebrow">UNIT 2 PROJECT</p>
       <h1>curiosity cabinet</h1>
       <p class="intro">
-        a collection of everyday curiosities. open drawers and discover hidden emotions.
+        unlock everyday questions. collect hidden moods. complete a row to reveal an emotion.
       </p>
     </header>
 
-    <section class="cabinet">
-      <!-- ROW 1 -->
-      <div class="row-label" id="label1">
-        <div class="label-inner">drawer 01</div>
+    <section class="game-panel">
+      <div class="panel-card">
+        <p class="panel-label">board status</p>
+        <p class="panel-value"><span id="unlockedCount">0</span> / 5 moods unlocked</p>
       </div>
 
-      <details class="card row1">
-        <summary>Why does rain feel calming?</summary>
-        <p>Soft repetitive sounds help slow our nervous system and make the world feel quieter.</p>
-      </details>
-
-      <details class="card row1">
-        <summary>Why do quiet mornings feel special?</summary>
-        <p>Less stimulation allows our thoughts to settle before the day becomes crowded.</p>
-      </details>
-
-      <details class="card row1">
-        <summary>Why do warm drinks feel comforting?</summary>
-        <p>Warmth and routine can create a small feeling of safety and care.</p>
-      </details>
-
-      <details class="card row1">
-        <summary>Why do we enjoy sitting by windows?</summary>
-        <p>Windows let us observe the world from a protected distance, which feels peaceful.</p>
-      </details>
-
-      <details class="card row1">
-        <summary>Why do slow days feel peaceful?</summary>
-        <p>When time feels less pressured, even simple moments can feel softer and fuller.</p>
-      </details>
-
-      <!-- ROW 2 -->
-      <div class="row-label" id="label2">
-        <div class="label-inner">drawer 02</div>
+      <div class="panel-card">
+        <p class="panel-label">mission</p>
+        <p class="panel-value">open all 5 cards in one row</p>
       </div>
 
-      <details class="card row2">
-        <summary>Why do we wave back by accident?</summary>
-        <p>Our social reflexes often act faster than our thinking in awkward public moments.</p>
-      </details>
-
-      <details class="card row2">
-        <summary>Why do we laugh when nothing is funny?</summary>
-        <p>Nervous laughter can release tension when we do not know how else to respond.</p>
-      </details>
-
-      <details class="card row2">
-        <summary>Why do we replay conversations later?</summary>
-        <p>The mind revisits uncertain moments and imagines better versions of them.</p>
-      </details>
-
-      <details class="card row2">
-        <summary>Why do we forget names immediately?</summary>
-        <p>In social situations, attention often goes to anxiety and impression rather than memory.</p>
-      </details>
-
-      <details class="card row2">
-        <summary>Why do awkward silences feel so long?</summary>
-        <p>When we feel responsible for filling the silence, even a few seconds stretch.</p>
-      </details>
-
-      <!-- ROW 3 -->
-      <div class="row-label" id="label3">
-        <div class="label-inner">drawer 03</div>
+      <div class="panel-card">
+        <p class="panel-label">cabinet mode</p>
+        <p class="panel-value">curiosity bingo</p>
       </div>
+    </section>
 
-      <details class="card row3">
-        <summary>Why do old songs feel emotional?</summary>
-        <p>Music can preserve a specific time, mood, or person more vividly than words.</p>
-      </details>
+    <section class="board-wrap">
+      <section class="cabinet-board">
+        <!-- ROW 1 -->
+        <div class="row-label" id="label1">
+          <div class="label-stamp">drawer 01</div>
+          <div class="label-sub">sealed</div>
+        </div>
 
-      <details class="card row3">
-        <summary>Why do smells bring back memories?</summary>
-        <p>Scent is deeply tied to memory and can return us to a moment almost instantly.</p>
-      </details>
+        <details class="card row1">
+          <summary><span class="card-icon">☁</span> rain = calm?</summary>
+          <p>Soft rain lowers noise and slows the body.</p>
+        </details>
 
-      <details class="card row3">
-        <summary>Why do we reread old messages?</summary>
-        <p>Sometimes we revisit old words to reconnect with a feeling we are not ready to lose.</p>
-      </details>
+        <details class="card row1">
+          <summary><span class="card-icon">☼</span> quiet mornings?</summary>
+          <p>Low stimulation makes space feel precious.</p>
+        </details>
 
-      <details class="card row3">
-        <summary>Why do childhood places feel smaller?</summary>
-        <p>As we grow, our sense of scale changes, and memory no longer fills space the same way.</p>
-      </details>
+        <details class="card row1">
+          <summary><span class="card-icon">☕</span> warm drinks?</summary>
+          <p>Warm routines create a small feeling of safety.</p>
+        </details>
 
-      <details class="card row3">
-        <summary>Why do we miss people more at night?</summary>
-        <p>Without daytime noise, emotion has more room to rise to the surface.</p>
-      </details>
+        <details class="card row1">
+          <summary><span class="card-icon">▢</span> window seat?</summary>
+          <p>You can watch the world without entering it.</p>
+        </details>
 
-      <!-- ROW 4 -->
-      <div class="row-label" id="label4">
-        <div class="label-inner">drawer 04</div>
-      </div>
+        <details class="card row1">
+          <summary><span class="card-icon">⋯</span> slow days?</summary>
+          <p>Less pressure makes simple moments feel softer.</p>
+        </details>
 
-      <details class="card row4">
-        <summary>Why do we open the fridge when not hungry?</summary>
-        <p>We are often looking for novelty, comfort, or interruption rather than food.</p>
-      </details>
+        <!-- ROW 2 -->
+        <div class="row-label" id="label2">
+          <div class="label-stamp">drawer 02</div>
+          <div class="label-sub">sealed</div>
+        </div>
 
-      <details class="card row4">
-        <summary>Why do we google random things at night?</summary>
-        <p>At night, the mind wanders more freely and small questions suddenly feel urgent.</p>
-      </details>
+        <details class="card row2">
+          <summary><span class="card-icon">↺</span> wave back?</summary>
+          <p>Social reflexes often move before thought.</p>
+        </details>
 
-      <details class="card row4">
-        <summary>Why do we click things just to see?</summary>
-        <p>Curiosity rewards us for testing possibility, even before we know the answer.</p>
-      </details>
+        <details class="card row2">
+          <summary><span class="card-icon">!</span> nervous laugh?</summary>
+          <p>Laughter can release tension when you freeze.</p>
+        </details>
 
-      <details class="card row4">
-        <summary>Why do we get distracted while working?</summary>
-        <p>The brain naturally seeks easier stimulation when focus begins to feel effortful.</p>
-      </details>
+        <details class="card row2">
+          <summary><span class="card-icon">⟲</span> replay talks?</summary>
+          <p>The mind edits awkward moments after they pass.</p>
+        </details>
 
-      <details class="card row4">
-        <summary>Why do random thoughts appear suddenly?</summary>
-        <p>Thoughts can surface from loose associations when the mind drifts.</p>
-      </details>
+        <details class="card row2">
+          <summary><span class="card-icon">✎</span> forget names?</summary>
+          <p>Attention goes to survival, not memory.</p>
+        </details>
 
-      <!-- ROW 5 -->
-      <div class="row-label" id="label5">
-        <div class="label-inner">drawer 05</div>
-      </div>
+        <details class="card row2">
+          <summary><span class="card-icon">—</span> long silence?</summary>
+          <p>Embarrassment stretches time.</p>
+        </details>
 
-      <details class="card row5">
-        <summary>Why do we smile when others smile?</summary>
-        <p>People naturally mirror expressions, so another person’s smile can shift our own face.</p>
-      </details>
+        <!-- ROW 3 -->
+        <div class="row-label" id="label3">
+          <div class="label-stamp">drawer 03</div>
+          <div class="label-sub">sealed</div>
+        </div>
 
-      <details class="card row5">
-        <summary>Why does laughter feel better together?</summary>
-        <p>Shared laughter creates connection, making joy feel larger than it does alone.</p>
-      </details>
+        <details class="card row3">
+          <summary><span class="card-icon">♫</span> old songs?</summary>
+          <p>Music stores mood better than language.</p>
+        </details>
 
-      <details class="card row5">
-        <summary>Why do small achievements feel satisfying?</summary>
-        <p>Even tiny completions can create relief because effort finally feels visible.</p>
-      </details>
+        <details class="card row3">
+          <summary><span class="card-icon">✿</span> memory smells?</summary>
+          <p>Scent reaches memory fast and deeply.</p>
+        </details>
 
-      <details class="card row5">
-        <summary>Why do pets improve our mood?</summary>
-        <p>Softness, affection, and simple presence can quickly reduce stress.</p>
-      </details>
+        <details class="card row3">
+          <summary><span class="card-icon">✉</span> reread texts?</summary>
+          <p>Old words hold versions of people and self.</p>
+        </details>
 
-      <details class="card row5">
-        <summary>Why does sunlight feel so good?</summary>
-        <p>Light affects mood, energy, and attention, making the body feel more open.</p>
-      </details>
+        <details class="card row3">
+          <summary><span class="card-icon">⌂</span> childhood places?</summary>
+          <p>Growing changes both scale and memory.</p>
+        </details>
+
+        <details class="card row3">
+          <summary><span class="card-icon">☾</span> miss people at night?</summary>
+          <p>Quiet leaves more room for feeling.</p>
+        </details>
+
+        <!-- ROW 4 -->
+        <div class="row-label" id="label4">
+          <div class="label-stamp">drawer 04</div>
+          <div class="label-sub">sealed</div>
+        </div>
+
+        <details class="card row4">
+          <summary><span class="card-icon">◫</span> open fridge?</summary>
+          <p>Sometimes you want interruption, not food.</p>
+        </details>
+
+        <details class="card row4">
+          <summary><span class="card-icon">⌕</span> google at 2am?</summary>
+          <p>Night gives random thoughts more volume.</p>
+        </details>
+
+        <details class="card row4">
+          <summary><span class="card-icon">?</span> click anyway?</summary>
+          <p>Curiosity rewards possibility before answers.</p>
+        </details>
+
+        <details class="card row4">
+          <summary><span class="card-icon">⋰</span> distracted?</summary>
+          <p>The brain keeps hunting novelty.</p>
+        </details>
+
+        <details class="card row4">
+          <summary><span class="card-icon">✦</span> random thoughts?</summary>
+          <p>Loose associations rise when the mind drifts.</p>
+        </details>
+
+        <!-- ROW 5 -->
+        <div class="row-label" id="label5">
+          <div class="label-stamp">drawer 05</div>
+          <div class="label-sub">sealed</div>
+        </div>
+
+        <details class="card row5">
+          <summary><span class="card-icon">☺</span> mirror smiles?</summary>
+          <p>Faces copy faces almost automatically.</p>
+        </details>
+
+        <details class="card row5">
+          <summary><span class="card-icon">✺</span> group laughter?</summary>
+          <p>Shared joy feels bigger than private joy.</p>
+        </details>
+
+        <details class="card row5">
+          <summary><span class="card-icon">✓</span> tiny wins?</summary>
+          <p>Completion makes effort feel visible.</p>
+        </details>
+
+        <details class="card row5">
+          <summary><span class="card-icon">♡</span> pets help?</summary>
+          <p>Softness and presence lower stress quickly.</p>
+        </details>
+
+        <details class="card row5">
+          <summary><span class="card-icon">☀</span> sunlight?</summary>
+          <p>Light changes mood, energy, and attention.</p>
+        </details>
+      </section>
     </section>
   </main>
 
-  <!-- Center reveal overlay -->
   <section class="emotion-overlay" id="emotionOverlay" aria-hidden="true">
-    <div class="overlay-card">
+    <div class="overlay-card" id="overlayCard">
       <button class="close-overlay" id="closeOverlay" aria-label="Close reveal">×</button>
+      <div class="overlay-ring"></div>
       <div class="overlay-emoji" id="overlayEmoji">😌</div>
       <p class="overlay-name" id="overlayName">calm</p>
-      <p class="overlay-message" id="overlayMessage">
-        quiet things can still hold meaning
-      </p>
+      <p class="overlay-message" id="overlayMessage">quiet things can still hold meaning</p>
     </div>
   </section>
 
