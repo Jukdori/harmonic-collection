@@ -3,200 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curiosity Cabinet</title>
+  <title>Curiosity Cabinet Bingo</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">UNIT 2 PROJECT</p>
-      <h1>curiosity cabinet</h1>
+      <h1>Curiosity Cabinet</h1>
       <p class="intro">
-        unlock everyday questions. collect hidden moods. complete a row to reveal an emotion.
+        open treasure drawers, uncover everyday clues, and complete a bingo row to reveal a hidden mood.
       </p>
     </header>
 
-    <section class="game-panel">
-      <div class="panel-card">
-        <p class="panel-label">board status</p>
-        <p class="panel-value"><span id="unlockedCount">0</span> / 5 moods unlocked</p>
+    <section class="status-bar">
+      <div class="status-card">
+        <span class="status-label">board status</span>
+        <span class="status-value"><span id="unlockedCount">0</span>/5 moods found</span>
       </div>
-
-      <div class="panel-card">
-        <p class="panel-label">mission</p>
-        <p class="panel-value">open all 5 drawers in one row</p>
+      <div class="status-card">
+        <span class="status-label">mission</span>
+        <span class="status-value">complete one full row</span>
       </div>
-
-      <div class="panel-card">
-        <p class="panel-label">cabinet mode</p>
-        <p class="panel-value">curiosity bingo</p>
+      <div class="status-card">
+        <span class="status-label">mode</span>
+        <span class="status-value">retro cabinet bingo</span>
       </div>
     </section>
 
-    <section class="board-wrap">
-      <section class="cabinet-board">
-        <!-- ROW 1 -->
-        <div class="row-label" id="label1">
-          <div class="label-stamp">drawer 01</div>
-          <div class="label-sub">sealed</div>
-        </div>
-
-        <details class="card row1">
-          <summary><span class="card-icon">☁</span> rain = calm?</summary>
-          <p>Soft rain lowers noise and slows the body.</p>
-        </details>
-
-        <details class="card row1">
-          <summary><span class="card-icon">☼</span> quiet mornings?</summary>
-          <p>Low stimulation makes space feel precious.</p>
-        </details>
-
-        <details class="card row1">
-          <summary><span class="card-icon">☕</span> warm drinks?</summary>
-          <p>Warm routines create a small feeling of safety.</p>
-        </details>
-
-        <details class="card row1">
-          <summary><span class="card-icon">▢</span> window seat?</summary>
-          <p>You can watch the world without entering it.</p>
-        </details>
-
-        <details class="card row1">
-          <summary><span class="card-icon">⋯</span> slow days?</summary>
-          <p>Less pressure makes simple moments feel softer.</p>
-        </details>
-
-        <!-- ROW 2 -->
-        <div class="row-label" id="label2">
-          <div class="label-stamp">drawer 02</div>
-          <div class="label-sub">sealed</div>
-        </div>
-
-        <details class="card row2">
-          <summary><span class="card-icon">↺</span> wave back?</summary>
-          <p>Social reflexes often move before thought.</p>
-        </details>
-
-        <details class="card row2">
-          <summary><span class="card-icon">!</span> nervous laugh?</summary>
-          <p>Laughter can release tension when you freeze.</p>
-        </details>
-
-        <details class="card row2">
-          <summary><span class="card-icon">⟲</span> replay talks?</summary>
-          <p>The mind edits awkward moments after they pass.</p>
-        </details>
-
-        <details class="card row2">
-          <summary><span class="card-icon">✎</span> forget names?</summary>
-          <p>Attention goes to survival, not memory.</p>
-        </details>
-
-        <details class="card row2">
-          <summary><span class="card-icon">—</span> long silence?</summary>
-          <p>Embarrassment stretches time.</p>
-        </details>
-
-        <!-- ROW 3 -->
-        <div class="row-label" id="label3">
-          <div class="label-stamp">drawer 03</div>
-          <div class="label-sub">sealed</div>
-        </div>
-
-        <details class="card row3">
-          <summary><span class="card-icon">♫</span> old songs?</summary>
-          <p>Music stores mood better than language.</p>
-        </details>
-
-        <details class="card row3">
-          <summary><span class="card-icon">✿</span> memory smells?</summary>
-          <p>Scent reaches memory fast and deeply.</p>
-        </details>
-
-        <details class="card row3">
-          <summary><span class="card-icon">✉</span> reread texts?</summary>
-          <p>Old words hold versions of people and self.</p>
-        </details>
-
-        <details class="card row3">
-          <summary><span class="card-icon">⌂</span> childhood places?</summary>
-          <p>Growing changes both scale and memory.</p>
-        </details>
-
-        <details class="card row3">
-          <summary><span class="card-icon">☾</span> miss people at night?</summary>
-          <p>Quiet leaves more room for feeling.</p>
-        </details>
-
-        <!-- ROW 4 -->
-        <div class="row-label" id="label4">
-          <div class="label-stamp">drawer 04</div>
-          <div class="label-sub">sealed</div>
-        </div>
-
-        <details class="card row4">
-          <summary><span class="card-icon">◫</span> open fridge?</summary>
-          <p>Sometimes you want interruption, not food.</p>
-        </details>
-
-        <details class="card row4">
-          <summary><span class="card-icon">⌕</span> google at 2am?</summary>
-          <p>Night gives random thoughts more volume.</p>
-        </details>
-
-        <details class="card row4">
-          <summary><span class="card-icon">?</span> click anyway?</summary>
-          <p>Curiosity rewards possibility before answers.</p>
-        </details>
-
-        <details class="card row4">
-          <summary><span class="card-icon">⋰</span> distracted?</summary>
-          <p>The brain keeps hunting novelty.</p>
-        </details>
-
-        <details class="card row4">
-          <summary><span class="card-icon">✦</span> random thoughts?</summary>
-          <p>Loose associations rise when the mind drifts.</p>
-        </details>
-
-        <!-- ROW 5 -->
-        <div class="row-label" id="label5">
-          <div class="label-stamp">drawer 05</div>
-          <div class="label-sub">sealed</div>
-        </div>
-
-        <details class="card row5">
-          <summary><span class="card-icon">☺</span> mirror smiles?</summary>
-          <p>Faces copy faces almost automatically.</p>
-        </details>
-
-        <details class="card row5">
-          <summary><span class="card-icon">✺</span> group laughter?</summary>
-          <p>Shared joy feels bigger than private joy.</p>
-        </details>
-
-        <details class="card row5">
-          <summary><span class="card-icon">✓</span> tiny wins?</summary>
-          <p>Completion makes effort feel visible.</p>
-        </details>
-
-        <details class="card row5">
-          <summary><span class="card-icon">♡</span> pets help?</summary>
-          <p>Softness and presence lower stress quickly.</p>
-        </details>
-
-        <details class="card row5">
-          <summary><span class="card-icon">☀</span> sunlight?</summary>
-          <p>Light changes mood, energy, and attention.</p>
-        </details>
-      </section>
+    <section class="board-shell">
+      <div class="board-grid" id="boardGrid"></div>
     </section>
   </main>
 
   <section class="emotion-overlay" id="emotionOverlay" aria-hidden="true">
     <div class="overlay-card" id="overlayCard">
       <button class="close-overlay" id="closeOverlay" aria-label="Close reveal">×</button>
-      <div class="overlay-ring"></div>
+      <div class="overlay-burst"></div>
       <div class="overlay-emoji" id="overlayEmoji">😌</div>
       <p class="overlay-name" id="overlayName">calm</p>
       <p class="overlay-message" id="overlayMessage">quiet things can still hold meaning</p>
