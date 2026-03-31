@@ -81,6 +81,8 @@ const closeOverlay = document.getElementById("closeOverlay");
 const revealedRows = new Set();
 
 function renderBoard() {
+  boardGrid.innerHTML = "";
+
   const corner = document.createElement("div");
   corner.className = "board-corner";
   corner.textContent = "BINGO";
@@ -94,19 +96,20 @@ function renderBoard() {
   });
 
   boardData.forEach((row, rowIndex) => {
+    const rowNumber = rowIndex + 1;
+
     const plaque = document.createElement("div");
     plaque.className = "row-plaque";
-    plaque.id = `plaque-${rowIndex + 1}`;
+    plaque.id = `plaque-${rowNumber}`;
     plaque.innerHTML = `
-      plaque.innerHTML = `
-  <div class="plaque-sub only-status">locked</div>
-`;
+      <div class="plaque-sub only-status">locked</div>
+    `;
     boardGrid.appendChild(plaque);
 
     row.clues.forEach((clue, colIndex) => {
       const cell = document.createElement("details");
-      cell.className = `cell row${rowIndex + 1}`;
-      cell.dataset.row = String(rowIndex + 1);
+      cell.className = `cell row${rowNumber}`;
+      cell.dataset.row = String(rowNumber);
 
       cell.innerHTML = `
         <summary class="chest" aria-label="Open clue">
@@ -177,13 +180,17 @@ function wireBoard() {
   }
 }
 
-closeOverlay.addEventListener("click", hideOverlay);
+if (closeOverlay) {
+  closeOverlay.addEventListener("click", hideOverlay);
+}
 
-overlay.addEventListener("click", (event) => {
-  if (event.target === overlay) {
-    hideOverlay();
-  }
-});
+if (overlay) {
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) {
+      hideOverlay();
+    }
+  });
+}
 
 renderBoard();
 wireBoard();
