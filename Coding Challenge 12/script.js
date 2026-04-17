@@ -13,7 +13,7 @@ function updateElement(selector, text, color) {
     element.style.color = color;
 }
 
-changeText("#greeting", "Welcome to class!");
+changeText("#greeting", "Welcome!");
 changeText("#counter", "Count: 42");
 changeHTML("#bio", "My name is <strong>Hanjun</strong> and I study <em>Communication design</em>.");
-updateElement("#greeting", "Hello <strong>again</strong>!", "blue");
+updateElement("#greeting", "Hello <strong>Class</strong>!", "blue");
