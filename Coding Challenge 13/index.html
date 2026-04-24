@@ -31,7 +31,10 @@
     const maxTextSize = 28;
     const borderRadius = 0;
 
-    const colors = ["black", "white", "blue", "lime"];
+    // 🔥 색상 수정된 부분
+    const bgColors = ["black", "red", "yellow"];
+    const textColors = ["white", "black"];
+
     const words = ["TYPE", "CODE", "LOOP", "MAKE"];
 
     const poster = document.querySelector("#poster");
@@ -47,12 +50,12 @@
 
       cell.style.width = cellWidth + "px";
       cell.style.height = cellHeight + "px";
-      cell.style.background = colors[r(0, colors.length - 1)];
+      cell.style.background = bgColors[r(0, bgColors.length - 1)];
       cell.style.borderRadius = borderRadius + "px";
 
       if (Math.random() < textChance) {
         cell.textContent = words[r(0, words.length - 1)];
-        cell.style.color = colors[r(0, colors.length - 1)];
+        cell.style.color = textColors[r(0, textColors.length - 1)];
         cell.style.fontSize = r(minTextSize, maxTextSize) + "px";
       }
 
