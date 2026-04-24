@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poster</title>
+  <style>
+    #poster {
+      display: grid;
+    }
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="poster"></div>
+
+  <script>
+    const columns = 7;
+    const rows = 9;
+    const cellWidth = 70;
+    const cellHeight = 55;
+    const textChance = 0.3;
+
+    const minTextSize = 12;
+    const maxTextSize = 28;
+    const borderRadius = 0;
+
+    const colors = ["black", "white", "blue", "lime"];
+    const words = ["TYPE", "CODE", "LOOP", "MAKE"];
+
+    const poster = document.querySelector("#poster");
+    poster.style.gridTemplateColumns = `repeat(${columns}, ${cellWidth}px)`;
+
+    function r(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    for (let i = 0; i < columns * rows; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+
+      cell.style.width = cellWidth + "px";
+      cell.style.height = cellHeight + "px";
+      cell.style.background = colors[r(0, colors.length - 1)];
+      cell.style.borderRadius = borderRadius + "px";
+
+      if (Math.random() < textChance) {
+        cell.textContent = words[r(0, words.length - 1)];
+        cell.style.color = colors[r(0, colors.length - 1)];
+        cell.style.fontSize = r(minTextSize, maxTextSize) + "px";
+      }
+
+      poster.appendChild(cell);
+    }
+  </script>
+</body>
+</html>
